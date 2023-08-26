@@ -1,0 +1,761 @@
+
+1)Write a java program to convert a given integer (in seconds) to hours, minutes and seconds.   
+Test Data :
+Input seconds: 25300
+Expected Output:
+There are:
+H:M:S - 7:1:40
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter seconds");
+        int seconds=sc.nextInt();
+
+        int a=seconds/3600;
+        System.out.println("hour= "+a);
+
+       int b=seconds-a*3600;
+       int c=b/60;
+        System.out.println("minutes= "+c);
+
+        int d=b-c*60;
+        System.out.println("seconds= "+d);
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+2)Write a java program to convert a given integer (in days) to years, months and days, assumes that all months have 30 days and all years have 365 days.   
+Test Data :
+Input no. of days: 2535
+Expected Output:
+6 Year(s)
+11 Month(s)
+15 Day(s)
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter days");
+        int days=sc.nextInt();
+
+        int a=days/365;
+        System.out.println("year= "+a);
+
+        int b=days-a*365;
+        int c=b/30;
+        System.out.println("month= "+c);
+
+        int d=b-c*30;
+        System.out.println("days= "+d);
+    }
+}
+--------------------------------------------------------------------------
+3)Write a java program to calculate the distance between the two points.   
+Test Data :
+Input x1: 25
+Input y1: 15
+Input x2: 35
+Input y2: 10
+Expected Output:
+Distance between the said points: 11.1803
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter x1");
+        double x1= sc.nextInt();
+        System.out.println("enter y1");
+        double y1= sc.nextInt();
+        System.out.println("enter x2");
+        double x2= sc.nextInt();
+        System.out.println("enter y2");
+        double y2= sc.nextInt();
+
+        double a=Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
+        System.out.printf("distance : %.2f",a);
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------
+
+4)Write a java program to read an amount (integer value) and break the amount into smallest possible number of bank notes.   
+Test Data :
+Input the amount: 375
+Expected Output:
+There are:
+3 Note(s) of 100.00
+1 Note(s) of 50.00
+1 Note(s) of 20.00
+0 Note(s) of 10.00
+1 Note(s) of 5.00
+0 Note(s) of 2.00
+0 Note(s) of 1.00
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter value");
+        int price=sc.nextInt();
+
+        int q=price/100;
+        System.out.println("notes of 100= "+q);
+
+        int r=price-q*100;
+        int s=r/50;
+        System.out.println("notes of 50= "+s);
+
+        int t=r-s*50;
+        int u=t/20;
+        System.out.println("notes of 20= "+u);
+
+        int v=t-u*20;
+        int w=v/10;
+        System.out.println("notes of 10= "+w);
+
+        int x=v-w*10;
+        int y=x/5;
+        System.out.println("notes of 5= "+y);
+
+        int z=x-y*5;
+        int a=z/2;
+        System.out.println("notes of 2= "+a);
+
+        int b=z-a*2;
+        int c=b/1;
+        System.out.println("notes of 1= "+c);
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------
+5)Write a java program that accepts 4 integers p, q, r, s from the user where q, r and s are positive and p is even. If q is greater than r and s is greater than p and if the sum of r and s is greater than the sum of p and q print "Correct values", otherwise print "Wrong values".   
+Test Data :
+Input the second integer: 35
+Input the third integer: 15
+Input the fourth integer: 46
+Expected Output:
+Wrong values
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter value");
+        int p=sc.nextInt();
+        System.out.println("enter value");
+        int q=sc.nextInt();
+        System.out.println("enter value");
+        int r=sc.nextInt();
+        System.out.println("enter value");
+        int s=sc.nextInt();
+
+        if(q>0 && r>0 && s>0 && p%2==0)
+        {
+            if(q>r && s>p && r+s>(p+q))
+            {
+                System.out.println("corret value");
+            }
+            else {
+                System.out.println("wrong value");
+            }
+        }
+
+    }
+}
+-------------------------------------------------------------------------------------------------------------------
+6)Write a java program that read 5 numbers and sum of all odd values between them.   
+Test Data :
+Input the first number: 11
+Input the second number: 17
+Input the third number: 13
+Input the fourth number: 12
+Input the fifth number: 5
+Expected Output:
+Sum of all odd values: 46
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+        int size=sc.nextInt();
+        int sum=0;
+
+        int a[]=new int[size];
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.println("enter value");
+            a[i]=sc.nextInt();
+        }
+
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]%2==1)
+            {
+                sum=sum+a[i];
+            }
+        }
+        System.out.println(sum);
+    }
+}
+-----------------------------------------------------------------------------------
+7)Write a java program that read 5 numbers and counts the number of positive numbers and negative numbers.   
+Test Data :
+Input the first number: 5
+Input the second number: -4
+Input the third number: 10
+Input the fourth number: 15
+Input the fifth number: -1
+Expected Output:
+Number of positive numbers: 3
+Number of negative numbers: 2
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+        int size=sc.nextInt();
+        int count=0,count1=0;
+
+        int a[]=new int[size];
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.println("enter value");
+            a[i]=sc.nextInt();
+        }
+
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]>0)
+            {
+                count++;
+            }
+            else
+            {
+                count1++;
+            }
+        }
+        System.out.println("positive count= "+count);
+        System.out.println("negative count= "+count1);
+    }
+}
+------------------------------------------------------------------------------------------
+8)Write a java program that read 5 numbers and counts the number of positive numbers and print the average of all positive values.   
+Test Data :
+Input the first number: 5
+Input the second number: 8
+Input the third number: 10
+Input the fourth number: -5
+Input the fifth number: 25
+Expected Output:
+Number of positive numbers: 4
+Average value of the said positive numbers: 12.00
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+        int size=sc.nextInt();
+        int count=0,sum=0;
+
+        int a[]=new int[size];
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.println("enter value");
+            a[i]=sc.nextInt();
+        }
+
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]>0)
+            {
+                sum=sum+a[i];
+                count++;
+            }
+        }
+        double total=sum/count;
+        System.out.println("positive count= "+count);
+        System.out.println("average of positive= "+total);
+    }
+}
+-----------------------------------------------------------------------------------------------------
+ 9) Write a java program to check whether a given integer is positive even, negative even, positive odd or negative odd. Print even if the number is 0.   
+Test Data :
+Input an integer: 13
+Expected Output:
+Positive Odd
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter value");
+        int a=sc.nextInt();
+
+        if(a==0)
+        {
+            System.out.println("it is even");
+        }
+        else if(a%2==0)
+        {
+            if(a>0)
+            {
+                System.out.println("it is positive even");
+            }
+            else {
+                System.out.println("it is negative even");
+            }
+        }
+        else
+        {
+            if(a>0)
+            {
+                System.out.println("it is positive odd");
+            }
+            else
+            {
+                System.out.println("it is negative odd");
+            }
+        }
+
+    }
+}
+---------------------------------------------------------------------------------------------
+10)
+Write a java program that accepts some integers from the user and find the highest value and the input position.   
+Test Data :
+Input 5 integers:
+5
+7
+15
+23
+45
+Expected Output:
+Highest value: 45
+Position: 4
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+        int size=sc.nextInt();
+        int max=0;
+        int position=0;
+
+        int a[]=new int[size];
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.println("enter value");
+            a[i]=sc.nextInt();
+        }
+        for(int i=0;i<a.length;i++){
+            if(max<a[i])
+            {
+                max=a[i];
+                position=i;
+            }
+        }
+        System.out.println("maximum value= "+max);
+        System.out.println("position= "+position);
+    }
+}
+------------------------------------------------------------------------------------
+11) 
+Write a java program to read a password until it is correct. For wrong password print "Incorrect password" and for correct password print "Correct password" and quit the program. The correct password is 1234.   
+Test Data :
+Input the password: 1234
+Expected Output:
+Correct password
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter password");
+        int a = sc.nextInt();
+        if(a==1234)
+        {
+            System.out.println("correct password");
+        }
+        else
+        {
+            System.out.println("incorrect passwprd");
+        }
+    }
+}
+-----------------------------------------------------------------------------------------
+12) Write a program that reads two numbers and divide the first number by second number. If the division not possible print "Division not possible".   
+Test Data :
+Input two numbers:
+x: 25
+y: 5
+Expected Output: 5.0
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter value");
+        int a = sc.nextInt();
+        System.out.println("enter value");
+        int b = sc.nextInt();
+
+        if(a>b) {
+            double c = a / b;
+            System.out.println(c);
+        }
+        else{
+            System.out.println("division not possible");
+        }
+    }
+}
+---------------------------------------------------------------------------------------------
+13)
+Write a java program to print a number, it’s square and cube in a line, starting from 1 and print n lines. Accept number of lines (n, integer) from the user.   
+Test Data :
+Input number of lines: 5
+Expected Output:
+1 1 1
+2 4 8
+3 9 27
+4 16 64
+5 25 125
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter line");
+        int n = sc.nextInt();
+        int m=0;
+
+        for(int i=1;i<=n;i++)
+        {
+             m=i;
+            for(int j=1;j<=3;j++)
+            {
+                System.out.print(m+" ");
+                 m=m*i;
+            }
+            System.out.println();
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+14)
+Write a java program to read an array of length 6 and find the smallest element and its position.   
+Test Data:
+Input the length of the array: 5 Input the array elements:
+25
+35
+20
+14
+45
+Expected Output:
+Smallest Value: 14
+Position of the element: 3
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+        int size=sc.nextInt();
+
+        int position=0;
+
+        int a[]=new int[size];
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.println("enter value");
+            a[i]=sc.nextInt();
+        }
+        int min=a[0];
+        for(int i=0;i<a.length;i++){
+            if(min>a[i])
+            {
+                min=a[i];
+                position=i;
+            }
+        }
+        System.out.println("minimum value= "+min);
+        System.out.println("position= "+position);
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+15)
+Write a java program to create string data type for 7 days and display their values in integer constants.   
+Sun = 0
+Mon = 1
+Tue = 2
+Wed = 3
+Thu = 4
+Fri = 5
+Sat = 6
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter week day");
+        String a=sc.next();
+
+        if(a.equals("sunday"))
+        {
+            System.out.println(0);
+        }
+        if(a.equals("monday"))
+        {
+            System.out.println(1);
+        }
+        if(a.equals("tuesday"))
+        {
+            System.out.println(2);
+        }
+        if(a.equals("wednesday"))
+        {
+            System.out.println(3);
+        }
+        if(a.equals("thursday"))
+        {
+            System.out.println(4);
+        }
+        if(a.equals("fridday"))
+        {
+            System.out.println(5);
+        }
+        if(a.equals("saturday"))
+        {
+            System.out.println(6);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------
+16)
+Write a java  program that accepts principal amount, rate of interest and days for a loan and calculate the simple interest for the loan, using the following formula.   
+interest = principal * rate * days / 365.
+Sample Input:
+10000
+.1
+365
+0
+Sample Output:
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter principal");
+        int principal=sc.nextInt();
+        System.out.println("enter rate");
+        float rate=sc.nextFloat();
+        System.out.println("enter days");
+        int days=sc.nextInt();
+
+        float interest = (principal * rate * days)/ 365;
+        System.out.println("interest= "+interest);
+    }
+}
+------------------------------------------------------------------------------------------------------
+17)
+Write a java program using looping to produce the following table of values.   
+Sample Output:
+
+x       x+2     x+4     x+6
+*******************************************************
+1       3       5       7
+4       6       8       10
+7       9       11      13
+10      12      14      16
+13      15      17      19
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter row");
+        int n= sc.nextInt();
+        for(int i=1;i<=n*3;i+=3)
+        {
+            int m=i;
+            for(int j=1;j<=n-1;j++)
+            {
+                System.out.print(m+" ");
+                m=m+2;
+            }
+            System.out.println();
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+18)
+Write a java program to convert a currency value (floating point with two decimal places) to possible number of notes and coins.   
+Sample Output:
+Input the currency value (floating point with two decimal places):
+10357.75
+
+Currency Notes:
+100 number of Note(s): 103
+50 number of Note(s): 1
+5 number of Note(s): 1
+2 number of Note(s): 1
+
+Currency Coins:
+.50 number of Coin(s): 1
+.25 number of Coin(s): 1
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter currency");
+        float currency=sc.nextFloat();
+
+        float a=currency/100;
+        int b=(int)a;
+        System.out.println("notes of 100= "+b);
+
+        float c=currency-b*100;
+        float d=c/50;
+        int e=(int)d;
+        System.out.println("notes of 50= "+e);
+
+        float f=c-e*50;
+        float g=f/5;
+        int h=(int)g;
+        System.out.println("notes of 5= "+h);
+
+        float i=f-h*5;
+        float j=i/2;
+        int k=(int)g;
+        System.out.println("notes of 2= "+k);
+
+        int l=(int)currency;
+        float m=currency-l;
+
+        float n=m/0.50f;
+        int o=(int)n;
+        System.out.println("coin of 0.50= "+o);
+
+        float p=m-o*0.50f;
+        float q=p/0.25f;
+        int r=(int)q;
+        System.out.println("coin of 0.25= "+r);
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------
+19)
+ Write a java program that accepts seven floating point numbers and count the number of positive and negative numbers. Also print the average of all positive and negative values with two digit after the decimal number.   
+Sample Output:
+Input 7 numbers(int/float):
+25
+35.75
+15
+-3.5
+40
+35
+16
+
+6 Number of positive numbers: Average 27.79
+
+1 Number of negative numbers: Average -3.50
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+        int size=sc.nextInt();
+        int count=0,count1=0;
+        float sum=0f,sum1=0f;
+
+        float a[]=new float[size];
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.println("enter value");
+            a[i]=sc.nextFloat();
+        }
+        for(int i=0;i<a.length;i++)
+        {
+           if(a[i]>0)
+           {
+               sum=sum+a[i];
+              count++;
+           }
+           else {
+               sum1=sum1+a[i];
+               count1++;
+           }
+        }
+        float avg=sum/count;
+        float avg1=sum1/count1;
+        System.out.println("count of positive value= "+count);
+        System.out.println("count of negative value= "+count1);
+        System.out.println("average of positive value= "+avg);
+        System.out.println("average of positive value= "+avg1);
+    }
+}
+----------------------------------------------------------------------------------------
+20) Write a java program that accepts an integer and print next ten consecutive odd and even numbers.   
+Sample Output:
+Input an integer number:
+15
+
+Next 10 consecutive odd numbers:
+17, 19, 21, 23, 25, 27, 29, 31, 33, 35,
+
+Next 10 consecutive even numbers:
+26, 28, 30, 32, 34, 36, 38, 40, 42, 44
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter value");
+        int n=sc.nextInt();
+        int m=n+1;
+
+        for(int i=1;i<=10;i++)
+        {
+            n=n+2;
+            System.out.print(n+" ");
+        }
+        System.out.println();
+        for(int i=1;i<=10;i++)
+        {
+            System.out.print(m+" ");
+            m=m+2;
+        }
+
+    }
+}
+-------------------------------------------------------------------------------------------------
+
+
+
+

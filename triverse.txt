@@ -1,0 +1,286 @@
+1) how many times a number is present in array ? 
+
+public class Main { 
+    public static void main(String[] args) {
+        int a[]={1,2,3,4,2,3,3};
+        int b=3;
+        int count=0;
+
+        for(int i=0;i<a.length;i++)
+        {
+                if(a[i]==b)
+                {
+                    count++;
+                }
+        }
+        System.out.println("count= "+count);
+    }
+    }
+------------------------------------------------------------------------------------
+2) find the last occurcence of x ? last duplicate konse index pr hey
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={1,2,3,4,2,3,3};
+        int b=3;
+        int count=0;
+
+        for(int i=0;i<a.length;i++)
+        {
+                if(a[i]==b)
+                {
+                    count=i;
+                }
+        }
+        System.out.println("index= "+count);
+    }
+    }
+---------------------------------------------------------------------------------
+3) count the numbers of elements is strictly greater than x ? 
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={2,3,5,6,3,7,8,9,10};
+        int max=5;
+        int count=0;
+
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]>max)
+            {
+                count++;
+            }
+        }
+        System.out.println("count greater than max= "+count);
+    }
+}
+--------------------------------------------------------------------------------
+4) find first smallest and largest array in java :
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={2,3,5,6,3,7,8,9,10,5};
+        int max=a[0];
+        int min=a[0];
+
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]>max)
+            {
+                max=a[i];
+            }
+        }
+        System.out.println("maximum number= "+max);
+
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]<min)
+            {
+                min=a[i];
+            }
+        }
+        System.out.println("minimum number= "+min);
+    }
+}
+-----------------------------------------------------------------------------
+5) find the total number of pairs in the array whose sum is equal to to the given value x ? 
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={2,3,5,6,3,7,8,9,10,5};
+        int x=7;
+
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]+a[j]==x)
+                {
+                    System.out.println(a[i]+" "+a[j]);
+                }
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------
+6) count the number of triplets whose sum is equal to the given value of x ? 
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={1,4,5,6,3};
+        int x=12;
+
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                for(int k=j+1;k<a.length;k++)
+                {
+                    if(a[i]+a[j]+a[k]==x)
+                    {
+                        System.out.println(a[i]+" "+a[j]+" "+a[k]);
+                    }
+                }
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------
+7) find the unique number in a given array where all the elements are beign repeated twice with one one value being unique 
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={1,2,3,4,2,1,3};
+
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+               if(a[i]==a[j])
+               {
+                   a[i]=-1;
+                   a[j]=-1;
+               }
+            }
+        }
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]>0)
+            {
+                System.out.println(a[i]);
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+8) second largest number in array ? 
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={1,2,3,4,2,1,3,5,9,9,9};
+        
+      for(int i=0;i<a.length-1;i++)
+      {
+          for(int j=i+1;j<a.length;j++)
+          {
+              if(a[i]==a[j])
+              {
+                  a[i]=-1;
+              }
+          }
+      }
+      int max=a[0];
+      for(int i=0;i<a.length-1;i++)
+      {
+          if(a[i]>max)
+          {
+              max=a[i];
+          }
+      }
+        System.out.println("second largest number= "+max);
+    }
+}
+-------------------------------------------------------------------------------------------------------
+9) Given an array ‘a’ consisting of integers.return the first value that is repeating in this array .if no value is being repeated return -1. (first occurence/one duplicate)
+a)write a all duplicate elements in array 
+b)which value repeat in array 
+
+public class Main {
+    static int duplicate(int a[])
+    {
+        for(int i=0;i<a.length-1;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]==a[j])
+                {
+                    return a[i];
+                }
+            }
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        int a[]={1,2,3,4,4,3,2};
+
+     int b=duplicate(a);
+        System.out.println(b);
+    }
+}
+---------------------------------------------------------
+public class Main {
+    public static void main(String[] args) {
+        int a[]={1,2,3,4,3,2};
+        int b=0;
+        int flag=0;
+
+        for(int i=0;i<a.length-1;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]==a[j])
+                {
+                   b=a[j];
+                    flag=1;
+                    break;
+                }
+            }
+        }
+        if(flag==0)
+            System.out.println(-1);
+        else
+            System.out.println(b);
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------
+10) Given an array ‘a’ consisting of integers.return the first value that is repeating in this array .if no value is being repeated return -1. {all occurence/all duplicate} 
+b)which value repeat in array 
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={1,2,3,4,3,2};
+        int b=0;
+        int flag=0;
+
+        for(int i=0;i<a.length-1;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]==a[j])
+                {
+                    System.out.println(a[i]);
+                    flag=1;
+                }
+            }
+        }
+        if(flag==0)
+            System.out.println(-1);
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+11) take user input when a all array is already sorted then print true otherwise false ? 
+12345 true sorted 
+23 45 1 3 9 false 
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+        int size=sc.nextInt();
+
+        int a[]=new int[size];
+
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+
+       int b[]=a.clone();
+        Arrays.sort(b);
+        System.out.println("equality= "+Arrays.equals(a,b));
+    }
+}
+
+
+
