@@ -1,0 +1,241 @@
+6)Prefix sum : 
+given an integer array 'a', return the prefix sum/running sum in the diffrent array with creating a new array ?
+
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static int [] prefixsum(int a[]){
+        int n=a.length;
+        int []prefix=new int[n];
+        prefix[0]=a[0];
+
+        for(int i=1;i<n;i++)
+        {
+            prefix[i]=prefix[i-1]+a[i];
+        }
+        return prefix;
+    }
+    public static void main(String[] args) {
+        int a[] = {2, 1, 3, 4, 5};
+       printArray(a);
+        int[] prefix=prefixsum(a);
+        printArray(prefix);
+    }
+}
+-------------------------------------------------------------------------------------
+7)given an integer array 'a' return the prefix sum/running sum in the same array without a creating a new array ? 
+
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static int[] prefixsum(int a[])
+    {
+        for(int i=1;i<a.length;i++)
+        {
+            a[i]=a[i-1]+a[i];
+        }
+        return a;
+    }
+
+    public static void main(String[] args) {
+       int a[]={2,1,3,4,5};
+       printArray(a);
+       int prefix []=prefixsum(a);
+       printArray(prefix);
+    }
+}
+----------------------------------------------------------------------------------
+8)a)given an array of integer of size n  where you need to print the sum of values in a given range of index from l to r (both include) 
+note : the value of l and r in queries follow 1 based indexing 
+
+import java.util.Scanner;
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static int[] prefixsum(int a[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter start index");
+        int start= sc.nextInt();
+        System.out.println("enter ending index");
+        int end= sc.nextInt();
+        for(int i=start;i<end;i++)
+        {
+            a[i]=a[i-1]+a[i];
+        }
+        return a;
+    }
+
+    public static void main(String[] args) {
+       int a[]={2,1,3,4,5};
+        printArray(a);
+       int prefix []=prefixsum(a);
+
+       printArray(prefix);
+    }
+}
+----------------------------------------------------------------------------------------
+8)b)3 testcases
+starting or ending point 
+
+import java.util.Scanner;
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static int[] prefixsum(int a[]) {
+        Scanner sc = new Scanner(System.in);
+            System.out.println("enter start index");
+            int start = sc.nextInt();
+            System.out.println("enter ending index");
+            int end = sc.nextInt();
+            
+        int n=a.length;
+        int []prefix=new int[n];
+        for(int i=0;i<a.length;i++)
+        {
+            prefix[i]=a[i];
+        }
+
+        for(int i=start;i<end;i++)
+        {
+            prefix[i]=prefix[i-1]+a[i];
+        }
+        return prefix;
+        }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+       int a[]={2,1,3,4,5};
+        printArray(a);
+        
+        System.out.println("enter testcases");
+        int n = sc.nextInt();
+        while (n > 0) {
+            int prefix []=prefixsum(a);
+            printArray(prefix);
+            n--;
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+9)given an array and a array is divide into two parts then check first part is equal to the next part ? 
+sum 
+1 2 3 4 5 6 
+1 2 3 
+4 5 6 
+6 
+15 not equal 
+
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void sum(int a[]) {
+        int sum=0;
+        int sum1=0;
+        for(int i=0;i<a.length/2;i++)
+        {
+            sum = sum + a[i];
+        }
+        System.out.println("half element sum= "+sum);
+
+        for(int i=a.length/2;i<a.length;i++)
+        {
+            sum1 = sum1 + a[i];
+        }
+        System.out.println("other half element sum= "+sum1);
+        
+        if(sum==sum1)
+        {
+            System.out.println("both are equal");
+        }
+        else
+        {
+            System.out.println("both are not equal");
+        }
+    }
+    public static void main(String[] args) {
+       int a[]={1,2,3,3,2,1};
+        printArray(a);
+        sum(a);
+    }
+}
+----------------------------------------------------------------------------------
+10)Find the smallest missing positive integer in an unsorted array of integers.
+1 3 4 5 
+2 =>2 is missing 
+
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void sort(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]>a[j])
+                {
+                    int temp;
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+    }
+    static void missing(int a[])
+    {
+        for(int i=0;i<a.length-1;i++)
+        {
+            if(a[i]+1==a[i+1]-1)
+            {
+                int n=a[i]+1;
+                System.out.println("missing element= "+n);
+            }
+        }
+    }
+    public static void main(String[] args) {
+        int a[]={1,6,5,2,3};
+        sort(a);
+        printArray(a);
+        missing(a);
+    }
+}
+
+
+
