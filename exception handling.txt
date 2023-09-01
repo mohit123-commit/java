@@ -1,0 +1,154 @@
+6) Create a Java program that uses the throws keyword to declare an exception being thrown from a method and handle it in the calling code.
+
+import java.io.IOException;
+
+class A {
+    void show() throws IOException {
+        System.out.println("hii");
+    }
+}
+public class Main {
+    public static void main(String[] args) throws IOException{
+        A k = new A();
+        k.show();
+    }
+}
+------------------------------------------------------------------------------------------------
+                                             MODERATE LEVEL
+
+1) Write a Java program that reads an integer from the user and handles the InputMismatchException when the user enters a non-integer input.
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+        System.out.println("enter value");
+     try{
+         int n= sc.nextInt();
+         System.out.println(n);
+     }
+     catch (InputMismatchException ex)
+     {
+         System.out.println("please enter a valid input");
+     }
+    }
+}
+--------------------------------------------------------------------------------
+2) Create a Java program that simulates a scenario where an IOException occurs while working with a file and handles it using a custom exception.
+
+class A{
+    void show() throws IOException{
+        throw new NullPointerException("device error");
+    }
+    void p()
+    {
+        try{
+            show();
+        }
+        catch (Exception ex){
+            System.out.println("Exception handled");
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+    A k=new A();
+    k.p();
+    }
+}
+---------------------------------------------------------------------------------
+3) Create a Java program that defines a method to divide two numbers and handle ArithmeticException. Then, invoke this method and handle the exception in the calling code.
+
+class A{
+    void devide(){
+        try
+        {
+            int a=5/0;
+            System.out.println(a);
+        }
+        catch (ArithmeticException ex)
+        {
+            System.out.println("enter a valid number");
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A k=new A();
+        k.devide();
+    }
+}
+-------------------------------------------------------------------------------
+4) Write a Java program that demonstrates the use of the try-catch-finally construct for exception handling. The program should read a file and print its content, and then close the file in the finally block.
+
+class A{
+    void show()
+    {
+        try{
+            int a[]={1,2,3,4};
+            a[9]=5;
+            System.out.println(a);
+        }
+        catch (ArrayIndexOutOfBoundsException ex)
+        {
+            System.out.println("Exception handled");
+        }
+        finally {
+            System.out.println("code execucuted");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+       A k=new A();
+       k.show();
+    }
+}
+-----------------------------------------------------------------------------------------------
+5) Create a Java program that defines a custom unchecked exception. Use this exception to handle a specific situation in the program.
+
+public class Main {
+    public static void main(String[] args) {
+
+        try{
+            int a=5/0;
+            System.out.println(a);
+        }
+        catch (ArithmeticException ex)
+        {
+            System.out.println("enter a valid input to remove airthmetic exception");
+        }
+
+        try{
+            String s=null;
+            System.out.println(s.length());
+        }
+        catch (NullPointerException ex)
+        {
+            System.out.println("enter a valid input to remove null pointer exception");
+        }
+
+        try {
+            String p="abc";
+            int a=Integer.parseInt(p);
+            System.out.println(a);
+        }
+        catch (NumberFormatException ex)
+        {
+            System.out.println("enter a valid input to remove number format exception");
+        }
+
+        try {
+            int a[]={1,2,3,4};
+            a[10]=5;
+            System.out.println(a);
+        }
+        catch (ArrayIndexOutOfBoundsException ex)
+        {
+            System.out.println("exception handled");
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------

@@ -1,0 +1,618 @@
+1) Write a Java program to find the sum of all elements in an integer array.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+       int size= sc.nextInt();
+       int a[]=new int[size];
+
+        System.out.println("enter value");
+       for(int i=0;i<a.length;i++)
+       {
+           a[i]=sc.nextInt();
+       }
+
+       int sum=0;
+       for(int i=0;i<a.length;i++)
+       {
+           sum=sum+a[i];
+       }
+        System.out.println("sum of all element= "+sum);
+    }
+}
+-----------------------------------------------------------------------------------
+2)Write a Java program to find the maximum element in an array of integers
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+       int size= sc.nextInt();
+       int a[]=new int[size];
+
+        System.out.println("enter value");
+       for(int i=0;i<a.length;i++)
+       {
+           a[i]=sc.nextInt();
+       }
+
+       int max=0;
+       for(int i=0;i<a.length;i++)
+       {
+           if(max<a[i])
+           {
+               max=a[i];
+           }
+       }
+        System.out.println("maximum element= "+max);
+    }
+}
+---------------------------------------------------------------------------------
+3)Write a Java program to count the number of even and odd elements in an array of integers.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+       int size= sc.nextInt();
+       int a[]=new int[size];
+
+        System.out.println("enter value");
+       for(int i=0;i<a.length;i++)
+       {
+           a[i]=sc.nextInt();
+       }
+
+       int count=0;
+       int count1=0;
+       for(int i=0;i<a.length;i++)
+       {
+           if(a[i]%2==0)
+           {
+              count++;
+           }
+           else{
+               count1++;
+           }
+       }
+        System.out.println("count of even element= "+count);
+        System.out.println("count of odd element= "+count1);
+    }
+}
+--------------------------------------------------------------------------------------------------------
+4) Write a Java program to find the average of elements in an array of integers.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+       int size= sc.nextInt();
+       int a[]=new int[size];
+
+        System.out.println("enter value");
+       for(int i=0;i<a.length;i++)
+       {
+           a[i]=sc.nextInt();
+       }
+
+       int sum=0;
+       int count=0;
+       for(int i=0;i<a.length;i++)
+       {
+          sum=sum+a[i];
+          count++;
+       }
+       int avg=sum/count;
+        System.out.println("average of element= "+avg);
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+5)Write a Java program to reverse an array of integers
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+       int size= sc.nextInt();
+       int a[]=new int[size];
+
+        System.out.println("enter value");
+       for(int i=0;i<a.length;i++)
+       {
+           a[i]=sc.nextInt();
+       }
+
+       for(int i=a.length-1;i>=0;i--)
+       {
+           System.out.println(a[i]);
+       }
+    }
+}
+---------------------------------------------------------------------------------------------------
+6) Write a Java program to find the second largest element in an array of integers.
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+       int size= sc.nextInt();
+       int a[]=new int[size];
+
+        System.out.println("enter value");
+       for(int i=0;i<a.length;i++)
+       {
+           a[i]=sc.nextInt();
+       }
+
+        Arrays.sort(a);
+       for(int i=0;i<a.length-1;i++)
+       {
+           if(a[i]==a[i+1])
+           {
+               a[i]=-1;
+           }
+       }
+
+        int max=0;
+        for(int i=0;i<a.length-1;i++)
+       {
+           if(a[i]>max)
+           {
+               max=a[i];
+           }
+       }
+        System.out.println("second largest element= "+max);
+    }
+}
+-----------------------------------------------------------------------------------------
+7)Write a Java program to find the common elements between two arrays of integers.
+
+public class Main {
+    public static void main(String[] args) {
+      int a[]={1,2,3,4,5};
+      int b[]={6,7,2,8,9,10};
+
+
+       for(int i=0;i<a.length-1;i++)
+       {
+           for(int j=0;j<b.length;j++)
+           {
+               if(a[i]==b[j])
+               {
+                   System.out.println("common elements= "+a[i]);
+               }
+           }
+       }
+    }
+}
+-------------------------------------------------------------------------------------------------
+8)Write a Java program to find the frequency of each element in an array of integers. take positive elements and negative elements 
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+        int size= sc.nextInt();
+        int a[]=new int[size];
+
+        System.out.println("enter value");
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+
+        int count;
+        for(int i=0;i<a.length;i++)
+        {
+            count=0;
+            for(int j=0;j<a.length;j++)
+            {
+                if(a[i]==a[j])
+                {
+                   count++;
+                }
+            }
+            System.out.println(a[i]+"="+count);
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------
+9)Write a Java program to find the intersection of two arrays.(intersection means :common elements)
+
+public class Main {
+    public static void main(String[] args) {
+      int a[]={1,2,3,4,5};
+      int b[]={6,7,2,8,9,10};
+
+
+       for(int i=0;i<a.length-1;i++)
+       {
+           for(int j=0;j<b.length;j++)
+           {
+               if(a[i]==b[j])
+               {
+                   System.out.println("common elements= "+a[i]);
+               }
+           }
+       }
+    }
+}
+-------------------------------------------------------------------------
+10)Write a Java program to shift all zeros in an array to the end while maintaining the order of non-zero elements. 
+given elements is : { 0, 2, 0, 4, 0, 6, 8, 0 } 
+
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void zero(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]==0)
+                {
+                    int temp;
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+    }
+    public static void main(String[] args) {
+       int a[]={ 0, 2, 0, 4, 0, 6, 8, 0 };
+
+       printArray(a);
+       zero(a);
+       printArray(a);
+    }
+}
+-------------------------------------------------------------------------------------------------------
+                                                moderate level
+
+1) Write a Java program to rotate an array to the right by a given number of steps.
+eg : { 1, 2, 3, 4, 5, 6, 7 }; 
+output explanation =>
+one time rotation :  7,1,2,3,4,5,6
+second time roration :6,7,1,2,3,4,5
+third time rotation : 5,6,7,1,2,3,4
+
+import java.util.Scanner;
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void reverse(int a[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enetr value for rotation");
+        int n= sc.nextInt();
+
+        int p=1;
+        while(p<=n)
+        {
+            for (int i = a.length - 2; i >= 0; i--)
+            {
+                int temp;
+                temp = a[i];
+                a[i] = a[i + 1];
+                a[i + 1] = temp;
+            }
+            p++;
+        }
+       }
+
+    public static void main(String[] args) {
+        int a[]={1,2,3,4,5,6,7};
+
+        reverse(a);
+        printArray(a);
+    }
+}
+-----------------------------------------------------------------------------------------------
+2)Write a Java program to segregate 0s, 1s, and 2s in an array.
+
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void sort(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]>a[j])
+                {
+                    int temp;
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int a[]={0,1,2,1,2,0,1,2,0};
+        sort(a);
+        printArray(a);
+    }
+}
+-----------------------------------------------------------------------------------------------------
+3)Write a Java program to find the majority element in an array (the element that appears more than n/2 times).
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={1,3,2,4,4,2,4,4,4,4};
+
+        int count;
+        for(int i=0;i<a.length;i++)
+        {
+            count=0;
+            for(int j=0;j<a.length;j++)
+            {
+                if(a[i]==a[j]) {
+                    count++;
+                }
+            }
+            if(count>a.length/2)
+            {
+                System.out.println("majority element= "+a[i]);
+                break;
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------
+4) Write a Java program to find the maximum difference between two elements in an array such that the larger element appears after the smaller element.
+
+public class Main {
+    public static void main(String[] args) {
+        int a[] =  {7, 9, 5, 6, 3, 2};
+
+        int maxdiff=a[1]-a[0];
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[j]-a[i]>maxdiff)
+                {
+                    maxdiff=a[j]-a[i];
+                }
+            }
+        }
+        System.out.println("maximum difference is= "+maxdiff);
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+5) Write a Java program to find the minimum difference between two elements in an array.
+
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        int a[]={4, 9, 1, 32, 13};
+        Arrays.sort(a);
+
+        int min=a[1]-a[0];
+        for(int i=1;i<a.length;i++)
+        {
+            if(a[i]-a[i-1]<min)
+            {
+                min=a[i]-a[i-1];
+            }
+        }
+        System.out.println("minimum difference is= "+min);
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+6) Write a Java program to find the longest increasing subarray.
+
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void sort(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]>a[j])
+                {
+                    int temp;
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+    }
+    public static void main(String[] args) {
+        int a[]={2,4,3,5,7,6,1};
+
+        sort(a);
+        printArray(a);
+    }
+}
+---------------------------------------------------------------------------------------------------------
+
+7) Reverse an Array in-place: java at specific place 
+
+import java.util.Scanner;
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+    }
+    static void reverse(int a[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enetr value");
+        int n= sc.nextInt();
+
+        int i=0,j=n-1;
+
+        while (i<j)
+        {
+            int temp;
+            temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+            i++;
+            j--;
+        }
+    }
+    public static void main(String[] args) {
+        int a[]={1,2,3,4,5,6};
+
+        reverse(a);
+        printArray(a);
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+
+8)Remove Duplicates from Sorted Array: remove only first duplicate element
+
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]>0)
+            {
+                System.out.print(a[i] + " ");
+            }
+        }
+        System.out.println();
+    }
+    static void sort(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]>a[j])
+                {
+                    int temp;
+                    temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+    }
+    static int[] duplicate(int a[])
+    {
+        int b=0;
+        for(int i=0;i<a.length-1;i++)
+        {
+          if(a[i]==a[i+1])
+          {
+              a[i]=-1;
+              break;
+          }
+        }
+        return a;
+    }
+    public static void main(String[] args) {
+        int a[]={2,3,4,1,5,3,2,1};
+
+        sort(a);
+        printArray(a);
+        int arr[]=duplicate(a);
+        printArray(arr);
+    }
+}
+---------------------------------------------------------------------------------------------------
+9)Remove Duplicates from unSorted Array: remove only first duplicate element
+
+public class Main {
+    static void printArray(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]>0)
+            {
+                System.out.print(a[i] + " ");
+            }
+        }
+        System.out.println();
+    }
+    static int[] duplicate(int a[])
+    {
+        int b=0;
+        for(int i=0;i<a.length-1;i++)
+        {
+         for(int j=i+1;j<a.length;j++)
+         {
+             if(a[i]==a[j])
+             {
+                 a[j]=-1;
+                 break;
+             }
+         }
+         break;
+        }
+        return a;
+    }
+    public static void main(String[] args) {
+        int a[]={2,3,4,1,5,2,3,1};
+
+        printArray(a);
+        int arr[]=duplicate(a);
+        printArray(arr);
+    }
+}
+-------------------------------------------------------------------------------------------------
+10)find the peak element in array 
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={10, 20, 15, 2, 23, 90, 67};
+
+        for(int i=1;i<a.length-1;i++)
+        {
+            if(a[i]>a[i-1] && a[i]>a[i+1])
+            {
+                System.out.println("peak element= "+a[i]);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------------
