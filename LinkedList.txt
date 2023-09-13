@@ -1,0 +1,814 @@
+ll : 
+number list :78,34,12,98 
+print 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        LinkedList ll=new LinkedList();
+        ll.add(78);
+        ll.add(34);
+        ll.add(12);
+        ll.add(98);
+        System.out.println(ll);
+    }
+}
+-------------------------------------------------------------------------------
+2)
+ll : 
+number list :78,34,12,98 
+print 
+
+new element add: 72 
+add index : 
+0 index 
+2 index =>67 
+3 index =>76 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        LinkedList ll=new LinkedList();
+        ll.add(78);
+        ll.add(34);
+        ll.add(12);
+        ll.add(98);
+        System.out.println(ll);
+
+        ll.add(0,72);
+        ll.add(2,67);
+        ll.add(3,76);
+        System.out.println(ll);
+    }
+}
+------------------------------------------------------------------------------
+3)
+ll1 : 
+number list :78,34,12,98 
+print 
+
+ll2: 45 ,89,23,56
+print 
+
+ll2+ll1 
+print
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        LinkedList ll1=new LinkedList();
+        ll1.add(78);
+        ll1.add(34);
+        ll1.add(12);
+        ll1.add(98);
+        System.out.println(ll1);
+
+        LinkedList ll2=new LinkedList();
+        ll2.add(45);
+        ll2.add(89);
+        ll2.add(23);
+        ll2.add(56);
+        System.out.println(ll2);
+
+        ll2.addAll(ll1);
+        System.out.println(ll1);
+        System.out.println(ll2);
+    }
+}
+------------------------------------------------------------------------------------
+4)
+al =>ravi , vijay ,ramesh, gopal 
+sout 
+
+ll =>fiven student 
+sout 
+
+al +ll 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        ArrayList al=new ArrayList();
+        al.add("ravi");
+        al.add("vijay");
+        al.add("ramesh");
+        al.add("gopal");
+        System.out.println(al);
+
+        LinkedList ll=new LinkedList();
+        ll.add("mohit");
+        ll.add("unnati");
+        ll.add("saloni");
+        ll.add("monika");
+        ll.add("mayank");
+        System.out.println(ll);
+
+        al.addAll(ll);
+        System.out.println(al);
+        System.out.println(ll);
+    }
+}
+------------------------------------------------------------------------------
+5)
+ll1 =>5 name 
+ll1+ll2
+
+ll2=>5 name 
+ll2+ll1
+
+ll3=>5 name 
+ll3+ll1
+
+ll4=>5 name 
+ll4+ll3
+
+ll5=>5 name
+ll2+ll5
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        LinkedList ll1=new LinkedList();
+        ll1.add("mohit");
+        ll1.add("unnati");
+        ll1.add("saloni");
+        ll1.add("monika");
+        ll1.add("mayank");
+        System.out.println(ll1);
+
+        LinkedList ll2=new LinkedList();
+        ll2.add("nidhi");
+        ll2.add("nikita");
+        ll2.add("piyush");
+        ll2.add("satyam");
+        ll2.add("kaushal");
+        System.out.println(ll2);
+        ll2.addAll(ll1);
+        System.out.println(ll2);
+
+        LinkedList ll3=new LinkedList();
+        ll3.add("ayushi");
+        ll3.add("nikhil");
+        ll3.add("hritvik");
+        ll3.add("tushar");
+        ll3.add("astha");
+        System.out.println(ll3);
+        ll3.addAll(ll1);
+        System.out.println(ll3);
+
+        LinkedList ll4=new LinkedList();
+        ll4.add("khushi");
+        ll4.add("ashish");
+        ll4.add("harshita");
+        ll4.add("pradhumn");
+        ll4.add("mahi");
+        System.out.println(ll4);
+        ll4.addAll(ll3);
+        System.out.println(ll4);
+
+        LinkedList ll5=new LinkedList();
+        ll5.add("sahil");
+        ll5.add("siddharth");
+        ll5.add("tanu");
+        ll5.add("vinay");
+        ll5.add("sourabh");
+        System.out.println(ll5);
+        ll2.addAll(ll5);
+        System.out.println(ll2);
+    }
+}
+--------------------------------------------------------------------------------------
+6)
+ll1 =>5 name 
+
+
+ll2=>5 name 
+ll2+ll1
+
+ll3=>5 name 
+ll3+ll1
+remove ll2 +ll1 
+ll4=>5 name 
+ll4+ll3
+
+ll5=>5 name
+ll2+ll5
+remove ll3+ll1 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        LinkedList ll1=new LinkedList();
+        ll1.add("mohit");
+        ll1.add("unnati");
+        ll1.add("saloni");
+        ll1.add("monika");
+        ll1.add("mayank");
+        System.out.println(ll1);
+
+        LinkedList ll2=new LinkedList();
+        ll2.add("nidhi");
+        ll2.add("nikita");
+        ll2.add("piyush");
+        ll2.add("satyam");
+        ll2.add("kaushal");
+        System.out.println(ll2);
+        ll2.addAll(ll1);
+        System.out.println(ll2);
+        ll2.removeAll(ll1);
+        System.out.println(ll2);
+
+        LinkedList ll3=new LinkedList();
+        ll3.add("ayushi");
+        ll3.add("nikhil");
+        ll3.add("hritvik");
+        ll3.add("tushar");
+        ll3.add("astha");
+        System.out.println(ll3);
+        ll3.addAll(ll1);
+        System.out.println(ll3);
+
+        LinkedList ll4=new LinkedList();
+        ll4.add("khushi");
+        ll4.add("ashish");
+        ll4.add("harshita");
+        ll4.add("pradhumn");
+        ll4.add("mahi");
+        System.out.println(ll4);
+        ll4.addAll(ll3);
+        System.out.println(ll4);
+
+        LinkedList ll5=new LinkedList();
+        ll5.add("sahil");
+        ll5.add("siddharth");
+        ll5.add("tanu");
+        ll5.add("vinay");
+        ll5.add("sourabh");
+        System.out.println(ll5);
+        ll2.addAll(ll5);
+        System.out.println(ll2);
+
+
+        ll3.removeAll(ll1);
+        System.out.println(ll3);
+    }
+}
+--------------------------------------------------------------------------------------
+7)
+al
+first element remove 
+last remove 
+index 
+name remove 
+
+ll
+first element remove 
+last remove 
+index 
+name remove 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        ArrayList al=new ArrayList();
+        al.add("mohit");
+        al.add("unnati");
+        al.add("saloni");
+        al.add("monika");
+        al.add("mayank");
+        System.out.println(al);
+
+        al.remove(0);
+        System.out.println(al);
+
+        al.remove(al.size()-1);
+        System.out.println(al);
+
+        al.remove("unnati");
+        System.out.println(al);
+
+        al.remove(1);
+        System.out.println(al);
+
+        LinkedList ll=new LinkedList();
+        ll.add("nidhi");
+        ll.add("nikita");
+        ll.add("piyush");
+        ll.add("satyam");
+        ll.add("kaushal");
+        System.out.println(ll);
+
+        ll.removeFirst();
+        System.out.println(ll);
+
+        ll.removeLast();
+        System.out.println(ll);
+
+        ll.remove("nikita");
+        System.out.println(ll);
+
+        ll.remove(1);
+        System.out.println(ll);
+    }
+}
+-------------------------------------------------------------------------------
+8)
+linked list number 
+12345
+even 
+odd number 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        LinkedList<Integer> ll=new LinkedList<>();
+        ll.add(1);
+        ll.add(2);
+        ll.add(3);
+        ll.add(4);
+        ll.add(5);
+
+        System.out.println("odd number");
+        for(int i=0;i<ll.size();i++)
+        {
+            if(ll.get(i)%2==1)
+            {
+                System.out.println(ll.get(i));
+            }
+        }
+
+        System.out.println("even number");
+        for(int i=0;i<ll.size();i++)
+        {
+            if(ll.get(i)%2==0)
+            {
+                System.out.println(ll.get(i));
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------
+9)
+basic program : 
+user input : 
+even odd 
+
+even : 
+aaraylist 
+linkedlist 
+
+arraylist =>even number 
+
+linkedlist=>even number 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+        System.out.println("enter even or odd");
+        String a= sc.next();
+
+        if(a.equals("even"))
+        {
+            System.out.println("enter arraylist or linkedlist");
+            String b= sc.next();
+
+            if(b.equals("arraylist"))
+            {
+                ArrayList<Integer> al=new ArrayList<>();
+                al.add(1);
+                al.add(2);
+                al.add(3);
+                al.add(4);
+                al.add(5);
+
+                for(int i=0;i<al.size();i++)
+                {
+                    if(al.get(i)%2==0)
+                    {
+                        System.out.println(al.get(i));
+                    }
+                }
+            }
+            else {
+                LinkedList<Integer> ll=new LinkedList<>();
+                ll.add(6);
+                ll.add(7);
+                ll.add(8);
+                ll.add(9);
+                ll.add(10);
+
+                for(int i=0;i<ll.size();i++)
+                {
+                    if(ll.get(i)%2==0)
+                    {
+                        System.out.println(ll.get(i));
+                    }
+                }
+
+            }
+        }
+        else {
+            System.out.println("enter arraylist or linkedlist");
+            String b= sc.next();
+
+            if(b.equals("arraylist"))
+            {
+                ArrayList<Integer> al=new ArrayList<>();
+                al.add(1);
+                al.add(2);
+                al.add(3);
+                al.add(4);
+                al.add(5);
+
+                for(int i=0;i<al.size();i++)
+                {
+                    if(al.get(i)%2==1)
+                    {
+                        System.out.println(al.get(i));
+                    }
+                }
+            }
+            else {
+                LinkedList<Integer> ll=new LinkedList<>();
+                ll.add(6);
+                ll.add(7);
+                ll.add(8);
+                ll.add(9);
+                ll.add(10);
+
+                for(int i=0;i<ll.size();i++)
+                {
+                    if(ll.get(i)%2==1)
+                    {
+                        System.out.println(ll.get(i));
+                    }
+                }
+
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+10)
+using switch case
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+        System.out.println("enter 1 for even or 2 for odd");
+        int a= sc.nextInt();
+
+       switch (a)
+       {
+           case 1:
+               System.out.println("enter 3 for arraylist or 4 for linkedlist");
+               int b= sc.nextInt();
+
+               switch (b)
+               {
+                   case 3:
+                       ArrayList<Integer> al=new ArrayList<>();
+                       al.add(1);
+                       al.add(2);
+                       al.add(3);
+                       al.add(4);
+                       al.add(5);
+
+                       for(int i=0;i<al.size();i++)
+                       {
+                           if(al.get(i)%2==0)
+                           {
+                               System.out.println(al.get(i));
+                           }
+                       }
+                       break;
+
+                   case 4:
+                       LinkedList<Integer> ll=new LinkedList<>();
+                       ll.add(6);
+                       ll.add(7);
+                       ll.add(8);
+                       ll.add(9);
+                       ll.add(10);
+
+                       for(int i=0;i<ll.size();i++)
+                       {
+                           if(ll.get(i)%2==0)
+                           {
+                               System.out.println(ll.get(i));
+                           }
+                       }
+                       break;
+               }
+           case 2:
+               System.out.println("enter 3 for arraylist or 4 for linkedlist");
+               int c= sc.nextInt();
+
+               switch (c) {
+                   case 3:
+                       ArrayList<Integer> al = new ArrayList<>();
+                       al.add(1);
+                       al.add(2);
+                       al.add(3);
+                       al.add(4);
+                       al.add(5);
+
+                       for (int i = 0; i < al.size(); i++) {
+                           if (al.get(i) % 2 == 1) {
+                               System.out.println(al.get(i));
+                           }
+                       }
+                       break;
+
+                   case 4:
+                       LinkedList<Integer> ll = new LinkedList<>();
+                       ll.add(6);
+                       ll.add(7);
+                       ll.add(8);
+                       ll.add(9);
+                       ll.add(10);
+
+                       for (int i = 0; i < ll.size(); i++) {
+                           if (ll.get(i) % 2 == 1) {
+                               System.out.println(ll.get(i));
+                           }
+                       }
+                       break;
+               }
+       }
+    }
+}
+-------------------------------------------------------------------------------------------
+11)
+class A {
+	static nested class B  static add no return and no argument 
+	 static nested class C static  add return and no argument 
+	static  nested class D static  add no return and argument 
+	static  nested class E static  add return and argument 
+
+multi no return and no argument 
+sub return and no argument 
+div no return and argument 
+}
+
+class A{
+    static class B{
+        static void add()
+        {
+            int a=2,b=2;
+            System.out.println(a+b);
+        }
+    }
+    static class C{
+        static int add()
+        {
+            int a=2,b=2;
+           return a+b;
+        }
+    }
+    static class D{
+        static void add(int a,int b)
+        {
+            System.out.println(a+b);
+        }
+    }
+    static class E{
+        static int add(int a,int b)
+        {
+            return a+b;
+        }
+    }
+    void multi()
+    {
+        int a=3,b=3;
+        System.out.println(a*b);
+    }
+    int sub()
+    {
+        int a=10, b=5;
+        return a-b;
+    }
+    void div(int a,int b)
+    {
+        System.out.println(a/b);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A k=new A();
+        System.out.println("multi");
+        k.multi();
+
+        System.out.println("sub");
+        System.out.println(k.sub());
+
+        System.out.println("divide");
+        k.div(15,5);
+
+        System.out.println("add of class B");
+        A.B.add();
+
+        System.out.println("add of class C");
+        System.out.println(A.C.add());
+
+        System.out.println("add of class D");
+        A.D.add(2,2);
+
+        System.out.println("add of class E");
+        System.out.println(A.E.add(3,3));
+    }
+}
+----------------------------------------------------------------------------------------
+12)
+
+class A {
+	static nested class B  static add no return and no argument 
+	nested class C add return and no argument 
+	static  nested class D static  add no return and argument 
+	nested class E add return and argument 
+
+multi no return and no argument 
+sub return and no argument 
+div no return and argument 
+}
+
+class A{
+    static class B{
+        static void add()
+        {
+            int a=2,b=2;
+            System.out.println(a+b);
+        }
+    }
+     class C{
+         int add()
+        {
+            int a=3,b=4;
+           return a+b;
+        }
+    }
+    static class D{
+        static void add(int a,int b)
+        {
+            System.out.println(a+b);
+        }
+    }
+     class E{
+         int add(int a,int b)
+        {
+            return a+b;
+        }
+    }
+    void multi()
+    {
+        int a=5,b=5;
+        System.out.println(a*b);
+    }
+    int sub()
+    {
+        int a=10, b=5;
+        return a-b;
+    }
+    void div(int a,int b)
+    {
+        System.out.println(a/b);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A k=new A();
+        System.out.println("multi");
+        k.multi();
+
+        System.out.println("sub");
+        System.out.println(k.sub());
+
+        System.out.println("divide");
+        k.div(15,5);
+
+        System.out.println("add of class B");
+        A.B.add();
+
+        System.out.println("add of class C");
+        System.out.println(new A().new C().add());
+
+        System.out.println("add of class D");
+        A.D.add(4,4);
+
+        System.out.println("add of class E");
+        System.out.println(new A().new E().add(3,3));
+    }
+}
+-------------------------------------------------------------------------------------------
+13)
+
+class A {
+	nested class B add no return and no argument sub no return and no argument 
+	nested class C add return and no argument sub return and no argument 
+	nested class D add no return and argument sub no return and argument
+	nested class E add return and argument sub return and argument 
+
+multi no return and no argument 
+sub return and no argument 
+div no return and argument 
+}
+
+class A{
+     class B{
+         void add()
+        {
+            int a=2,b=2;
+            System.out.println(a+b);
+        }
+         void sub()
+         {
+             int a=4,b=2;
+             System.out.println(a-b);
+         }
+    }
+     class C{
+         int add()
+        {
+            int a=3,b=4;
+           return a+b;
+        }
+         int sub()
+         {
+             int a=8,b=4;
+             return a-b;
+         }
+    }
+     class D{
+         void add(int a,int b)
+        {
+            System.out.println(a+b);
+        }
+         void sub(int a,int b)
+         {
+             System.out.println(a-b);
+         }
+    }
+     class E{
+         int add(int a,int b)
+        {
+            return a+b;
+        }
+         int sub(int a,int b)
+         {
+             return a-b;
+         }
+    }
+    void multi()
+    {
+        int a=5,b=5;
+        System.out.println(a*b);
+    }
+    int sub()
+    {
+        int a=10, b=5;
+        return a-b;
+    }
+    void div(int a,int b)
+    {
+        System.out.println(a/b);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A k=new A();
+        System.out.println("multi");
+        k.multi();
+
+        System.out.println("sub");
+        System.out.println(k.sub());
+
+        System.out.println("divide");
+        k.div(15,5);
+
+        System.out.println("add of class B");
+        new A().new B().add();
+        System.out.println("sub of class B");
+        new A().new B().sub();
+
+        System.out.println("add of class C");
+        System.out.println(new A().new C().add());
+        System.out.println("sub of class C");
+        System.out.println(new A().new C().sub());
+
+        System.out.println("add of class D");
+        new A().new D().add(4,4);
+        System.out.println("sub of class D");
+        new A().new D().sub(6,5);
+
+        System.out.println("add of class E");
+        System.out.println(new A().new E().add(3,3));
+        System.out.println("sub of class E");
+        System.out.println(new A().new E().sub(10,6));
+    }
+}
+----------------------------------------------------------------------------------------
+
+
+
