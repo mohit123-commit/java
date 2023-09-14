@@ -1,0 +1,439 @@
+vector : 
+1)vector : 
+5 name 
+direct print 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector vv=new Vector();
+        vv.addElement("hii");
+        vv.addElement("bye");
+        vv.addElement("tata");
+        vv.addElement("hlo");
+        vv.addElement("lol");
+        System.out.println(vv);
+    }
+}
+------------------------------------------------------------------
+vector : 
+5 name 
+direct print 
+for lop 
+for each loop 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector vv=new Vector();
+        vv.addElement("hii");
+        vv.addElement("bye");
+        vv.addElement("tata");
+        vv.addElement("hlo");
+        vv.addElement("lol");
+
+        for(int i=0;i<vv.size();i++)
+        {
+            System.out.println(vv.get(i));
+        }
+    }
+}
+-----------------------------------------------------------------------
+for each loop 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<String> vv=new Vector();
+        vv.addElement("hii");
+        vv.addElement("bye");
+        vv.addElement("tata");
+        vv.addElement("hlo");
+        vv.addElement("lol");
+
+        for(String i:vv)
+        {
+            System.out.println(i);
+        }
+    }
+}
+----------------------------------------------------------------------
+vector : 
+5 int value 
+direct print 
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Integer> vv=new Vector();
+        vv.addElement(1);
+        vv.addElement(2);
+        vv.addElement(3);
+        vv.addElement(4);
+        vv.addElement(5);
+        System.out.println(vv);
+    }
+}
+-----------------------------------------------------------------------
+vector : 
+5 int value 
+direct print 
+
+for loop 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Integer> vv=new Vector();
+        vv.addElement(1);
+        vv.addElement(2);
+        vv.addElement(3);
+        vv.addElement(4);
+        vv.addElement(5);
+
+        for(int i=0;i<vv.size();i++)
+        {
+            System.out.println(vv.get(i));
+        }
+    }
+}
+----------------------------------------------------------------------
+for each loop 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Integer> vv=new Vector();
+        vv.addElement(1);
+        vv.addElement(2);
+        vv.addElement(3);
+        vv.addElement(4);
+        vv.addElement(5);
+
+
+        for(Integer i:vv)
+        {
+            System.out.println(i);
+        }
+    }
+}
+----------------------------------------------------------------------
+wrapper classes used :
+
+1)Integer
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Integer> vv=new Vector();
+        vv.addElement(1);
+        vv.addElement(2);
+        vv.addElement(3);
+        vv.addElement(4);
+        vv.addElement(5);
+        System.out.println(vv);
+    }
+}
+------------------------------------------------------------
+2)long
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Long> vv=new Vector();
+        vv.addElement((long)1);
+        vv.addElement((long)2);
+        vv.addElement((long)3);
+        vv.addElement((long)4);
+        vv.addElement((long)5);
+        System.out.println(vv);
+    }
+}
+--------------------------------------------------------------------
+3) short
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Short> vv=new Vector();
+        vv.addElement((short)1);
+        vv.addElement((short)2);
+        vv.addElement((short)3);
+        vv.addElement((short)4);
+        vv.addElement((short)5);
+        System.out.println(vv);
+    }
+}
+-----------------------------------------------------------------
+4) Double
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Double> vv=new Vector();
+        vv.addElement(1.1);
+        vv.addElement(2.2);
+        vv.addElement(3.3);
+        vv.addElement(4.4);
+        vv.addElement(5.5);
+        System.out.println(vv);
+    }
+}
+---------------------------------------------------------------
+5) Float
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Float> vv=new Vector();
+        vv.addElement(1.1f);
+        vv.addElement(2.2f);
+        vv.addElement(3.3f);
+        vv.addElement(4.4f);
+        vv.addElement(5.5f);
+        System.out.println(vv);
+    }
+}
+-------------------------------------------------------------------------
+6) Byte
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Byte> vv=new Vector();
+        vv.addElement((byte)1);
+        vv.addElement((byte)2);
+        vv.addElement((byte)3);
+        vv.addElement((byte)4);
+        vv.addElement((byte)5);
+        System.out.println(vv);
+    }
+}
+---------------------------------------------------------------------
+7) String
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<String> vv=new Vector();
+        vv.addElement("hii");
+        vv.addElement("bye");
+        vv.addElement("tata");
+        vv.addElement("hlo");
+        vv.addElement("lol");
+        System.out.println(vv);
+    }
+}
+----------------------------------------------------------------------
+8) Character
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Character> vv=new Vector();
+        vv.addElement('a');
+        vv.addElement('b');
+        vv.addElement('c');
+        vv.addElement('d');
+        vv.addElement('e');
+        System.out.println(vv);
+    }
+}
+-----------------------------------------------------------------------
+9) Boolean
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Boolean> vv=new Vector();
+        vv.addElement(true);
+        vv.addElement(false);
+        System.out.println(vv);
+    }
+}
+----------------------------------------------------------------------
+
+vector : 
+odd 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Integer> vv=new Vector();
+        vv.addElement(1);
+        vv.addElement(2);
+        vv.addElement(3);
+        vv.addElement(4);
+        vv.addElement(5);
+        for(Integer i:vv)
+        {
+            if(i%2==1)
+            {
+                System.out.println(i);
+            }
+        }
+
+        }
+}
+---------------------------------------------------------------------------
+
+vector : 
+even 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Vector<Integer> vv=new Vector();
+        vv.addElement(1);
+        vv.addElement(2);
+        vv.addElement(3);
+        vv.addElement(4);
+        vv.addElement(5);
+        for(Integer i:vv)
+        {
+            if(i%2==0)
+            {
+                System.out.println(i);
+            }
+        }
+
+        }
+}
+---------------------------------------------------------------------
+if(even )
+arraylist =even number 
+linkedlist 
+vector 
+
+else if(odd)
+
+arraylist =odd number 
+linkedlist 
+vector 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        Vector<Integer> vv = new Vector();
+        vv.addElement(1);
+        vv.addElement(2);
+        vv.addElement(3);
+        vv.addElement(4);
+        vv.addElement(5);
+        System.out.println("vector= "+vv);
+
+        ArrayList<Integer> al = new ArrayList();
+        al.add(10);
+        al.add(6);
+        al.add(7);
+        al.add(8);
+        al.add(9);
+        System.out.println("arraylist= "+al);
+
+        LinkedList<Integer> ll=new LinkedList<>();
+        ll.add(11);
+        ll.add(12);
+        ll.add(13);
+        ll.add(14);
+        ll.add(15);
+        System.out.println("linkedlist= "+ll);
+
+        System.out.println("enter even or odd");
+        String a= sc.next();
+
+        if(a.equals("even"))
+        {
+            System.out.println("enter arraylist or linkedlist or vector");
+            String b=sc.next();
+            if(b.equals("arraylist"))
+            {
+                for(Integer i:al)
+                {
+                    if(i%2==0)
+                    {
+                        System.out.println(i);
+                    }
+                }
+            }
+            else if(b.equals("linkedlist"))
+            {
+                for(Integer i:ll)
+                {
+                    if(i%2==0)
+                    {
+                        System.out.println(i);
+                    }
+                }
+            }
+            else
+            {
+                for(Integer i:vv)
+                {
+                    if(i%2==0)
+                    {
+                        System.out.println(i);
+                    }
+                }
+            }
+        }
+        else
+        {
+            System.out.println("enter arraylist or linkedlist or vector");
+            String b=sc.next();
+            if(b.equals("arraylist"))
+            {
+                for(Integer i:al)
+                {
+                    if(i%2==1)
+                    {
+                        System.out.println(i);
+                    }
+                }
+            }
+            else if(b.equals("linkedlist"))
+            {
+                for(Integer i:ll)
+                {
+                    if(i%2==1)
+                    {
+                        System.out.println(i);
+                    }
+                }
+            }
+            else
+            {
+                for(Integer i:vv)
+                {
+                    if(i%2==1)
+                    {
+                        System.out.println(i);
+                    }
+                }
+            }
+        }
+
+    }
+}
+-------------------------------------------------------------------------------------
+
+
+
