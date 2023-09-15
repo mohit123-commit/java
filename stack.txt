@@ -1,0 +1,474 @@
+23 45 67 89 22 12 =>print 
+size 
+pop 
+peek 
+empty 
+
+even number 
+odd number 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Stack<Integer> ss=new Stack();
+        ss.push(23);
+        ss.push(45);
+        ss.push(67);
+        ss.push(89);
+        ss.push(22);
+        ss.push(12);
+        System.out.println(ss);
+        System.out.println("size= "+ss.size());
+        ss.pop();
+        System.out.println("after pop= "+ss);
+        System.out.println("peek element= "+ss.peek());
+        System.out.println("empty= "+ss.empty());
+
+        System.out.println("even number");
+        for(Integer i:ss)
+        {
+            if(i%2==0)
+            {
+                System.out.println(i);
+            }
+        }
+        System.out.println("odd number");
+        for(Integer i:ss)
+        {
+            if(i%2==1)
+            {
+                System.out.println(i);
+            }
+        }
+
+    }
+}
+---------------------------------------------------------------------------------
+String kajal kdsj kdsvj vsldk dlfkvl dlfv 
+values : 12 67 89 34 19 22 66 46 
+normal code : 
+if(arraylist) : first element , last element , remove ,empty 
+
+remove :int string 
+index ,value duplicate (mid value remove)
+
+linkedlist : first element , last element , remove ,empty 
+
+remove :int string 
+index ,value duplicate (mid value remove)
+
+vector : first element , last element , remove ,empty 
+
+remove :int string 
+index ,value duplicate (mid value remove)
+
+stack : first element , last element , remove ,empty 
+
+remove :int string 
+index ,value duplicate (mid value remove)
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+      ArrayList al=new ArrayList();
+      al.add(12);
+        al.add(67);
+        al.add(89);
+        al.add(34);
+        al.add(19);
+        al.add(22);
+        al.add(66);
+        al.add(46);
+      System.out.println("arraylist= "+al);
+
+        LinkedList ll=new LinkedList();
+        ll.add(10);
+        ll.add(64);
+        ll.add(86);
+        ll.add(33);
+        ll.add(10);
+        ll.add(26);
+        ll.add(68);
+        ll.add(64);
+      System.out.println("linkedlist= "+ll);
+
+        Vector vv=new Vector();
+        vv.add(15);
+        vv.add(64);
+        vv.add(80);
+        vv.add(31);
+        vv.add(10);
+        vv.add(24);
+        vv.add(66);
+        vv.add(47);
+      System.out.println("vector= "+vv);
+
+        Stack ss=new Stack();
+        ss.push(17);
+        ss.push(69);
+        ss.push(80);
+        ss.push(32);
+        ss.push(18);
+        ss.push(20);
+        ss.push(66);
+        ss.push(41);
+      System.out.println("stack= "+ss);
+
+        System.out.println("enter arraylist or linkedlist or vector or stack");
+        String a= sc.next();
+        if(a.equals("arraylist"))
+        {
+            System.out.println("enter first element or last element or remove or empty");
+            String b= sc.next();
+            if(b.equals("firstelement"))
+            {
+              System.out.println(al.get(0));
+            }
+            else if(b.equals("lastelement"))
+            {
+              System.out.println(al.get(al.size()-1));
+            }
+            else if(b.equals("empty"))
+            {
+              System.out.println(al.isEmpty());
+            }
+            else {
+              System.out.println("enter index or value" );
+              String c= sc.next();
+              if(c.equals("index"))
+              {
+                System.out.println("enter index");
+                int in=sc.nextInt();
+                al.remove(in);
+                System.out.println(al);
+              }
+              else
+              {
+                System.out.println("enter value");
+                int va=sc.nextInt();
+                al.remove((Integer)va);
+                System.out.println(al);
+              }
+            }
+
+        }
+        else if(a.equals("linkedlist"))
+        {
+          System.out.println("enter first element or last element or remove or empty");
+          String b= sc.next();
+          if(b.equals("firstelement"))
+          {
+            System.out.println(ll.getFirst());
+          }
+          else if(b.equals("lastelement"))
+          {
+            System.out.println(ll.getLast());
+          }
+          else if(b.equals("empty"))
+          {
+            System.out.println(ll.isEmpty());
+          }
+          else {
+            System.out.println("enter index or value or duplicate" );
+            String c= sc.next();
+            if(c.equals("index"))
+            {
+              System.out.println("enter index");
+              int in=sc.nextInt();
+              ll.remove(in);
+              System.out.println(al);
+            }
+            else if(c.equals("value"))
+            {
+              System.out.println("enter value");
+              int va=sc.nextInt();
+              ll.remove((Integer)va);
+              System.out.println(ll);
+            }
+            else if(c.equals("duplicate"))
+            {
+              System.out.println("enter value");
+              int va=sc.nextInt();
+              ll.removeLastOccurrence((Integer)va);
+              System.out.println(ll);
+            }
+          }
+        }
+        else if(a.equals("vector"))
+        {
+          System.out.println("enter first element or last element or remove or empty");
+          String b= sc.next();
+          if(b.equals("firstelement"))
+          {
+            System.out.println(vv.get(0));
+          }
+          else if(b.equals("lastelement"))
+          {
+            System.out.println(vv.get(vv.size()-1));
+          }
+          else if(b.equals("empty"))
+          {
+            System.out.println(vv.isEmpty());
+          }
+          else {
+            System.out.println("enter index or value " );
+            String c= sc.next();
+            if(c.equals("index"))
+            {
+              System.out.println("enter index");
+              int in=sc.nextInt();
+              vv.remove(in);
+              System.out.println(vv);
+            }
+            else
+            {
+              System.out.println("enter value");
+              int va=sc.nextInt();
+              vv.remove((Integer)va);
+              System.out.println(vv);
+            }
+
+          }
+        }
+        else {
+          System.out.println("enter first element or last element or remove or empty");
+          String b= sc.next();
+          if(b.equals("firstelement"))
+          {
+            System.out.println(ss.get(0));
+          }
+          else if(b.equals("lastelement"))
+          {
+            System.out.println(ss.get(ss.size()-1));
+          }
+          else if(b.equals("empty"))
+          {
+            System.out.println(ss.isEmpty());
+          }
+          else {
+            System.out.println("enter index or value" );
+            String c= sc.next();
+            if(c.equals("index"))
+            {
+              System.out.println("enter index");
+              int in=sc.nextInt();
+              ss.remove(in);
+              System.out.println(ss);
+            }
+            else
+            {
+              System.out.println("enter value");
+              int va=sc.nextInt();
+              ss.remove((Integer)va);
+              System.out.println(ss);
+            }
+          }
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+      ArrayList al=new ArrayList();
+      al.add("mohit");
+        al.add("unnati");
+        al.add("saloni");
+        al.add("mayank");
+        al.add("monika");
+        al.add("kaushal");
+      System.out.println("arraylist= "+al);
+
+        LinkedList ll=new LinkedList();
+        ll.add("nikita");
+        ll.add("mayank");
+        ll.add("nikhil");
+        ll.add("piyush");
+        ll.add("mayank");
+        ll.add("saurabh");
+      System.out.println("linkedlist= "+ll);
+
+        Vector vv=new Vector();
+        vv.add("ayushi");
+        vv.add("ritvik");
+        vv.add("astha");
+        vv.add("khushi");
+        vv.add("prachi");
+        vv.add("ashish");
+      System.out.println("vector= "+vv);
+
+        Stack ss=new Stack();
+        ss.push("sahil");
+        ss.push("sidharth");
+        ss.push("lovish");
+        ss.push("sohil");
+        ss.push("vaibhav");
+        ss.push("nitin");
+      System.out.println("stack= "+ss);
+
+        System.out.println("enter arraylist or linkedlist or vector or stack");
+        String a= sc.next();
+        if(a.equals("arraylist"))
+        {
+            System.out.println("enter first element or last element or remove or empty");
+            String b= sc.next();
+            if(b.equals("firstelement"))
+            {
+              System.out.println(al.get(0));
+            }
+            else if(b.equals("lastelement"))
+            {
+              System.out.println(al.get(al.size()-1));
+            }
+            else if(b.equals("empty"))
+            {
+              System.out.println(al.isEmpty());
+            }
+            else {
+              System.out.println("enter index or name" );
+              String c= sc.next();
+              if(c.equals("index"))
+              {
+                System.out.println("enter index");
+                int in=sc.nextInt();
+                al.remove(in);
+                System.out.println(al);
+              }
+              else
+              {
+                System.out.println("enter name");
+                String va=sc.next();
+                al.remove(va);
+                System.out.println(al);
+              }
+            }
+
+        }
+        else if(a.equals("linkedlist"))
+        {
+          System.out.println("enter first element or last element or remove or empty");
+          String b= sc.next();
+          if(b.equals("firstelement"))
+          {
+            System.out.println(ll.getFirst());
+          }
+          else if(b.equals("lastelement"))
+          {
+            System.out.println(ll.getLast());
+          }
+          else if(b.equals("empty"))
+          {
+            System.out.println(ll.isEmpty());
+          }
+          else {
+            System.out.println("enter index or name or duplicate" );
+            String c= sc.next();
+            if(c.equals("index"))
+            {
+              System.out.println("enter index");
+              int in=sc.nextInt();
+              ll.remove(in);
+              System.out.println(al);
+            }
+            else if(c.equals("name"))
+            {
+              System.out.println("enter name");
+              String va=sc.next();
+              ll.remove(va);
+              System.out.println(ll);
+            }
+            else if(c.equals("duplicate"))
+            {
+              System.out.println("enter name");
+              String va=sc.next();
+              ll.removeLastOccurrence(va);
+              System.out.println(ll);
+            }
+          }
+        }
+        else if(a.equals("vector"))
+        {
+          System.out.println("enter first element or last element or remove or empty");
+          String b= sc.next();
+          if(b.equals("firstelement"))
+          {
+            System.out.println(vv.get(0));
+          }
+          else if(b.equals("lastelement"))
+          {
+            System.out.println(vv.get(vv.size()-1));
+          }
+          else if(b.equals("empty"))
+          {
+            System.out.println(vv.isEmpty());
+          }
+          else {
+            System.out.println("enter index or name " );
+            String c= sc.next();
+            if(c.equals("index"))
+            {
+              System.out.println("enter index");
+              int in=sc.nextInt();
+              vv.remove(in);
+              System.out.println(vv);
+            }
+            else
+            {
+              System.out.println("enter name");
+              String va=sc.next();
+              vv.remove(va);
+              System.out.println(vv);
+            }
+
+          }
+        }
+        else {
+          System.out.println("enter first element or last element or remove or empty");
+          String b= sc.next();
+          if(b.equals("firstelement"))
+          {
+            System.out.println(ss.get(0));
+          }
+          else if(b.equals("lastelement"))
+          {
+            System.out.println(ss.get(ss.size()-1));
+          }
+          else if(b.equals("empty"))
+          {
+            System.out.println(ss.isEmpty());
+          }
+          else {
+            System.out.println("enter index or name" );
+            String c= sc.next();
+            if(c.equals("index"))
+            {
+              System.out.println("enter index");
+              int in=sc.nextInt();
+              ss.remove(in);
+              System.out.println(ss);
+            }
+            else
+            {
+              System.out.println("enter name");
+              String va=sc.next();
+              ss.remove(va);
+              System.out.println(ss);
+            }
+          }
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
