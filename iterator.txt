@@ -1,0 +1,651 @@
+aarayllist <value >5 value 
+for loop 
+for rach
+while 
+iterator 
+
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        ArrayList<Integer> al=new ArrayList<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+        for(int i=0;i<al.size();i++)
+        {
+            System.out.println(al.get(i));
+        }
+    }
+}
+--------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        ArrayList<Integer> al=new ArrayList<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+       for(Integer i:al)
+       {
+           System.out.println(i);
+       }
+    }
+}
+------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        ArrayList<Integer> al=new ArrayList<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+        int i=0;
+     while(i<al.size())
+     {
+         System.out.println(al.get(i));
+         i++;
+     }
+    }
+}
+--------------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        ArrayList<Integer> al=new ArrayList<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+       Iterator i=al.iterator();
+       while (i.hasNext())
+       {
+           System.out.println(i.next());
+       }
+    }
+}
+----------------------------------------------------------------------
+aarayllist <string >5 value 
+for loop 
+for rach
+while 
+iterator 
+
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        ArrayList al=new ArrayList<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        for(int i=0;i<al.size();i++)
+        {
+            System.out.println(al.get(i));
+        }
+    }
+}
+---------------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        ArrayList<String> al=new ArrayList<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        for(String i:al)
+        {
+            System.out.println(i);
+        }
+    }
+}
+----------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        ArrayList<String> al=new ArrayList<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        int i=0;
+        while(i<al.size())
+        {
+            System.out.println(al.get(i));
+            i++;
+        }
+    }
+}
+----------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        ArrayList<String> al=new ArrayList<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        Iterator i=al.iterator();
+        while (i.hasNext())
+        {
+            System.out.println(i.next());
+        }
+    }
+}
+---------------------------------------------------------------------
+integer : 5 value 
+for loop 
+for rach
+while 
+iterator 
+
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+          LinkedList<Integer> al=new LinkedList<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+        for(int i=0;i<al.size();i++)
+        {
+            System.out.println(al.get(i));
+        }
+    }
+}
+--------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+         LinkedList<Integer> al=new LinkedList<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+       for(Integer i:al)
+       {
+           System.out.println(i);
+       }
+    }
+}
+------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+          LinkedList<Integer> al=new LinkedList<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+        int i=0;
+     while(i<al.size())
+     {
+         System.out.println(al.get(i));
+         i++;
+     }
+    }
+}
+--------------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+         LinkedList<Integer> al=new LinkedList<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+       Iterator i=al.iterator();
+       while (i.hasNext())
+       {
+           System.out.println(i.next());
+       }
+    }
+}
+----------------------------------------------------------------------------
+linked <string >5 value 
+for loop 
+for rach
+while 
+iterator 
+
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        LinkedList<String> al=new LinkedList<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        for(int i=0;i<al.size();i++)
+        {
+            System.out.println(al.get(i));
+        }
+    }
+}
+---------------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+         LinkedList<String> al=new LinkedList<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        for(String i:al)
+        {
+            System.out.println(i);
+        }
+    }
+}
+----------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+         LinkedList<String> al=new LinkedList<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        int i=0;
+        while(i<al.size())
+        {
+            System.out.println(al.get(i));
+            i++;
+        }
+    }
+}
+----------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        LinkedList<String> al=new LinkedList<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        Iterator i=al.iterator();
+        while (i.hasNext())
+        {
+            System.out.println(i.next());
+        }
+    }
+}
+----------------------------------------------------------------------
+vector <string >5 value 
+for loop 
+for rach
+while 
+iterator 
+
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        Vector<String> al=new Vector<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        for(int i=0;i<al.size();i++)
+        {
+            System.out.println(al.get(i));
+        }
+    }
+}
+---------------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+         Vector<String> al=new Vector<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        for(String i:al)
+        {
+            System.out.println(i);
+        }
+    }
+}
+----------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+         Vector<String> al=new Vector<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        int i=0;
+        while(i<al.size())
+        {
+            System.out.println(al.get(i));
+            i++;
+        }
+    }
+}
+----------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+       Vector<String> al=new Vector<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        Iterator i=al.iterator();
+        while (i.hasNext())
+        {
+            System.out.println(i.next());
+        }
+    }
+}
+--------------------------------------------------------------------------
+integer : 5 value 
+for loop 
+for rach
+while 
+iterator 
+
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+           Vector<Integer> al=new Vector<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+        for(int i=0;i<al.size();i++)
+        {
+            System.out.println(al.get(i));
+        }
+    }
+}
+--------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+          Vector<Integer> al=new Vector<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+       for(Integer i:al)
+       {
+           System.out.println(i);
+       }
+    }
+}
+------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+           Vector<Integer> al=new Vector<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+        int i=0;
+     while(i<al.size())
+     {
+         System.out.println(al.get(i));
+         i++;
+     }
+    }
+}
+--------------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+         Vector<Integer> al=new Vector<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+       Iterator i=al.iterator();
+       while (i.hasNext())
+       {
+           System.out.println(i.next());
+       }
+    }
+}
+---------------------------------------------------------------------------
+stack integer : 5 value 
+for loop 
+for rach
+while 
+iterator
+
+
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+          Stack<Integer> al=new Stack<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+        for(int i=0;i<al.size();i++)
+        {
+            System.out.println(al.get(i));
+        }
+    }
+}
+--------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+          Stack<Integer> al=new Stack<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+       for(Integer i:al)
+       {
+           System.out.println(i);
+       }
+    }
+}
+------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+         Stack<Integer> al=new Stack<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+        int i=0;
+     while(i<al.size())
+     {
+         System.out.println(al.get(i));
+         i++;
+     }
+    }
+}
+--------------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+         Stack<Integer> al=new Stack<>();
+        al.add(10);
+        al.add(11);
+        al.add(12);
+        al.add(13);
+        al.add(14);
+
+       Iterator i=al.iterator();
+       while (i.hasNext())
+       {
+           System.out.println(i.next());
+       }
+    }
+}
+--------------------------------------------------------------------
+stack<string >5 value 
+for loop 
+for rach
+while 
+iterator 
+
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+         Stack<String> al=new Stack<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        for(int i=0;i<al.size();i++)
+        {
+            System.out.println(al.get(i));
+        }
+    }
+}
+---------------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+         Stack<String> al=new Stack<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        for(String i:al)
+        {
+            System.out.println(i);
+        }
+    }
+}
+----------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+          Stack<String> al=new Stack<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        int i=0;
+        while(i<al.size())
+        {
+            System.out.println(al.get(i));
+            i++;
+        }
+    }
+}
+----------------------------------------------------------------------
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+       Stack<String> al=new Stack<>();
+        al.add("hi");
+        al.add("bye");
+        al.add("tata");
+        al.add("boo");
+        al.add("lol");
+
+        Iterator i=al.iterator();
+        while (i.hasNext())
+        {
+            System.out.println(i.next());
+        }
+    }
+}
+----------------------------------------------------------------------
+
+
