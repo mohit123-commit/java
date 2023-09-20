@@ -1,0 +1,977 @@
+1) 
+arraylist 
+vector 
+linkedlist 
+user input 
+
+arraylist 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     ArrayList al=new ArrayList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         int x= sc.nextInt();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+----------------------------------------------------------------
+linkedlist 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     LinkedList al=new LinkedList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         int x= sc.nextInt();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+----------------------------------------------------------------
+vector 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     Vector al=new Vector();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         int x= sc.nextInt();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+-------------------------------------------------------------
+B) String :data type used 
+arraylist 
+vector 
+linkedlist 
+user input 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     ArrayList<String> al=new ArrayList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         String x= sc.next();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+---------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     LinkedList<String> al=new LinkedList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         String x= sc.next();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+--------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     Vector<String> al=new Vector();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         String x= sc.next();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+-------------------------------------------------------------
+C) Float
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     ArrayList<Float> al=new ArrayList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         float x= sc.nextFloat();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+----------------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     LinkedList<Float> al=new LinkedList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         float x= sc.nextFloat();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+----------------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     Vector<Float> al=new Vector();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         float x= sc.nextFloat();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+------------------------------------------------------------------
+D) Double
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     ArrayList<Double> al=new ArrayList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         double x= sc.nextDouble();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+------------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     LinkedList<Double> al=new LinkedList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         double x= sc.nextDouble();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+---------------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     Vector<Double> al=new Vector();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         double x= sc.nextDouble();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+--------------------------------------------------------------
+E) char
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     ArrayList<Character> al=new ArrayList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         char x= sc.next().charAt(0);
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+-------------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     LinkedList<Character> al=new LinkedList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         char x= sc.next().charAt(0);
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+-------------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     Vector<Character> al=new Vector();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         char x= sc.next().charAt(0);
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+-------------------------------------------------------------
+F) Long
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     ArrayList<Long> al=new ArrayList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         long x= sc.nextLong();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+---------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     LinkedList<Long> al=new LinkedList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         long x= sc.nextLong();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     Vector<Long> al=new Vector();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         long x= sc.nextLong();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+------------------------------------------------------------------
+G) short
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     ArrayList<Short> al=new ArrayList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         short x= sc.nextShort();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+-----------------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     LinkedList<Short> al=new LinkedList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         short x= sc.nextShort();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+---------------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     Vector<Short> al=new Vector();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         short x= sc.nextShort();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+----------------------------------------------------------------
+H) Byte
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     ArrayList<Byte> al=new ArrayList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         byte x= sc.nextByte();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+--------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     LinkedList<Byte> al=new LinkedList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         byte x= sc.nextByte();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+-----------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     Vector<Byte> al=new Vector();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         byte x= sc.nextByte();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+--------------------------------------------------------------
+I) Boolean
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     ArrayList<Boolean> al=new ArrayList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         boolean x= sc.nextBoolean();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+-------------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     LinkedList<Boolean> al=new LinkedList();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         boolean x= sc.nextBoolean();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+------------------------------------------------------------
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     Vector<Boolean> al=new Vector();
+     Scanner sc=new Scanner(System.in);
+     int n= sc.nextInt();
+
+     for(int i=0;i<n;i++)
+     {
+         boolean x= sc.nextBoolean();
+         al.add(x);
+     }
+        System.out.println(al);
+    }
+}
+-------------------------------------------------------
+A 
+id name address email 
+
+ArrayList access 
+a)constant 
+b)user input 
+
+import java.util.*;
+class A{
+    int id;
+    String name,Email,address;
+    A(int id,String name,String Email,String address)
+    {
+        this.id=id;
+        this.name=name;
+        this.address=address;
+        this.Email=Email;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+     ArrayList<A> al=new ArrayList();
+
+     A k=new A(1,"mohit","mohit@gmail","pratapnagar");
+     A k1=new A(2,"rohit","rohit@gmail","gopalpura");
+     A k2=new A(3,"sohit","sohit@gmail","murlipura");
+
+     al.add(k);
+     al.add(k1);
+     al.add(k2);
+
+     for(A i:al)
+     {
+         System.out.println(i.id+" "+i.name+" "+i.Email+" "+i.address);
+     }
+    }
+}
+----------------------------------------------------------------------------------
+b) user input
+
+import java.util.*;
+class A{
+    int id;
+    String name,Email,address;
+    A(int id,String name,String Email,String address)
+    {
+        this.id=id;
+        this.name=name;
+        this.address=address;
+        this.Email=Email;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+     ArrayList<A> al=new ArrayList();
+
+     Scanner sc=new Scanner(System.in);
+        System.out.println("enter id");
+     int id= sc.nextInt();
+        System.out.println("enter name");
+     String name= sc.next();
+        System.out.println("enter gmail");
+     String gmail= sc.next();
+        System.out.println("enter address");
+     String address= sc.next();
+     A k=new A(id,name,gmail,address);
+
+        System.out.println("enter id");
+     int id1= sc.nextInt();
+        System.out.println("enter name");
+     String name1= sc.next();
+        System.out.println("enter gmail");
+     String gmail1= sc.next();
+        System.out.println("enter address");
+     String address1= sc.next();
+     A k1=new A(id1,name1,gmail1,address1);
+
+     al.add(k);
+     al.add(k1);
+
+     for(A i:al)
+     {
+         System.out.println(i.id+" "+i.name+" "+i.Email+" "+i.address);
+     }
+    }
+}
+--------------------------------------------------------------------------------------
+A 
+id name address email 
+
+Stack access 
+a)constant 
+b)user input 
+
+a) constant
+
+import java.util.*;
+class A{
+    int id;
+    String name,Email,address;
+    A(int id,String name,String Email,String address)
+    {
+        this.id=id;
+        this.name=name;
+        this.address=address;
+        this.Email=Email;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Stack<A> al=new Stack<>();
+
+        A k=new A(1,"mohit","mohit@gmail","pratapnagar");
+        A k1=new A(2,"rohit","rohit@gmail","gopalpura");
+        A k2=new A(3,"sohit","sohit@gmail","murlipura");
+
+        al.add(k);
+        al.add(k1);
+        al.add(k2);
+
+        for(A i:al)
+        {
+            System.out.println(i.id+" "+i.name+" "+i.Email+" "+i.address);
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+b) user input
+
+import java.util.*;
+class A{
+    int id;
+    String name,Email,address;
+    A(int id,String name,String Email,String address)
+    {
+        this.id=id;
+        this.name=name;
+        this.address=address;
+        this.Email=Email;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+     Stack<A> al=new Stack();
+
+     Scanner sc=new Scanner(System.in);
+        System.out.println("enter id");
+     int id= sc.nextInt();
+        System.out.println("enter name");
+     String name= sc.next();
+        System.out.println("enter gmail");
+     String gmail= sc.next();
+        System.out.println("enter address");
+     String address= sc.next();
+     A k=new A(id,name,gmail,address);
+
+        System.out.println("enter id");
+     int id1= sc.nextInt();
+        System.out.println("enter name");
+     String name1= sc.next();
+        System.out.println("enter gmail");
+     String gmail1= sc.next();
+        System.out.println("enter address");
+     String address1= sc.next();
+     A k1=new A(id1,name1,gmail1,address1);
+
+     al.add(k);
+     al.add(k1);
+
+     for(A i:al)
+     {
+         System.out.println(i.id+" "+i.name+" "+i.Email+" "+i.address);
+     }
+    }
+}
+-------------------------------------------------------------------------------------
+id name fname mname age salary 
+
+LinkedList access 
+
+import java.util.*;
+class A{
+    int id,age,salary;
+    String fname,mname;
+    A(int id,String fname,String mname,int age,int salary)
+    {
+        this.id=id;
+        this.fname=fname;
+        this.mname=mname;
+        this.age=age;
+        this.salary=salary;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        LinkedList<A> al=new LinkedList<>();
+
+        A k=new A(1,"sohil","astha",32,400000);
+        A k1=new A(2,"rohit","pinki",30,600000);
+        
+        al.add(k);
+        al.add(k1);
+
+        for(A i:al)
+        {
+            System.out.println(i.id+" "+i.fname+" "+i.mname+" "+i.age+" "+i.salary);
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+A 
+id name fname mname age salary 
+
+Vector access 
+
+import java.util.*;
+class A{
+    int id,age,salary;
+    String fname,mname;
+    A(int id,String fname,String mname,int age,int salary)
+    {
+        this.id=id;
+        this.fname=fname;
+        this.mname=mname;
+        this.age=age;
+        this.salary=salary;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Vector<A> al=new Vector<>();
+
+        A k=new A(1,"sohil","astha",32,400000);
+        A k1=new A(2,"rohit","pinki",30,600000);
+
+        al.add(k);
+        al.add(k1);
+
+        for(A i:al)
+        {
+            System.out.println(i.id+" "+i.fname+" "+i.mname+" "+i.age+" "+i.salary);
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+Arraylist ---->add 
+
+vector--->arrylist ko print krna hey 
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        ArrayList al=new ArrayList();
+        al.add(1);
+        al.add(2);
+        al.add(3);
+
+        Vector vv=new Vector(al);
+        vv.add("hii");
+        vv.add("bye");
+
+        System.out.println(vv);
+    }
+}
+-----------------------------------------------------------------------------
+arraylist 
+
+
+linkedlist -->arraylist  
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        ArrayList al=new ArrayList();
+        al.add(1);
+        al.add(2);
+        al.add(3);
+
+        LinkedList ll=new LinkedList(al);
+        ll.add("hii");
+        ll.add("bye");
+
+        System.out.println(ll);
+    }
+}
+-----------------------------------------------------------------------------
+arraylist 
+
+stack-->arraylisy 
+
+it is not possible
+------------------------------------------------------------------------
+linkedlist 
+
+arraylist-->ll 
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        LinkedList ll=new LinkedList();
+        ll.add(1);
+        ll.add(2);
+        ll.add(3);
+
+        ArrayList al=new ArrayList(ll);
+        al.add(4);
+        al.add("hii");
+        
+        System.out.println(al);
+    }
+}
+-------------------------------------------------------------------------
+ll
+
+vec--->ll
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        LinkedList ll=new LinkedList();
+        ll.add(1);
+        ll.add(2);
+        ll.add(3);
+
+        Vector al=new Vector(ll);
+        al.add(4);
+        al.add("hii");
+
+        System.out.println(al);
+    }
+}
+---------------------------------------------------------------------------
+ll 
+
+st--->ll 
+
+it is not possible;;error
+---------------------------------------------------------------
+
+st
+
+al--->st
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Stack ss=new Stack();
+        ss.add(1);
+        ss.add(2);
+        ss.add(3);
+
+        ArrayList al=new ArrayList(ss);
+        al.add(4);
+        al.add("hii");
+
+        System.out.println(al);
+    }
+}
+---------------------------------------------------------------------------
+st
+
+
+ll--->st
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Stack ss=new Stack();
+        ss.add(1);
+        ss.add(2);
+        ss.add(3);
+
+        LinkedList al=new LinkedList(ss);
+        al.add(4);
+        al.add("hii");
+
+        System.out.println(al);
+    }
+}
+-----------------------------------------------------------------------
+st
+
+vec---->st
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Stack ss=new Stack();
+        ss.add(1);
+        ss.add(2);
+        ss.add(3);
+
+        Vector al=new Vector(ss);
+        al.add(4);
+        al.add("hii");
+
+        System.out.println(al);
+    }
+}
+--------------------------------------------------------------------------
+al 
+
+hs-->al
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        ArrayList al=new ArrayList();
+        al.add(1);
+        al.add(4);
+        al.add("hi");
+
+        HashSet hs=new HashSet(al);
+        hs.add(2);
+        hs.add(1);
+        hs.add("bye");
+
+       System.out.println(hs);
+    }
+}
+-----------------------------------------------------------------------------
+ll
+
+hs-->ll
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        LinkedList al=new LinkedList();
+        al.add(1);
+        al.add(4);
+        al.add("hi");
+
+        HashSet hs=new HashSet(al);
+        hs.add(2);
+        hs.add(1);
+        hs.add("bye");
+
+       System.out.println(hs);
+    }
+}
+---------------------------------------------------------------------
+st
+
+hs-->st
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Stack al=new Stack();
+        al.add(1);
+        al.add(4);
+        al.add("hi");
+
+        HashSet hs=new HashSet(al);
+        hs.add(2);
+        hs.add(1);
+        hs.add("bye");
+
+       System.out.println(hs);
+    }
+}
+-------------------------------------------------------------------
+vec 
+
+hs-->st
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Vector al=new Vector();
+        al.add(1);
+        al.add(4);
+        al.add("hi");
+
+        HashSet hs=new HashSet(al);
+        hs.add(2);
+        hs.add(1);
+        hs.add("bye");
+
+       System.out.println(hs);
+    }
+}
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
