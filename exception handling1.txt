@@ -1,0 +1,71 @@
+Exception Handling
+Java Exceptions
+Java Try-catch block
+Java Multiple Catch Block
+Java Finally Block
+
+public class Main {
+    public static void main(String[] args) {
+        try{
+            int a=5/0;
+        }
+        catch (ArithmeticException ex)
+        {
+            System.out.println("solved");
+        }
+    }
+}
+-----------------------------------------------------
+public class Main {
+    public static void main(String[] args) {
+        try{
+            String s=null;
+            System.out.println(s.length());
+        }
+        catch (ArithmeticException ex)
+        {
+            System.out.println("solved");
+        }
+        catch (NullPointerException ex)
+        {
+            System.out.println("hello");
+        }
+        catch (Exception ex)
+        {
+            System.out.println("bye");
+        }
+    }
+}
+----------------------------------------------------
+public class Main {
+    public static void main(String[] args) {
+        try{
+            String s="abc";
+            int a=Integer.parseInt(s);
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+----------------------------------------------------
+public class Main {
+    public static void main(String[] args) {
+        try{
+            int a[]=new int[5];
+            a[8]=10;
+        }
+        catch (ArrayIndexOutOfBoundsException ex)
+        {
+            System.out.println("hello");
+        }
+        finally {
+            System.out.println("bye");
+            System.exit(0);
+        }
+        System.out.println("tata");
+    }
+}
+-------------------------------------------------------------------
+
