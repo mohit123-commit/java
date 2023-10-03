@@ -1,0 +1,293 @@
+[a-z]
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+        String input="aedf";
+        String re="[a-z]{4}";
+        Pattern p=Pattern.compile(re);
+        Matcher m=p.matcher(input);
+        while(m.find())
+        {
+            System.out.println(m.group());
+        }
+    }
+}
+
+----------------------------------------------------------------------
+[A-Z]
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+        String input="AERG";
+        String re="[A-Z]{4}";
+        Pattern p=Pattern.compile(re);
+        Matcher m=p.matcher(input);
+        while(m.find())
+        {
+            System.out.println(m.group());
+        }
+    }
+}
+-----------------------------------------------------------------
+[a-zA-z]
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+        String input="AxRc";
+        String re="[a-zA-z]{4}";
+        Pattern p=Pattern.compile(re);
+        Matcher m=p.matcher(input);
+        while(m.find())
+        {
+            System.out.println(m.group());
+        }
+    }
+}
+----------------------------------------------------------------------
+[0-9]
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+        String input="1646";
+        String re="[0-9]{4}";
+        Pattern p=Pattern.compile(re);
+        Matcher m=p.matcher(input);
+        while(m.find())
+        {
+            System.out.println(m.group());
+        }
+    }
+}
+--------------------------------------------------------------------
+[abc]
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+        String input="abac";
+        String re="[abc]{4}";
+        Pattern p=Pattern.compile(re);
+        Matcher m=p.matcher(input);
+        while(m.find())
+        {
+            System.out.println(m.group());
+        }
+    }
+}
+---------------------------------------------------------------------
+[^abc]
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+        String input="dfgh";
+        String re="[^abc]{4}";
+        Pattern p=Pattern.compile(re);
+        Matcher m=p.matcher(input);
+        while(m.find())
+        {
+            System.out.println(m.group());
+        }
+    }
+}
+---------------------------------------------------------------------
+[a-zA-Z0-9]
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+        String input="dbRR15Rf";
+        String re="[a-zA-Z0-9]{8}";
+        Pattern p=Pattern.compile(re);
+        Matcher m=p.matcher(input);
+        while(m.find())
+        {
+            System.out.println(m.group());
+        }
+    }
+}
+----------------------------------------------------------------------
+[a-z]
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+       String input="a";
+       String re="[a-z]";
+       Pattern p= Pattern.compile(re);
+       Matcher m=p.matcher(input);
+       while(m.find())
+       {
+           System.out.println(m.group());
+       }
+    }
+}
+-------------------------------------------------------------------
+[a-z]{max}
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+       String input="abxcd";
+       String re="[a-z]{5}";
+       Pattern p= Pattern.compile(re);
+       Matcher m=p.matcher(input);
+       while(m.find())
+       {
+           System.out.println(m.group());
+       }
+    }
+}
+--------------------------------------------------------------------------
+[a-z]{min,max}
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+       String input="abhbhja";
+       String re="[a-z]{2,7}";
+       Pattern p= Pattern.compile(re);
+       Matcher m=p.matcher(input);
+
+       while(m.find())
+       {
+           System.out.println(m.group());
+       }
+    }
+}
+-------------------------------------------------------------------------
+[a-z]+
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+       String input=" ";
+       String re="[a-z]+";
+       Pattern p= Pattern.compile(re);
+       Matcher m=p.matcher(input);
+        System.out.println(m.find());
+        System.out.println(m.group());
+    }
+}
+---------------------------------------------------------------------
+[a-z]+
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+       String input="dashgh";
+       String re="[a-z]+";
+       Pattern p= Pattern.compile(re);
+       Matcher m=p.matcher(input);
+        System.out.println(m.find());
+        System.out.println(m.group());
+    }
+}
+---------------------------------------------------------------
+[a-z]* 
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+       String input="hgyuegf";
+       String re="[a-z]*";
+       Pattern p= Pattern.compile(re);
+       Matcher m=p.matcher(input);
+        System.out.println(m.find());
+        System.out.println(m.group());
+    }
+}
+-------------------------------------------------------------------
+[a-z]*
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+       String input="";
+       String re="[a-z]*";
+       Pattern p= Pattern.compile(re);
+       Matcher m=p.matcher(input);
+        System.out.println(m.find());
+        System.out.println(m.group());
+    }
+}
+----------------------------------------------------------------------
+[a-z]?
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+       String input="";
+       String re="[a-z]?";
+       Pattern p= Pattern.compile(re);
+       Matcher m=p.matcher(input);
+        System.out.println(m.find());
+        System.out.println(m.group());
+    }
+}
+-------------------------------------------------------------------
+[a-z]?
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+       String input="a";
+       String re="[a-z]?";
+       Pattern p= Pattern.compile(re);
+       Matcher m=p.matcher(input);
+        System.out.println(m.find());
+        System.out.println(m.group());
+    }
+}
+-----------------------------------------------------------------
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args)  {
+       Pattern p= Pattern.compile(".s");
+       Matcher m=p.matcher("as");
+        System.out.println(m.matches());
+    }
+}
+-------------------------------------------------------
+
+
+
+
