@@ -1,0 +1,379 @@
+class A ex Thr 
+for 1-->5 
+
+class B 
+for 1---5 2 
+
+
+class C 
+for 1 --5 3 
+
+start() : 
+memory 
+
+class A extends Thread{
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+class B extends Thread {
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i*2+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+class C extends Thread {
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i*3+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+ public class Main {
+     public static void main(String[] args) {
+         A k=new A();
+         B k1=new B();
+         C k2=new C();
+         k.start();
+         k1.start();
+         k2.start();
+     }
+}
+----------------------------------------------------------------------------------------
+class A impl runn
+for 1-->5 
+
+class B impl runn
+for 1---5 2 
+
+
+class C impl runn
+for 1 --5 3 
+
+start() : 
+memory 
+
+class A implements Runnable{
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+class B implements Runnable {
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i*2+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+class C implements Runnable {
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i*3+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+ public class Main {
+     public static void main(String[] args) {
+         A k=new A();
+         Thread t=new Thread(k);
+         B k1=new B();
+         Thread t1=new Thread(k1);
+         C k2=new C();
+         Thread t2=new Thread(k2);
+         t.start();
+         t1.start();
+         t2.start();
+     }
+}
+-------------------------------------------------------------------------------
+join 
+class A impl runn
+for 1-->5 
+
+class B impl runn
+for 1---5 2 
+
+
+class C impl runn
+for 1 --5 3 
+
+start() : 
+memory 
+
+class A implements Runnable{
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+class B implements Runnable {
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i*2+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+class C implements Runnable {
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i*3+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+ public class Main {
+     public static void main(String[] args) {
+         A k=new A();
+         Thread t=new Thread(k);
+         B k1=new B();
+         Thread t1=new Thread(k1);
+         C k2=new C();
+         Thread t2=new Thread(k2);
+         t.start();
+         try{
+             t.join();
+         }
+         catch (Exception ex)
+         {
+             System.out.println(ex);
+         }
+         t1.start();
+         try{
+             t1.join();
+         }
+         catch (Exception ex)
+         {
+             System.out.println(ex);
+         }
+         t2.start();
+         try{
+             t2.join();
+         }
+         catch (Exception ex)
+         {
+             System.out.println(ex);
+         }
+     }
+}
+-------------------------------------------------------------------------------------
+class A ex Thr 
+for 1-->5 
+
+class B 
+for 1---5 2 
+
+
+class C 
+for 1 --5 3 
+
+start() : 
+memory 
+
+class A extends Thread{
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+class B extends Thread {
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i*2+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+class C extends Thread {
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i*3+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A k=new A();
+        B k1=new B();
+        C k2=new C();
+        k.start();
+        try {
+            k.join();
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+        k1.start();
+        try {
+            k1.join();
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+        k2.start();
+        try {
+            k2.join();
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+-------------------------------------------------------------------------------
+class A ex  Thread 
+for 1---5 
+
+class B impl Runnable 
+for 1-->5 *2 
+
+Main class access 
+
+class A extends Thread{
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+class B implements Runnable{
+    public void run(){
+        try{
+            for(int i=1;i<=5;i++)
+            {
+                Thread.sleep(1000);
+                System.out.print(i+" ");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        A k=new A();
+        k.start();
+        B k1=new B();
+        Thread t =new Thread(k1);
+        t.start();
+    }
+}
+------------------------------------------------------------------------------------
+
+
+
+
+
+
