@@ -1,0 +1,202 @@
+find power p ki power q
+
+public class Main{
+  static int pow(int n,int k)
+  {
+      if(k==0)
+      {
+          return 1;
+      }
+      int ans=pow(n,k-1);
+      return ans*n;
+  }
+
+    public static void main(String[] args) {
+        System.out.println(pow(3,4));
+    }
+}
+---------------------------------------------------------------------
+multiplication
+
+public class Main{
+  static void multi(int n,int k)
+  {
+      if(k==0)
+      {
+          return;
+      }
+      multi(n,k-1);
+      System.out.println(n*k);
+  }
+
+    public static void main(String[] args) {
+        multi(12,5);
+    }
+}
+----------------------------------------------------------------
+alternate sum----  -1+2-3+4-5
+
+public class Main{
+
+    static int sum(int n)
+    {
+        if(n==0)
+        {
+            return 0;
+        }
+        if(n%2==0)
+        {
+            return sum(n-1)+n;
+        }
+        else
+        {
+            return sum(n-1)-n;
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(sum(5));
+    }
+}
+-------------------------------------------------------------
+array printing 
+
+public class Main{
+    static void printArray(int a[],int index)
+    {
+        if(a.length==index)
+        {
+            return;
+        }
+        System.out.println(a[index]);
+        printArray(a,index+1);
+    }
+
+    public static void main(String[] args) {
+        int a[]={2,3,4,5,6,7};
+        printArray(a,0);
+    }
+}
+-------------------------------------------------------------------------
+sum of array
+
+public class Main{
+   static int sum(int a[],int index)
+   {
+       if(index==a.length)
+       {
+           return 0;
+       }
+       int small= sum(a,index+1);
+       int f=small+a[index];
+       return f;
+   }
+
+    public static void main(String[] args) {
+        int a[]={2,3,4,5,6,7};
+        System.out.println(sum(a,0));
+    }
+}
+-----------------------------------------------------------------------------
+give an array of integer or target value of x exist or not
+
+public class Main{
+  static boolean target(int a[],int target,int index)
+  {
+      if(a.length==index)
+      {
+          return false;
+      }
+      if(target==a[index])
+      {
+          return true;
+      }
+      return target(a,target,index+1);
+  }
+
+    public static void main(String[] args) {
+        int a[]={2,3,4,5,6,7};
+        if(target(a,3,0))
+            System.out.println("yes");
+        else
+            System.out.println("no");
+    }
+}
+-------------------------------------------------------------------------
+index of element
+
+public class Main{
+ static void printArray(int a[],int target,int index)
+ {
+     if(a.length==index)
+     {
+         return;
+     }
+     if(target==a[index])
+     {
+         System.out.println(index);
+     }
+      printArray(a,target,index+1);
+ }
+
+    public static void main(String[] args) {
+        int a[]={2,3,2,4,5,2,6,7,2};
+       printArray(a,2,0);
+    }
+}
+-------------------------------------------------------------------------
+count of duplicate element
+
+public class Main{
+ static int printCount(int a[],int target,int index)
+ {
+     int count=0;
+     if(index==a.length)
+     {
+         return 0;
+     }
+     if(target==a[index])
+     {
+         count++;
+     }
+     int small=printCount(a,target,index+1);
+     return count+small;
+ }
+
+    public static void main(String[] args) {
+      int a[]={2,3,4,1,2,3,2,2,2};
+        System.out.println(printCount(a,2,0));
+    }
+}
+-------------------------------------------------------------------------
+armstrong number 
+
+import java.util.Scanner;
+
+public class Main{
+    static int armstrong(int n)
+    {
+        if(n>=0 && n<=9)
+        {
+            return n*n*n;
+        }
+        int small=armstrong(n/10);
+        int rem=n%10;
+        int ans=small+rem*rem*rem;
+        return ans;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter number");
+        int n= sc.nextInt();
+
+        int m=(armstrong(n));
+        if(n==m)
+            System.out.println("armstrong number");
+        else
+            System.out.println("not armstrong");
+
+    }
+}
+--------------------------------------------------------------------------
+
