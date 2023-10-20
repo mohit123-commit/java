@@ -1,0 +1,303 @@
+1)string : 
+print 
+
+regex is my learning platform 
+
+public class Main{
+    public static void main(String[] args) {
+     String name="regex is my learning platform ";
+        System.out.println(name);
+    }
+}
+-------------------------------------------------------------------
+2)
+string : 
+print 
+
+regex is my learning platform 
+count : number of characters 
+
+public class Main{
+    public static void main(String[] args) {
+     String name="regex is my learning platform";
+     char []a=name.toCharArray();
+     int count=0;
+      for(int i=0;i<a.length;i++)
+      {
+          count++;
+      }
+        System.out.println(count);
+    }
+}
+---------------------------------------------------------------------
+3)String : 
+input a character check characher present or not ? 
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter character to check present or not");
+        char c=sc.next().charAt(0);
+
+     String name="regex is my learning platform";
+     char []a=name.toCharArray();
+
+      for(int i=0;i<a.length;i++)
+      {
+          if(a[i]==c)
+          {
+              System.out.println("present");
+              break;
+          }
+          else
+          {
+              System.out.println("not present");
+          }
+      }
+    }
+}
+----------------------------------------------------------------------------------
+how many time present ? 
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String name="regex is my learning platform";
+        System.out.println(name);
+
+        System.out.println("enter character to check present how many times");
+        char c=sc.next().charAt(0);
+
+     char []a=name.toCharArray();
+     int count=0;
+
+      for(int i=0;i<a.length;i++)
+      {
+          if(a[i]==c)
+          {
+              count++;
+          }
+      }
+        System.out.println(count);
+    }
+}
+-------------------------------------------------------------------------
+4)String vowel is present or not ?
+
+public class Main{
+    public static void main(String[] args) {
+        String name="regex is my learning platform";
+        System.out.println(name);
+
+     char []a=name.toCharArray();
+
+      for(int i=0;i<a.length;i++)
+      {
+          if(a[i]=='a' ||a[i]=='e' ||a[i]=='i' ||a[i]=='o' ||a[i]=='u')
+          {
+              System.out.println("vowels present");
+              break;
+          }
+          else {
+              System.out.println("not present");
+          }
+      }
+    }
+}
+------------------------------------------------------------------------------
+how many vowel present (counting)
+
+public class Main{
+    public static void main(String[] args) {
+        String name="regex is my learning platform";
+        System.out.println(name);
+
+     char []a=name.toCharArray();
+
+     int count=0;
+      for(int i=0;i<a.length;i++)
+      {
+          if(a[i]=='a' ||a[i]=='e' ||a[i]=='i' ||a[i]=='o' ||a[i]=='u')
+          {
+              count++;
+          }
+      }
+        System.out.println(count);
+    }
+}
+-------------------------------------------------------------------------------
+which is consonant and vowel 
+
+public class Main{
+    public static void main(String[] args) {
+        String name="regex is my learning platform";
+        System.out.println(name);
+
+     char []a=name.toCharArray();
+
+      for(int i=0;i<a.length;i++)
+      {
+          if(a[i]=='a' ||a[i]=='e' ||a[i]=='i' ||a[i]=='o' ||a[i]=='u')
+          {
+              System.out.println(a[i]+" = it is vowel");
+          }
+          else if(a[i]==' ')
+          {
+              System.out.println(a[i]+" = it is space");
+          }
+          else {
+              System.out.println(a[i]+" = it is consonent");
+          }
+      }
+    }
+}
+-------------------------------------------------------------------------------------
+5)
+want to find index :user 
+i =>indexing 
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String name="regex is my learning platform";
+        System.out.println(name);
+
+        System.out.println("enter character to find index");
+        char c=sc.next().charAt(0);
+
+        char []a=name.toCharArray();
+
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]==c)
+            {
+                System.out.println(i);
+            }
+        }
+    }
+}
+---------------------------------------------------
+6)
+String is print reverse 
+
+public class Main{
+    public static void main(String[] args) {
+        String name="regex is my learning platform";
+        System.out.println(name);
+
+        char []a=name.toCharArray();
+
+        for(int i=a.length-1;i>=0;i--)
+        {
+            System.out.print(a[i]);
+        }
+    }
+}
+----------------------------------------------------
+7)
+to check the string is pallindrome or not ? 
+->array pallindrome logic 
+
+public class Main{
+    public static void main(String[] args) {
+        String name="malayalam";
+        System.out.println(name);
+
+        char []a=name.toCharArray();
+
+        int flag=0;
+       int i=0;
+       int j=a.length-1;
+       while(i<j)
+       {
+           if(a[i]!=a[j])
+           {
+               flag=1;
+               break;
+           }
+           i++;
+           j--;
+       }
+       if(flag==0)
+           System.out.println("it is palindrome");
+       else
+           System.out.println("it is not palindrome");
+    }
+}
+----------------------------------------------------------------------------
+8)
+which character is duplicate in string? 
+
+public class Main{
+    public static void main(String[] args) {
+       String name="regex is my learning platform";
+        System.out.println(name);
+
+        char []a=name.toCharArray();
+        System.out.println("these are duplicate character");
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]==a[j])
+                {
+                    System.out.println(a[j]);
+                    break;
+                }
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------
+how much? 
+
+public class Main{
+    public static void main(String[] args) {
+       String name="regex is my learning platform";
+        System.out.println(name);
+
+        char []a=name.toCharArray();
+        int count=0;
+        System.out.println("these are duplicate character");
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]==a[j])
+                {
+                    System.out.println(a[j]);
+                    count++;
+                    break;
+                }
+            }
+        }
+        System.out.println(count);
+    }
+}
+-----------------------------------------------------------------------------------
+9)
+how many space present in a string ? 
+
+public class Main{
+    public static void main(String[] args) {
+        String name="regex is my learning platform";
+        System.out.println(name);
+
+        char []a=name.toCharArray();
+
+        int count=0;
+        for(int i=0;i<a.length;i++)
+        {
+            if(a[i]==' ')
+            {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+------------------------------------------
