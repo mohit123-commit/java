@@ -1,0 +1,241 @@
+1)number swap
+a)with third variable 
+
+public class Main{
+    public static void main(String[] args) {
+      int a=1;
+      int b=2;
+        System.out.println("a= "+a);
+        System.out.println("b= "+b);
+      int temp;
+      temp=a;
+      a=b;
+      b=temp;
+        System.out.println("a= "+a);
+        System.out.println("b= "+b);
+    }
+}
+--------------------------------------------------------------------------------
+b)without third varaible 
+
+public class Main{
+    public static void main(String[] args) {
+      int a=1;
+      int b=2;
+        System.out.println("a= "+a);
+        System.out.println("b= "+b);
+      a=a+b;
+      b=a-b;
+      a=a-b;
+        System.out.println("a= "+a);
+        System.out.println("b= "+b);
+    }
+}
+------------------------------------------------------------------------------
+2)prime number 
+a)take a user input and check number is prime or not 
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+        System.out.println("enter number");
+        int n= sc.nextInt();
+        int flag=0;
+
+        for(int i=2;i<n;i++)
+        {
+            if(n%i==0)
+            {
+                flag=1;
+                break;
+            }
+ 0       }
+        if(flag==1)
+            System.out.println("it is not prime number");
+        else
+            System.out.println("it is  prime number");
+    }
+}
+--------------------------------------------------------------------------------------
+b)1 to 100 prime numbers 
+
+public class Main{
+    public static void main(String[] args) {
+        for(int j=2;j<=100;j++)
+        {
+            int flag=0;
+            for(int i=2;i<j;i++)
+            {
+                if(j%i==0)
+                {
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0)
+            {
+                System.out.println(j);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+3)
+when a user input a one then check a number is even 
+when a user input a 2 then check a number is odd
+when a user input a 3 then check a number is armstrong
+when a user input a 4 then check a number is pallindrome
+when a user input a 5 then calculate a number is factorial
+when a user input a 6 then calculate a number is fibonaacii
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter number 1-6");
+        int i= sc.nextInt();
+        switch (i)
+        {
+            case 1:
+                System.out.println("enter number to check even");
+                int a= sc.nextInt();
+                if(a%2==0)
+                    System.out.println("it is even");
+                else
+                    System.out.println("it is not even");
+                break;
+            case 2:
+                System.out.println("enter number to check odd");
+                int b= sc.nextInt();
+                if(b%2==1)
+                    System.out.println("it is odd");
+                else
+                    System.out.println("it is not odd");
+                break;
+            case 3:
+                System.out.println("enter number to check armstrong");
+                int n= sc.nextInt();
+                int c=n;
+                int rem;
+                int rev=0;
+
+                while(n>0)
+                {
+                   rem=n%10;
+                   rev=rev+rem*rem*rem;
+                   n=n/10;
+                }
+                if(rev==c)
+                    System.out.println("it is armstrong");
+                else
+                    System.out.println("it is not armstrong");
+                break;
+            case 4:
+                System.out.println("enter number to check palindrome");
+                int m= sc.nextInt();
+                int d=m;
+                int rem1;
+                int rev1=0;
+
+                while(m>0)
+                {
+                    rem1=m%10;
+                    rev1=rev1*10+rem1;
+                    m=m/10;
+                }
+                if(rev1==d)
+                    System.out.println("it is palindrome");
+                else
+                    System.out.println("it is not palindrome");
+                break;
+            case 5:
+                System.out.println("enter number to print factorial");
+                int e=sc.nextInt();
+                int result=1;
+
+                for(int j=1;j<=e;j++)
+                {
+                    result=result*j;
+                }
+                System.out.println(result);
+                break;
+            case 6:
+                System.out.println("enter number to print fibonacci");
+                int f= sc.nextInt();
+                int g=0;
+                int h=1;
+                System.out.println(g);
+                System.out.println(h);
+
+                for(int k=1;k<=f;k++)
+                {
+                  int temp=g+h;
+                    System.out.println(temp);
+                    g=h;
+                    h=temp;
+                }
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+4)
+what is neon number 
+neon number like : 9 *9 =>81 
+and the sum of output is (8+1 is 9)
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter number");
+        int n= sc.nextInt();
+        int res=n*n;
+        int rem;
+        int sum=0;
+        while(res>0)
+        {
+            rem=res%10;
+            sum=sum+rem;
+            res=res/10;
+        }
+        System.out.println(sum);
+
+    }
+}
+
+----------------------------------------------------------------------------------------
+5)
+*****
+* *
+*  *
+*   *
+*     *
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter number");
+        int n= sc.nextInt();
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=n;j++)
+            {
+                if(i==1 || j==1 || i==j)
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+    }
+}
+---------------------------------------------------------------------------------
+
+
