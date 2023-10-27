@@ -1,0 +1,497 @@
+Question 1: Write a Java program to find the length of a given string
+
+public class Main{
+    public static void main(String[] args) {
+       String name="regex is learning platform";
+        System.out.println(name.length());
+    }
+}
+----------------------------------------------------------------------------
+Question 2: Write a Java program to concatenate two strings without using the + operator.
+
+public class Main{
+    public static void main(String[] args) {
+       String s1="regex is ";
+       String s2="learning platform";
+        System.out.println(s1.concat(s2));
+    }
+}
+-----------------------------------------------------------------------------------
+Question 3: Write a Java program to check if a string is empty.
+
+public class Main{
+    public static void main(String[] args) {
+       String s1="regex";
+        System.out.println(s1.isEmpty());
+    }
+}
+-------------------------------------------------------------------------------------------
+
+Question 4: Write a Java program to compare two strings while ignoring case.
+
+public class Main{
+    public static void main(String[] args) {
+       String s1="regex";
+       String s2="rehex";
+       String s3="Regex";
+       String s4="refjx";
+       String s5="";
+        System.out.println(s1.compareTo(s2));
+        System.out.println(s1.compareTo(s3));
+        System.out.println(s1.compareTo(s4));
+        System.out.println(s1.compareTo(s5));
+        System.out.println(s5.compareTo(s1));
+    }
+}
+------------------------------------------------------------------------------
+
+Question 5: Write a Java program to find and replace a specific substring in a string.
+
+public class Main{
+    public static void main(String[] args) {
+       String s1="regex";
+        System.out.println(s1.replace('e','f'));
+    }
+}
+---------------------------------------------------------------------------------------	
+
+Question 6: Write a Java program to extract the first and last characters of a string.
+
+public class Main{
+    public static void main(String[] args) {
+       String name="Regex";
+       char a[]=name.toCharArray();
+        System.out.println(a[0]);
+        System.out.println(a[a.length-1]);
+
+    }
+}
+-------------------------------------------------------------------------------------
+
+Question 7: Write a Java program to find the index of the first occurrence of a character in a string.
+
+public class Main{
+    public static void main(String[] args) {
+       String s1="regex";
+        System.out.println(s1.indexOf('e'));
+    }
+}
+---------------------------------------------------------------------------------
+
+Question 8: Write a Java program to check if a string starts with a given prefix.
+
+public class Main{
+    public static void main(String[] args) {
+       String s1="regex";
+        System.out.println(s1.startsWith("re"));
+    }
+}
+------------------------------------------------------------------------------------
+
+Question 9: Write a Java program to count the number of occurrences of a specific character in a string.
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s1="regex is learning platform";
+        System.out.println(s1);
+
+        System.out.println("enter character to count");
+        char a=sc.next().charAt(0);
+
+        char b[]=s1.toCharArray();
+        int count=0;
+        for(int i=0;i<b.length;i++)
+        {
+            if(a==b[i])
+            {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+-------------------------------------------------------------------------------------------
+Question 10: Write a Java program to check if a string is a palindrome.
+
+public class Main{
+    public static void main(String[] args) {
+        String s1="malayalam";
+
+        char a[]=s1.toCharArray();
+        int flag=0;
+      int i=0;
+      int j=a.length-1;
+      while (i<j)
+      {
+          if(a[i]!=a[j])
+          {
+              flag=1;
+              break;
+          }
+          i++;
+          j--;
+      }
+      if(flag==0)
+          System.out.println("it is palindrome");
+      else
+          System.out.println("it is not palindrome");
+    }
+}
+----------------------------------------------------------------------------------------
+
+Question 11: Write a Java program to reverse a string.
+
+public class Main{
+    public static void main(String[] args) {
+       String name="Regex";
+       char a[]=name.toCharArray();
+       for(int i=a.length-1;i>=0;i--)
+       {
+           System.out.print(a[i]);
+       }
+    }
+}
+--------------------------------------------------------------------------------------
+
+Question 12: Write a Java program to find the longest word in a string.
+
+public class Main{
+    public static void main(String[] args) {
+        String name="regex is my learninging platformm";
+        String []s=name.split(" ");
+
+        int max=0;
+        String p="";
+        for(int i=0;i<s.length;i++)
+        {
+            String x="";
+            int count=0;
+
+            for(int j=0;j<s[i].length();j++)
+            {
+                    x+=s[i].charAt(j);
+                    count++;
+            }
+            System.out.println(count);
+
+            if(max<count)
+            {
+                max=count;
+                p=x;
+            }
+        }
+        System.out.println(p);
+    }
+}
+-------------------------------------------------------------------------------------
+
+Question 13: Write a Java program to check if a string contains only numeric characters.
+
+public class Main{
+    public static void main(String[] args) {
+       String name="Regex";
+       byte b[]=name.getBytes();
+       for(int i=0;i<b.length;i++)
+       {
+           System.out.println(b[i]);
+       }
+    }
+}
+-----------------------------------------------------------------------------------------
+
+Question 14: Write a Java program to remove all spaces from a string.
+
+public class Main{
+    public static void main(String[] args) {
+       String name="  Hello Regex  ";
+        System.out.println(name.trim());
+    }
+}
+-------------------------------------------------------------------------------------------
+Question 15: Write a Java program to capitalize the first letter of each word in a string.
+
+public class Main{
+    public static void main(String[] args) {
+        String name="regex is my learning platform";
+        String s[]=name.split(" ");
+
+        for(int i=0;i<s.length;i++)
+        {
+            String x="";
+            for(int j=0;j<s[i].length();j++)
+            {
+               if(j==0)
+               {
+                   x+=Character.toUpperCase(s[i].charAt(j));
+               }
+               else
+               {
+                   x+=s[i].charAt(j);
+               }
+            }
+            s[i]=x;
+        }
+        for(int i=0;i<s.length;i++)
+        {
+            System.out.print(s[i]+" ");
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------
+
+Question 16: Write a Java program to count the number of words in a string.
+
+import java.util.Arrays;
+public class Main{
+    public static void main(String[] args) {
+        String name="regex is my learning platform";
+        String s[]=name.split(" ");
+
+        for(int i=0;i<s.length;i++)
+        {
+            String x="";
+            int count=0;
+            for(int j=0;j<s[i].length();j++)
+            {
+                x+=s[i].charAt(j);
+                count++;
+            }
+            s[i]=x;
+            System.out.println(count);
+        }
+        System.out.println(Arrays.toString(s));
+    }
+}
+----------------------------------------------------------------------------------------------------
+
+Question 17: Write a Java program to find the most frequently occurring character in a string.
+
+public class Main{
+    public static void main(String[] args) {
+        String name="regex is my learning platform";
+       char []a=name.toCharArray();
+
+       int max=0;
+       char p='-';
+       for(int i=0;i<a.length;i++)
+       {
+           int count=0;
+           for(int j=i+1;j<a.length;j++)
+           {
+               if(a[i]==a[j] && a[i]!=' ')
+               {
+                  count++;
+               }
+           }
+
+           if(max<count)
+           {
+               max=count;
+                p=a[i];
+           }
+       }
+        System.out.println(p);
+    }
+}
+--------------------------------------------------------------------------------------
+Question 18: Write a Java program to reverse words in a string.
+
+public class Main{
+    public static void main(String[] args) {
+       String name="regex is a learrning platform";
+       char a[]=name.toCharArray();
+
+       for(int i=a.length-1;i>=0;i--)
+       {
+               System.out.print(a[i]);
+       }
+    }
+}
+----------------------------------------------------------------------------------
+Question 19: Write a Java program to find the common characters between two strings.
+
+public class Main{
+    public static void main(String[] args) {
+       String s1="regex is a learrning platform";
+       String s2="i am playing chess";
+       char a[]=s1.toCharArray();
+        char b[]=s2.toCharArray();
+
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=0;j<b.length;j++)
+            {
+                if(a[i]==b[j])
+                {
+                    System.out.print(a[i]+" ");
+                    break;
+                }
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------
+
+Question 20: Write a Java program to reverse the order of words in a sentence.
+
+import java.util.Arrays;
+public class Main{
+    public static void main(String[] args) {
+        String name="regex is my learning platform";
+        String s[]=name.split(" ");
+
+        for(int i=0;i<s.length;i++)
+        {
+            String x="";
+            for(int j=s[i].length()-1;j>=0;j--)
+            {
+                x+=s[i].charAt(j);
+            }
+            s[i]=x;
+            x="";
+        }
+        System.out.println(Arrays.toString(s));
+        for(int i=0;i<s.length;i++)
+        {
+            System.out.print(s[i]+" ");
+        }
+    }
+}
+------------------------------------------------------------------------------------
+
+Question 21: Write a Java program to remove all occurrences of a specific character from a string.
+
+public class Main{
+    public static void main(String[] args) {
+       String name="reg@x is # leR%rning pl&tform";
+       char a[]=name.toCharArray();
+
+       for(int i=0;i<a.length;i++)
+       {
+           if(a[i]=='@' ||a[i]=='%' ||a[i]=='&' ||a[i]=='#' )
+           {
+               a[i]=0;
+           }
+       }
+       for(int i=0;i<a.length;i++)
+       {
+           if(a[i]!=0)
+           {
+               System.out.print(a[i]);
+           }
+       }
+    }
+}
+----------------------------------------------------------------------------------------
+
+Question 22: Write a Java program to find the first non-repeated character in a string.
+
+public class Main{
+    public static void main(String[] args) {
+       String s="regex is learning platform";
+       int flag=0;
+
+       for(int i=0;i<s.length();i++)
+       {
+           for(int j=0;j<s.length();j++)
+           {
+               if(s.charAt(i)==s.charAt(j) && i!=j)
+               {
+                   flag=1;
+               }
+           }
+           if(flag==0)
+           {
+               System.out.print(s.charAt(i)+" ");
+           }
+           else
+           {
+               flag=0;
+           }
+       }
+    }
+}
+---------------------------------------------------------------------------------------------------
+
+Question 23: Write a Java program to check if a string is a valid number.
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter name");
+        String s=sc.nextLine();
+        System.out.println("enter length to check valid or not");
+        int len= sc.nextInt();
+        
+        if(len==s.length())
+        {
+            System.out.println("it is valid number");
+        }
+        else
+        {
+            System.out.println("it is not a valid number");
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+Question 24: Write a Java program to capitalize the first letter of each sentence in a string.
+
+public class Main{
+    public static void main(String[] args) {
+        String name="regex is my learning platform";
+        String []s=name.split(" ");
+
+        for(int i=0;i<s.length;i++)
+        {
+            String x="";
+            for(int j=0;j<s[i].length();j++)
+            {
+                if(i==0 && j==0)
+                {
+                    x+=Character.toUpperCase(s[i].charAt(j));
+                }
+                else
+                {
+                    x+=s[i].charAt(j);
+                }
+            }
+            s[i]=x;
+        }
+        for(int i=0;i<s.length;i++)
+        {
+            System.out.print(s[i]+" ");
+        }
+    }
+}
+-------------------------------------------------------------------------------------
+Question 25: Write a Java program to remove duplicate characters from a string.
+
+public class Main{
+    public static void main(String[] args) {
+       String name="regex is a learning platform";
+       char a[]=name.toCharArray();
+
+
+       for(int i=0;i<a.length;i++)
+       {
+           for(int j=i+1;j<a.length;j++)
+           {
+               if(a[i]==a[j])
+               {
+                   a[j]=0;
+               }
+           }
+       }
+       for(int i=0;i<a.length;i++)
+       {
+           if(a[i]!=0)
+           {
+               System.out.print(a[i]);
+           }
+       }
+    }
+}
+-------------------------------------------------------------------------------------
