@@ -1,0 +1,207 @@
+merge sort : 
+
+45 87 2 1 43 12 
+
+public class Main {
+    static void display(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+    public static void merge(int a[],int l,int mid,int r)
+    {
+        int b[]=new int[r-l+1];
+
+        int p=l;
+        int q=mid+1;
+        int x=0;
+
+        while(p<=mid && q<=r)
+        {
+            if(a[p]<=a[q])
+            {
+                b[x++]=a[p++];
+            }
+            else
+            {
+                b[x++]=a[q++];
+            }
+        }
+        while(p<=mid)
+        {
+            b[x++]=a[p++];
+        }
+        while(q<=r)
+        {
+            b[x++]=a[q++];
+        }
+        for(int i=0, j=l;i<b.length;i++,j++)
+        {
+            a[j]=b[i];
+        }
+    }
+    public static void mergeSort(int a[],int l,int r)
+    {
+        if(l>=r)
+        {
+            return;
+        }
+        int mid=(l+r)/2;
+        mergeSort(a,l,mid);
+        mergeSort(a,mid+1,r);
+        merge(a,l,mid,r);
+    }
+    public static void main(String[] args) {
+        int a[]={45,87,2,1,43,12};
+
+        int n=a.length;
+        mergeSort(a,0,n-1);
+        display(a);
+    }
+}
+-------------------------------------------------------------------------------------------
+
+23 7 81 76 18 8
+bubble sort : 
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={23,7,81,76,18,8};
+
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=0;j<a.length-i-1;j++)
+            {
+                if(a[j]>a[j+1])
+                {
+                    int temp;
+                    temp=a[j];
+                    a[j]=a[j+1];
+                    a[j+1]=temp;
+                }
+            }
+        }
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+selection sort:
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={23,7,81,76,18,8};
+
+       for(int i=0;i<a.length;i++)
+       {
+           int min=i;
+           for(int j=i+1;j<a.length;j++)
+           {
+               if(a[j]<a[min])
+               {
+                   min=j;
+               }
+           }
+           int temp;
+           temp=a[min];
+           a[min]=a[i];
+           a[i]=temp;
+       }
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+
+insertion sort: 
+
+public class Main {
+    public static void main(String[] args) {
+        int a[]={23,7,81,76,18,8};
+
+       for(int i=0;i<a.length;i++)
+       {
+           int j=i;
+           while(j>0 && a[j]<a[j-1])
+           {
+               int temp;
+               temp=a[j];
+               a[j]=a[j-1];
+               a[j-1]=temp;
+               j--;
+           }
+       }
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+----------------------------------------------------------------------------------
+merge sort:
+
+public class Main {
+    static void display(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+    static void merge(int a[],int l,int mid,int r)
+    {
+        int b[]=new int[r-l+1];
+        int p=l;
+        int q=mid+1;
+        int x=0;
+
+        while(p<=mid && q<=r)
+        {
+            if(a[p]<=a[q])
+            {
+                b[x++]=a[p++];
+            }
+            else
+            {
+                b[x++]=a[q++];
+            }
+        }
+        while(p<=mid)
+        {
+            b[x++]=a[p++];
+        }
+        while(q<=r)
+        {
+            b[x++]=a[q++];
+        }
+        for(int i=0,j=l;i<b.length;i++,j++)
+        {
+            a[j]=b[i];
+        }
+    }
+    static void mergeSort(int a[],int l,int r)
+    {
+        if(l>=r)
+        {
+            return;
+        }
+        int mid=(l+r)/2;
+        mergeSort(a,l,mid);
+        mergeSort(a,mid+1,r);
+        merge(a,l,mid,r);
+    }
+    public static void main(String[] args) {
+        int a[]={23,7,81,76,18,8};
+
+        int n=a.length;
+        mergeSort(a,0,n-1);
+        display(a);
+    }
+}
+-----------------------------------------------------------------------------------------
