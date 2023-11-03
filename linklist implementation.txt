@@ -1,0 +1,251 @@
+1)Node 
+simple node 
+
+public class Main{
+    public static class Node{
+        int data;
+        Node next;
+    }
+    public static void main(String[] args) {
+        Node x=new Node();
+        System.out.println(x);
+    }
+}
+------------------------------------------------------------------------------------------
+
+2)
+address print with separate 
+Node1    23,78,34,12 
+
+Node2     12,56,78,34,78,23,12
+
+public class Main{
+    public static class Node1{
+        int data;
+        Node1 next;
+        Node1(int data)
+        {
+            this.data=data;
+        }
+    }
+
+    public static class Node2{
+        int data;
+        Node2 next;
+        Node2(int data)
+        {
+            this.data=data;
+        }
+    }
+    public static void main(String[] args) {
+        Node1 x1=new Node1(23);
+        Node1 x2=new Node1(78);
+        Node1 x3=new Node1(34);
+        Node1 x4=new Node1(12);
+        System.out.println(x1);
+        System.out.println(x2);
+        System.out.println(x3);
+        System.out.println(x4);
+
+        Node2 p1=new Node2(12);
+        Node2 p2=new Node2(56);
+        Node2 p3=new Node2(78);
+        Node2 p4=new Node2(34);
+        Node2 p5=new Node2(78);
+        Node2 p6=new Node2(23);
+        Node2 p7=new Node2(12);
+        System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(p3);
+        System.out.println(p4);
+        System.out.println(p5);
+        System.out.println(p6);
+        System.out.println(p7);
+    }
+}
+------------------------------------------------------------------------------------------
+3)
+23,78,34,12 
+
+12,56,78,34,78,23,12
+
+address connectivity
+
+public class Main{
+    public static class Node1{
+        int data;
+        Node1 next;
+        Node1(int data)
+        {
+            this.data=data;
+        }
+    }
+
+    public static class Node2{
+        int data;
+        Node2 next;
+        Node2(int data)
+        {
+            this.data=data;
+        }
+    }
+    public static void main(String[] args) {
+        Node1 x1=new Node1(23);
+        Node1 x2=new Node1(78);
+        Node1 x3=new Node1(34);
+        Node1 x4=new Node1(12);
+        x1.next=x2;
+        x2.next=x3;
+        x3.next=x4;
+        System.out.println(x1.next);
+        System.out.println(x2.next);
+        System.out.println(x3.next);
+        System.out.println(x4.next);
+
+        Node2 p1=new Node2(12);
+        Node2 p2=new Node2(56);
+        Node2 p3=new Node2(78);
+        Node2 p4=new Node2(34);
+        Node2 p5=new Node2(78);
+        Node2 p6=new Node2(23);
+        Node2 p7=new Node2(12);
+        p1.next=p2;
+        p2.next=p3;
+        p3.next=p4;
+        p4.next=p5;
+        p5.next=p6;
+        p6.next=p7;
+        System.out.println(p1.next);
+        System.out.println(p2.next);
+        System.out.println(p3.next);
+        System.out.println(p4.next);
+        System.out.println(p5.next);
+        System.out.println(p6.next);
+        System.out.println(p7.next);
+    }
+}
+--------------------------------------------------------------------------------------
+4)
+23,78,34,12 
+
+12,56,78,34,78,23,12
+
+data print 
+
+public class Main{
+    public static class Node1{
+        int data;
+        Node1 next;
+        Node1(int data)
+        {
+            this.data=data;
+        }
+    }
+
+    public static class Node2{
+        int data;
+        Node2 next;
+        Node2(int data)
+        {
+            this.data=data;
+        }
+    }
+    public static void main(String[] args) {
+        Node1 x1=new Node1(23);
+        Node1 x2=new Node1(78);
+        Node1 x3=new Node1(34);
+        Node1 x4=new Node1(12);
+        x1.next=x2;
+        x2.next=x3;
+        x3.next=x4;
+        System.out.println(x1.data);
+        System.out.println(x2.data);
+        System.out.println(x3.data);
+        System.out.println(x4.data);
+
+        System.out.println("for second node");
+        Node2 p1=new Node2(12);
+        Node2 p2=new Node2(56);
+        Node2 p3=new Node2(78);
+        Node2 p4=new Node2(34);
+        Node2 p5=new Node2(78);
+        Node2 p6=new Node2(23);
+        Node2 p7=new Node2(12);
+        p1.next=p2;
+        p2.next=p3;
+        p3.next=p4;
+        p4.next=p5;
+        p5.next=p6;
+        p6.next=p7;
+        System.out.println(p1.data);
+        System.out.println(p2.data);
+        System.out.println(p3.data);
+        System.out.println(p4.data);
+        System.out.println(p5.data);
+        System.out.println(p6.data);
+        System.out.println(p7.data);
+    }
+}
+--------------------------------------------------------------------------------------------
+5)
+23,78,34,12 
+
+12,56,78,34,78,23,12
+
+data print through first node  
+
+public class Main{
+    public static class Node1{
+        int data;
+        Node1 next;
+        Node1(int data)
+        {
+            this.data=data;
+        }
+    }
+
+    public static class Node2{
+        int data;
+        Node2 next;
+        Node2(int data)
+        {
+            this.data=data;
+        }
+    }
+    public static void main(String[] args) {
+        Node1 x1=new Node1(23);
+        Node1 x2=new Node1(78);
+        Node1 x3=new Node1(34);
+        Node1 x4=new Node1(12);
+        x1.next=x2;
+        x2.next=x3;
+        x3.next=x4;
+        System.out.println(x1.data);
+        System.out.println(x1.next.data);
+        System.out.println(x1.next.next.data);
+        System.out.println(x1.next.next.data);
+
+        System.out.println("for second node");
+        Node2 p1=new Node2(12);
+        Node2 p2=new Node2(56);
+        Node2 p3=new Node2(78);
+        Node2 p4=new Node2(34);
+        Node2 p5=new Node2(78);
+        Node2 p6=new Node2(23);
+        Node2 p7=new Node2(12);
+        p1.next=p2;
+        p2.next=p3;
+        p3.next=p4;
+        p4.next=p5;
+        p5.next=p6;
+        p6.next=p7;
+        System.out.println(p1.data);
+        System.out.println(p1.next.data);
+        System.out.println(p1.next.next.data);
+        System.out.println(p1.next.next.next.data);
+        System.out.println(p1.next.next.next.next.data);
+        System.out.println(p1.next.next.next.next.next.data);
+        System.out.println(p1.next.next.next.next.next.next.data);
+    }
+}
+-----------------------------------------------------------------------------------------
