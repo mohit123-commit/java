@@ -1,0 +1,344 @@
+1) write a quick sort algorithm in java ?
+
+public class Main{
+    static void display(int a[])
+    {
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+    static int sort(int a[],int l,int r)
+    {
+        int pivot=a[r];
+        int i=l-1;
+
+        for(int j=l;j<r;j++)
+        {
+            if(a[j]<pivot)
+            {
+                i++;
+                int temp=a[j];
+                a[j]=a[i];
+                a[i]=temp;
+            }
+        }
+        i++;
+        int temp=a[i];
+        a[i]=pivot;
+        a[r]=temp;
+        return i;
+    }
+    static void quickSort(int a[],int l,int r)
+    {
+       if(l>=r)
+       {
+           return;
+       }
+       int pidx=sort(a,l,r);
+       quickSort(a,l,pidx-1);
+       quickSort(a,pidx+1,r);
+    }
+
+    public static void main(String[] args) {
+    int a[]={3,2,5,4,6,7,1,8};
+    int n=a.length;
+
+    quickSort(a,0,n-1);
+    display(a);
+    }
+}
+----------------------------------------------------------------------------------------
+
+2)write a insertion sort algorithm in java ?
+
+public class Main{
+    public static void main(String[] args) {
+    int a[]={3,2,5,4,6,7,1,8};
+
+    for(int i=0;i<a.length;i++)
+    {
+        int j=i;
+        while(j>0 && a[j]<a[j-1])
+        {
+            int temp;
+            temp=a[j];
+            a[j]=a[j-1];
+            a[j-1]=temp;
+            j--;
+        }
+    }
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+-----------------------------------------------------------------------------------------
+3)Want to print nth term of fibonacci series
+
+test case1: 5
+
+test case2: 10
+
+import java.util.Scanner;
+
+public class Main{
+    static int fibbo(int n)
+    {
+        if(n==0 || n==1)
+        {
+            return n;
+        }
+        return fibbo(n-1)+fibbo(n-2);
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter test case");
+        int t= sc.nextInt();
+
+        while(t>0)
+        {
+            System.out.println("enter times");
+            int n=sc.nextInt();
+            for(int i=0;i<=n;i++)
+            {
+                System.out.println(fibbo(i));
+            }
+         t--;
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+
+4)Write a Java function alternatingSum that takes an integer n as input and calculates the sum of natural numbers up to n with alternating signs. For example, if n is 5, the function should return 3, as the sum is 1 - 2 + 3 - 4 + 5 = 3.through recurssion
+
+ Test case 1: n = 10
+ The alternating sum is 1 - 2 + 3 - 4 + 5 - 6 + 7 - 8 + 9 - 10 = 5
+
+Test case 2: n = 2
+The alternating sum is 1 - 2 = -1 + 2 = 1
+
+import java.util.Scanner;
+
+public class Main{
+   static int sum(int n)
+   {
+       if(n==0)
+       {
+           return 0;
+       }
+       if(n%2==0)
+       {
+           return sum(n-1)+n;
+       }
+       else
+       {
+           return sum(n-1)-n;
+       }
+   }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter test case");
+        int t= sc.nextInt();
+
+        while(t>0)
+        {
+            System.out.println("enter times");
+            int n=sc.nextInt();
+            System.out.println(sum(n));
+            t--;
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+
+
+5)String vowel is present or not ?
+
+public class Main{
+    public static void main(String[] args) {
+        String s="regex is my learning platform";
+        char []c=s.toCharArray();
+
+        for(int i=0;i<c.length;i++)
+        {
+            if(c[i]=='a' ||c[i]=='e' ||c[i]=='i' ||c[i]=='o' ||c[i]=='u' )
+            {
+                System.out.println(c[i]+" = vowel is present");
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+how many vowel present (counting)
+
+public class Main{
+    public static void main(String[] args) {
+        String s="regex is my learning platform";
+        char []c=s.toCharArray();
+        int count=0;
+
+        for(int i=0;i<c.length;i++)
+        {
+            if(c[i]=='a' ||c[i]=='e' ||c[i]=='i' ||c[i]=='o' ||c[i]=='u' )
+            {
+                count++;
+            }
+        }
+        System.out.println("total vowel = "+count);
+    }
+}
+-----------------------------------------------------------------------------------------
+which is consonant and vowel 
+
+public class Main{
+    public static void main(String[] args) {
+        String s="regex is my learning platform";
+        char []c=s.toCharArray();
+        int count=0;
+
+        for(int i=0;i<c.length;i++)
+        {
+           if(c[i]!=' ')
+           {
+               if(c[i]=='a' ||c[i]=='e' ||c[i]=='i' ||c[i]=='o' ||c[i]=='u' )
+               {
+                   System.out.println(c[i]+" = it is vowel");
+               }
+               else
+               {
+                   System.out.println(c[i]+" = it is consonent");
+               }
+           }
+        }
+
+    }
+}
+
+regex is my learning platform :present
+-------------------------------------------------------------------------------------------
+
+6)
+Create a class Book with private attributes title and author. Implement the equals() method to compare two Book objects based on their title and author.
+
+class Book{
+    private String title;
+    private String author;
+
+    Book(String title,String author)
+    {
+        this.title=title;
+        this.author=author;
+    }
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+    public boolean equals(Book otherBook) {
+        if (this == otherBook) {
+            return true;
+        }
+        return this.title.equals(otherBook.getTitle()) && this.author.equals(otherBook.getAuthor());
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        Book b1=new Book("The Great Gatsby", "F. Scott Fitzgerald");
+        Book b2=new Book("The Great Gatsby", "F. Scott Fitzgerald");
+
+        if(b1.equals(b2))
+            System.out.println("Book 1 is the same as Book 2");
+        else
+            System.out.println("Book 1 is the different as Book 2");
+    }
+}
+---------------------------------------------------------------------------------------
+
+
+7)
+Create an interface Playable with a default method playMusic(). Create a class MP3Player that implements this interface and overrides the default method.
+
+interface Playable{
+    default void playMusic()
+    {
+        System.out.println("play music");
+    }
+}
+class MP3Player implements Playable{
+    public void playMusic(){
+        System.out.println("play music in mp3");
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        MP3Player m=new MP3Player();
+        m.playMusic();
+    }
+}
+------------------------------------------------------------------------------------------
+
+
+8)
+A perfect number is a positive integer that is equal to the sum of its proper divisors, excluding itself. For example, 28 is a perfect number because its divisors are 1, 2, 4, 7, and 14, and their sum is 28. Write a Java function to determine whether a given integer n is a perfect number.
+
+public class Main{
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        System.out.println("enter number to check perfect number");
+        int n= sc.nextInt();
+       int b=n;
+
+       int sum=0;
+       for(int i=1;i<n;i++)
+       {
+           if(n%i==0)
+           {
+               sum=sum+i;
+           }
+       }
+        if(sum==b)
+            System.out.println("it is perfect number");
+        else
+            System.out.println("it is not perfect number");
+    }
+}
+-------------------------------------------------------------------------------------
+
+9)
+Calculate the sum of each column in a 2D array.
+
+{1, 2, 3},=12
+{4, 5, 6},=15
+ {7, 8, 9}=18
+
+public class Main{
+    public static void main(String[] args) {
+       int a[][]={{1,2,3},{4,5,6},{7,8,9}};
+
+       for(int i=0;i<a.length;i++)
+       {
+           int sum=0;
+           for (int j=0;j<a[i].length;j++)
+           {
+              sum=sum+a[j][i];
+           }
+           System.out.println("sum for "+i+" column = "+sum);
+       }
+    }
+}
+------------------------------------------------------------------------------------------
+
+
+
