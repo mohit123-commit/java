@@ -1,0 +1,499 @@
+1) 
+45  89 34 67 83 12 77 23 
+
+LinkedList 
+
+add() method 
+
+public class Main {
+    static class Node{
+        int data;
+        Node next;
+        Node(int data)
+        {
+            this.data=data;
+        }
+    }
+    static class LinkedList{
+        Node head=null;
+        Node tail=null;
+
+        void add(int val)
+        {
+            Node temp=new Node(val);
+            if(head==null)
+            {
+                head=temp;
+            }
+            else
+            {
+                tail.next=temp;
+            }
+            tail=temp;
+        }
+        void display()
+        {
+            Node temp=head;
+            while (temp!=null)
+            {
+                System.out.print(temp.data+" ");
+                temp=temp.next;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        LinkedList ll=new LinkedList();
+        ll.add(45);
+        ll.add(89);
+        ll.add(34);
+        ll.add(67);
+        ll.add(83);
+        ll.add(12);
+        ll.add(77);
+        ll.add(23);
+        ll.display();
+    }
+}
+---------------------------------------------------
+2)
+45  89 34 67 83 12 77 23 
+
+LinkedList 
+
+add() method 
+show() method 
+
+public class Main {
+    static class Node{
+        int data;
+        Node next;
+        Node(int data)
+        {
+            this.data=data;
+        }
+    }
+    static class LinkedList{
+        Node head=null;
+        Node tail=null;
+
+        void add(int val)
+        {
+            Node temp=new Node(val);
+            if(head==null)
+            {
+                head=temp;
+            }
+            else
+            {
+                tail.next=temp;
+            }
+            tail=temp;
+        }
+        void show()
+        {
+            Node temp=head;
+            while (temp!=null)
+            {
+                System.out.print(temp.data+" ");
+                temp=temp.next;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        LinkedList ll=new LinkedList();
+        ll.add(45);
+        ll.add(89);
+        ll.add(34);
+        ll.add(67);
+        ll.add(83);
+        ll.add(12);
+        ll.add(77);
+        ll.add(23);
+        ll.show();
+    }
+}
+---------------------------------------------------
+3)
+45  89 34 67 83 12 77 23 
+
+LinkedList 
+
+add() method 
+display() 
+length() 
+
+public class Main {
+    static class Node{
+        int data;
+        Node next;
+        Node(int data)
+        {
+            this.data=data;
+        }
+    }
+    static class LinkedList{
+        Node head=null;
+        Node tail=null;
+
+        void add(int val)
+        {
+            Node temp=new Node(val);
+            if(head==null)
+            {
+                head=temp;
+            }
+            else
+            {
+                tail.next=temp;
+            }
+            tail=temp;
+        }
+        void display()
+        {
+            Node temp=head;
+            while (temp!=null)
+            {
+                System.out.print(temp.data+" ");
+                temp=temp.next;
+            }
+        }
+        int length()
+        {
+            int count=0;
+            Node temp=head;
+            while (temp!=null)
+            {
+                count++;
+                temp=temp.next;
+            }
+            return count;
+        }
+    }
+    public static void main(String[] args) {
+        LinkedList ll=new LinkedList();
+        ll.add(45);
+        ll.add(89);
+        ll.add(34);
+        ll.add(67);
+        ll.add(83);
+        ll.add(12);
+        ll.add(77);
+        ll.add(23);
+        ll.display();
+        System.out.println();
+        System.out.println("length is = "+ll.length());
+    }
+}
+---------------------------------------------------
+4)
+45  89 34 67 83 12 77 23 
+
+LinkedList 
+
+add() method 
+display()
+size() 
+
+public class Main {
+    static class Node{
+        int data;
+        Node next;
+        Node(int data)
+        {
+            this.data=data;
+        }
+    }
+    static class LinkedList{
+        Node head=null;
+        Node tail=null;
+
+        void add(int val)
+        {
+            Node temp=new Node(val);
+            if(head==null)
+            {
+                head=temp;
+            }
+            else
+            {
+                tail.next=temp;
+            }
+            tail=temp;
+        }
+        void display()
+        {
+            Node temp=head;
+            while (temp!=null)
+            {
+                System.out.print(temp.data+" ");
+                temp=temp.next;
+            }
+        }
+        int size()
+        {
+            int count=0;
+            Node temp=head;
+            while (temp!=null)
+            {
+                count++;
+                temp=temp.next;
+            }
+            return count;
+        }
+    }
+    public static void main(String[] args) {
+        LinkedList ll=new LinkedList();
+        ll.add(45);
+        ll.add(89);
+        ll.add(34);
+        ll.add(67);
+        ll.add(83);
+        ll.add(12);
+        ll.add(77);
+        ll.add(23);
+        ll.display();
+        System.out.println();
+        System.out.println("length is = "+ll.size());
+    }
+}
+---------------------------------------------------
+5)
+45  89 34 67 83 12 77 23 
+
+LinkedList 
+
+add() method 
+show() 
+addFirst() 
+
+public class Main {
+    static class Node{
+        int data;
+        Node next;
+        Node(int data)
+        {
+            this.data=data;
+        }
+    }
+    static class LinkedList{
+        Node head=null;
+        Node tail=null;
+
+        void add(int val)
+        {
+            Node temp=new Node(val);
+            if(head==null)
+            {
+                head=temp;
+            }
+            else
+            {
+                tail.next=temp;
+            }
+            tail=temp;
+        }
+        void show()
+        {
+            Node temp=head;
+            while (temp!=null)
+            {
+                System.out.print(temp.data+" ");
+                temp=temp.next;
+            }
+        }
+        void addFirst(int val)
+        {
+            Node temp=new Node(val);
+            if(head==null)
+            {
+                head=temp;
+            }
+            else {
+                temp.next=head;
+                head=temp;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        LinkedList ll=new LinkedList();
+        ll.add(45);
+        ll.add(89);
+        ll.add(34);
+        ll.add(67);
+        ll.add(83);
+        ll.add(12);
+        ll.add(77);
+        ll.add(23);
+        ll.show();
+        System.out.println();
+
+        ll.addFirst(20);
+        ll.addFirst(30);
+        ll.show();
+    }
+}
+---------------------------------------------------
+6)
+45  89 34 67 83 12 77 23 
+
+LinkedList 
+
+add() method 
+show()
+method:add element only mid mid() 
+
+public class Main {
+    static class Node{
+        int data;
+        Node next;
+        Node(int data)
+        {
+            this.data=data;
+        }
+    }
+    static class LinkedList{
+        Node head=null;
+        Node tail=null;
+
+        void add(int val)
+        {
+            Node temp=new Node(val);
+            if(head==null)
+            {
+                head=temp;
+            }
+            else
+            {
+                tail.next=temp;
+            }
+            tail=temp;
+        }
+        void show()
+        {
+            Node temp=head;
+            while (temp!=null)
+            {
+                System.out.print(temp.data+" ");
+                temp=temp.next;
+            }
+        }
+        int size() {
+            Node temp = head;
+            int count = 0;
+            if (temp != null) {
+                count++;
+                temp = temp.next;
+            }
+            return count;
+        }
+        void mid(int index,int val)
+        {
+            Node t=new Node(val);
+            Node temp=head;
+            if(index==size())
+            {
+                add(val);
+                return;
+            }
+            for(int i=1;i<index;i++)
+            {
+                temp=temp.next;
+            }
+            t.next=temp.next;
+            temp.next=t;
+        }
+    }
+    public static void main(String[] args) {
+        LinkedList ll=new LinkedList();
+        ll.add(45);
+        ll.add(89);
+        ll.add(34);
+        ll.add(67);
+        ll.add(83);
+        ll.add(12);
+        ll.add(77);
+        ll.add(23);
+        ll.show();
+        System.out.println();
+
+        ll.mid(2,20);
+        ll.mid(1,30);
+        ll.show();
+    }
+}
+---------------------------------------------------
+7)
+45  89 34 67 83 12 77 23 
+
+LinkedList 
+
+add() method 
+method: a element add on evry position of linkedlist exception first position
+
+public class Main {
+    static class Node{
+        int data;
+        Node next;
+        Node(int data)
+        {
+            this.data=data;
+        }
+    }
+    static class LinkedList{
+        Node head=null;
+        Node tail=null;
+
+        void add(int val)
+        {
+            Node temp=new Node(val);
+            if(head==null)
+            {
+                head=temp;
+            }
+            else
+            {
+                tail.next=temp;
+            }
+            tail=temp;
+        }
+        void show()
+        {
+            Node temp=head;
+            while (temp!=null)
+            {
+                System.out.print(temp.data+" ");
+                temp=temp.next;
+            }
+        }
+        void mid(int index,int val)
+        {
+            Node t=new Node(val);
+            Node temp=head;
+            for(int i=1;i<index;i++)
+            {
+                temp=temp.next;
+            }
+            t.next=temp.next;
+            temp.next=t;
+        }
+    }
+    public static void main(String[] args) {
+        LinkedList ll=new LinkedList();
+        ll.add(45);
+        ll.add(89);
+        ll.add(34);
+        ll.add(67);
+        ll.add(83);
+        ll.add(12);
+        ll.add(77);
+        ll.add(23);
+        ll.show();
+        System.out.println();
+
+        ll.mid(2,20);
+        ll.mid(1,30);
+        ll.mid(10,80);
+        ll.show();
+    }
+}
+---------------------------------------------------
