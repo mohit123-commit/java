@@ -1,0 +1,2368 @@
+1)
+Create a Java program that simulates a game of Rock, Paper, Scissors between two
+players. Take the choices as input and determine the winner using "if-else if"
+statements. If it's a tie, print "Tie.
+
+import java.util.Scanner;
+
+public class RockPaperScissorsGame {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Player 1, enter your choice (Rock, Paper, Scissors):");
+        String player1Choice = scanner.nextLine().toLowerCase();
+
+        System.out.println("Player 2, enter your choice (Rock, Paper, Scissors):");
+        String player2Choice = scanner.nextLine().toLowerCase();
+
+        // Determine the winner
+        if (player1Choice.equals(player2Choice)) {
+            System.out.println("It's a Tie!");
+        } else if (player1Choice.equals("rock") && player2Choice.equals("scissors") ||
+                   player1Choice.equals("paper") && player2Choice.equals("rock") ||
+                   player1Choice.equals("scissors") && player2Choice.equals("paper")) {
+            System.out.println("Player 1 wins!");
+        } else {
+            System.out.println("Player 2 wins!");
+        }
+
+        scanner.close();
+    }
+}
+=================================================================================================
+
+
+2)
+Create a Java program to determine whether a year is a leap year, but with additional
+conditions: if it's divisible by 4, it's a leap year, unless it's divisible by 100, except
+when it's also divisible by 400.
+
+import java.util.Scanner;
+
+public class LeapYearChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a year: ");
+        int year = scanner.nextInt();
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " is a leap year.");
+        } else {
+            System.out.println(year + " is not a leap year.");
+        }
+
+        scanner.close();
+    }
+}
+======================================================================================================
+
+
+3.Write a Java program that accepts a number as input and determines if it's positive,
+negative, or zero.
+
+import java.util.Scanner;
+
+public class NumberClassifier {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        double number = scanner.nextDouble();
+
+        if (number > 0) {
+            System.out.println("The number is positive.");
+        } else if (number < 0) {
+            System.out.println("The number is negative.");
+        } else {
+            System.out.println("The number is zero.");
+        }
+
+        scanner.close();
+    }
+}
+===================================================================================
+
+
+4.Implement a program that takes a string as input and checks if it's a valid email
+address according to a specific format.
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class EmailValidator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an email address: ");
+        String email = scanner.nextLine();
+
+        if (isValidEmail(email)) {
+            System.out.println("The email address is valid.");
+        } else {
+            System.out.println("The email address is not valid.");
+        }
+
+        scanner.close();
+    }
+
+    public static boolean isValidEmail(String email) {
+        // Define a simple email address pattern for demonstration
+        String emailPattern = "^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\\.[a-zA-Z]{2,}$";
+
+        // Create a Pattern object
+        Pattern pattern = Pattern.compile(emailPattern);
+
+        // Create a Matcher object
+        Matcher matcher = pattern.matcher(email);
+
+        // Check if the email matches the pattern
+        return matcher.matches();
+    }
+}
+============================================================================
+5.Write a Java program to simulate a basic calculator that can perform addition,
+subtraction, multiplication, and division operations.
+
+import java.util.Scanner;
+
+public class BasicCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.println("Select operation:");
+        System.out.println("1. Addition");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
+
+        System.out.print("Enter your choice (1-4): ");
+        int choice = scanner.nextInt();
+
+        double result = 0;
+
+        switch (choice) {
+            case 1:
+                result = num1 + num2;
+                System.out.println("Result: " + result);
+                break;
+            case 2:
+                result = num1 - num2;
+                System.out.println("Result: " + result);
+                break;
+            case 3:
+                result = num1 * num2;
+                System.out.println("Result: " + result);
+                break;
+            case 4:
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    System.out.println("Result: " + result);
+                } else {
+                    System.out.println("Error! Division by zero is not allowed.");
+                }
+                break;
+            default:
+                System.out.println("Invalid choice. Please choose a number between 1 and 4.");
+        }
+
+        scanner.close();
+    }
+}
+====================================================================================================
+6.Create a program that reads a year and a month as input and prints the number of
+days in that month, considering leap years for February.
+
+import java.util.Scanner;
+
+public class MonthDaysCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the year: ");
+        int year = scanner.nextInt();
+
+        System.out.print("Enter the month (1-12): ");
+        int month = scanner.nextInt();
+
+        if (isValidMonth(month)) {
+            int daysInMonth = getDaysInMonth(year, month);
+            System.out.println("Number of days in the specified month: " + daysInMonth);
+        } else {
+            System.out.println("Invalid month. Please enter a number between 1 and 12.");
+        }
+
+        scanner.close();
+    }
+
+    public static boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+
+    public static int getDaysInMonth(int year, int month) {
+        switch (month) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                return 31;
+            case 4: case 6: case 9: case 11:
+                return 30;
+            case 2:
+                return isLeapYear(year) ? 29 : 28;
+            default:
+                return -1; // Invalid month
+        }
+    }
+
+    public static boolean isValidMonth(int month) {
+        return month >= 1 && month <= 12;
+    }
+}
+============================================================================================
+
+7.Write a Java program that checks if a given number is a perfect square and, if it is,
+finds its square root.
+
+import java.util.Scanner;
+
+public class PerfectSquareChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        double number = scanner.nextDouble();
+
+        if (isPerfectSquare(number)) {
+            double squareRoot = Math.sqrt(number);
+            System.out.println(number + " is a perfect square.");
+            System.out.println("Square root: " + squareRoot);
+        } else {
+            System.out.println(number + " is not a perfect square.");
+        }
+
+        scanner.close();
+    }
+
+    public static boolean isPerfectSquare(double number) {
+        // Check if the square root is an integer
+        double squareRoot = Math.sqrt(number);
+        return squareRoot == Math.floor(squareRoot);
+    }
+}
+=================================================================================================
+8.Implement a program that calculates the age of a person based on their birthdate
+and the current date.
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class AgeCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your birthdate (yyyy-MM-dd): ");
+        String birthdateString = scanner.nextLine();
+
+        // Parse the input string to a LocalDate object
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate birthdate = LocalDate.parse(birthdateString, formatter);
+
+        // Get the current date
+        LocalDate currentDate = LocalDate.now();
+
+        // Calculate the age
+        int age = calculateAge(birthdate, currentDate);
+
+        System.out.println("Your age is: " + age + " years.");
+
+        scanner.close();
+    }
+
+    public static int calculateAge(LocalDate birthdate, LocalDate currentDate) {
+        // Calculate the age by subtracting the birthdate from the current date
+        int age = currentDate.getYear() - birthdate.getYear();
+
+        // Adjust age based on the month and day
+        if (currentDate.getMonthValue() < birthdate.getMonthValue() ||
+                (currentDate.getMonthValue() == birthdate.getMonthValue() &&
+                        currentDate.getDayOfMonth() < birthdate.getDayOfMonth())) {
+            age--;
+        }
+
+        return age;
+    }
+}
+=====================================================================================================
+9.Write a Java program to check if a given number is a strong number or not, where
+a strong number is the sum of its individual digits' factorial.
+
+import java.util.Scanner;
+
+public class StrongNumberChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        if (isStrongNumber(number)) {
+            System.out.println(number + " is a strong number.");
+        } else {
+            System.out.println(number + " is not a strong number.");
+        }
+
+        scanner.close();
+    }
+
+    public static boolean isStrongNumber(int number) {
+        int originalNumber = number;
+        int sum = 0;
+
+        while (number > 0) {
+            int digit = number % 10;
+            sum += factorial(digit);
+            number /= 10;
+        }
+
+        return sum == originalNumber;
+    }
+
+    public static int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+}
+======================================================================================
+
+10.Design a Java program to calculate the income tax for an individual based on their
+annual income. The program should apply different tax rates to different income
+ranges as defined by the tax laws. The tax rates should be applied progressively,
+with higher income levels incurring a higher tax rate. The program should prompt the
+user to input their income, and then it should determine the tax owed based on the
+following income ranges and associated tax rates:
+Income up to $50,000: 10% tax
+Income from $50,001 to $100,000: 20% tax
+Income over $100,000: 30% tax
+
+import java.util.Scanner;
+
+public class IncomeTaxCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your annual income: $");
+        double income = scanner.nextDouble();
+
+        double taxOwed = calculateIncomeTax(income);
+
+        System.out.println("Your income tax owed is: $" + taxOwed);
+
+        scanner.close();
+    }
+
+    public static double calculateIncomeTax(double income) {
+        double taxOwed;
+
+        if (income <= 50000) {
+            // 10% tax for income up to $50,000
+            taxOwed = income * 0.10;
+        } else if (income <= 100000) {
+            // 20% tax for income from $50,001 to $100,000
+            taxOwed = 50000 * 0.10 + (income - 50000) * 0.20;
+        } else {
+            // 30% tax for income over $100,000
+            taxOwed = 50000 * 0.10 + 50000 * 0.20 + (income - 100000) * 0.30;
+        }
+
+        return taxOwed;
+    }
+}
+================================================================================================
+
+11.Create a program that uses a for loop to find and print all the prime numbers
+between 1 and 100.
+
+public class PrimeNumberFinder {
+    public static void main(String[] args) {
+        System.out.println("Prime numbers between 1 and 100:");
+
+        for (int i = 2; i <= 100; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+================================================================================================
+
+12.Create a program that calculates and prints the sum of the squares of all even
+numbers between 1 and 100 using a for loop
+
+public class SumOfSquares {
+    public static void main(String[] args) {
+        int sum = 0;
+
+        for (int i = 2; i <= 100; i += 2) {
+            int square = i * i;
+            sum += square;
+        }
+
+        System.out.println("Sum of the squares of even numbers between 1 and 100: " + sum);
+    }
+}
+==================================================================================================
+13.Create a Java program that calculates and prints the sum of the first 100 prime
+numbers using a for loop.
+
+public class SumOfPrimes {
+    public static void main(String[] args) {
+        int count = 0;
+        int number = 2;
+        long sum = 0;
+
+        while (count < 100) {
+            if (isPrime(number)) {
+                sum += number;
+                count++;
+            }
+            number++;
+        }
+
+        System.out.println("Sum of the first 100 prime numbers: " + sum);
+    }
+
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+=========================================================================
+
+14.Implement a Java program to print the Pascal's triangle for a given number of rows using
+for loops.
+
+import java.util.Scanner;
+
+public class PascalsTriangle {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows for Pascal's Triangle: ");
+        int numRows = scanner.nextInt();
+
+        printPascalsTriangle(numRows);
+
+        scanner.close();
+    }
+
+    public static void printPascalsTriangle(int numRows) {
+        for (int i = 0; i < numRows; i++) {
+            int number = 1;
+
+            // Print spaces before the numbers
+            for (int j = 0; j < numRows - i; j++) {
+                System.out.print("   ");
+            }
+
+            for (int j = 0; j <= i; j++) {
+                System.out.printf("%6d", number);
+                number = number * (i - j) / (j + 1);
+            }
+
+            System.out.println();
+        }
+    }
+}
+=========================================================================================================
+
+15Write a Java program to find the second smallest element in an array without sorting it.
+
+import java.util.Scanner;
+
+public class SecondSmallestElement {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+
+        int[] array = new int[size];
+
+        System.out.println("Enter the elements of the array:");
+
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        int secondSmallest = findSecondSmallest(array);
+
+        System.out.println("The second smallest element in the array is: " + secondSmallest);
+
+        scanner.close();
+    }
+
+    public static int findSecondSmallest(int[] array) {
+        if (array.length < 2) {
+            System.out.println("Array should have at least two elements.");
+            return -1; // or throw an exception
+        }
+
+        int smallest = Integer.MAX_VALUE;
+        int secondSmallest = Integer.MAX_VALUE;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < smallest) {
+                secondSmallest = smallest;
+                smallest = array[i];
+            } else if (array[i] < secondSmallest && array[i] != smallest) {
+                secondSmallest = array[i];
+            }
+        }
+
+        return secondSmallest;
+    }
+}
+==========================================================================================================
+
+16. Implement a method to rotate an array to the right by K steps.
+
+import java.util.Arrays;
+
+public class ArrayRotation {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+        int k = 2;
+
+        System.out.println("Original Array: " + Arrays.toString(array));
+
+        rotateArrayRight(array, k);
+
+        System.out.println("Array after rotating to the right by " + k + " steps: " + Arrays.toString(array));
+    }
+
+    public static void rotateArrayRight(int[] nums, int k) {
+        int n = nums.length;
+
+        // Handle cases where k is greater than the array length
+        k = k % n;
+
+        // Reverse the entire array
+        reverse(nums, 0, n - 1);
+
+        // Reverse the first k elements
+        reverse(nums, 0, k - 1);
+
+        // Reverse the remaining elements
+        reverse(nums, k, n - 1);
+    }
+
+    public static void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            // Swap elements at start and end indices
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+
+            // Move indices toward the center
+            start++;
+            end--;
+        }
+    }
+}
+===============================================================================================================
+
+17Given two sorted arrays, merge them into a single sorted array without using extra space.
+
+public class MergeSortedArrays {
+    public static void main(String[] args) {
+        int[] nums1 = {1, 3, 5, 7};
+        int[] nums2 = {2, 4, 6, 8, 10};
+
+        mergeSortedArrays(nums1, nums2);
+
+        System.out.println("Merged Sorted Array: ");
+        for (int num : nums1) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static void mergeSortedArrays(int[] nums1, int[] nums2) {
+        int m = nums1.length;
+        int n = nums2.length;
+
+        int i = m - 1; // Index in nums1 for elements from nums1
+        int j = n - 1; // Index in nums2 for elements from nums2
+        int k = m + n - 1; // Index in nums1 for merged elements
+
+        // Merge elements from nums2 into nums1 in reverse order
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[k] = nums1[i];
+                i--;
+            } else {
+                nums1[k] = nums2[j];
+                j--;
+            }
+            k--;
+        }
+
+        // If there are remaining elements in nums2, copy them to nums1
+        while (j >= 0) {
+            nums1[k] = nums2[j];
+            j--;
+            k--;
+        }
+    }
+}
+==================================================================================================
+
+18Create a method to remove duplicates from an unsorted array without using extra space.
+
+import java.util.Arrays;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        int[] array = {3, 1, 2, 4, 2, 1, 5, 3};
+
+        System.out.println("Original Array: " + Arrays.toString(array));
+
+        removeDuplicates(array);
+
+        System.out.println("Array after removing duplicates: " + Arrays.toString(array));
+    }
+
+    public static void removeDuplicates(int[] nums) {
+        int n = nums.length;
+
+        // Sort the array in-place
+        Arrays.sort(nums);
+
+        // Initialize a variable to keep track of the index for the next non-duplicate element
+        int nextNonDuplicateIndex = 1;
+
+        // Iterate through the sorted array
+        for (int i = 1; i < n; i++) {
+            // If the current element is different from the previous one, update the array
+            if (nums[i] != nums[i - 1]) {
+                nums[nextNonDuplicateIndex] = nums[i];
+                nextNonDuplicateIndex++;
+            }
+        }
+
+        // Resize the array to remove the duplicates
+        nums = Arrays.copyOf(nums, nextNonDuplicateIndex);
+    }
+}
+===========================================================================================================
+
+19 Write a Java program to find the "intersection" of two arrays (elements present in both
+arrays).
+
+import java.util.HashSet;
+
+public class ArrayIntersection {
+    public static void main(String[] args) {
+        int[] array1 = {1, 2, 3, 4, 5};
+        int[] array2 = {3, 4, 5, 6, 7};
+
+        int[] intersection = findIntersection(array1, array2);
+
+        System.out.print("Intersection of the two arrays: ");
+        for (int num : intersection) {
+            System.out.print(num + " ");
+        }
+    }
+
+    public static int[] findIntersection(int[] nums1, int[] nums2) {
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> result = new HashSet<>();
+
+        // Add elements from the first array to the set
+        for (int num : nums1) {
+            set1.add(num);
+        }
+
+        // Check elements from the second array against the set
+        for (int num : nums2) {
+            if (set1.contains(num)) {
+                result.add(num);
+            }
+        }
+
+        // Convert the HashSet to an array
+        int[] intersection = new int[result.size()];
+        int index = 0;
+        for (int num : result) {
+            intersection[index++] = num;
+        }
+
+        return intersection;
+    }
+}
+==================================================================================================
+
+20 Given an array of integers, rearrange the array so that the even-indexed elements are
+greater than the odd-indexed elements.
+
+public class RearrangeArray {
+    public static void main(String[] args) {
+        int[] array = {3, 1, 4, 2, 5, 7, 8, 6};
+
+        System.out.println("Original Array: ");
+        printArray(array);
+
+        rearrangeArray(array);
+
+        System.out.println("\nArray after rearranging: ");
+        printArray(array);
+    }
+
+    public static void rearrangeArray(int[] nums) {
+        int n = nums.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            // Swap elements if the current index is even and the next element is smaller
+            if (i % 2 == 0 && nums[i] > nums[i + 1]) {
+                swap(nums, i, i + 1);
+            }
+            // Swap elements if the current index is odd and the next element is greater
+            else if (i % 2 != 0 && nums[i] < nums[i + 1]) {
+                swap(nums, i, i + 1);
+            }
+        }
+    }
+
+    public static void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+    public static void printArray(int[] nums) {
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+    }
+}
+==================================================================================================
+
+21 Write a Java program to find the saddle point of a matrix. A saddle point is an element
+that is the minimum in its row and the maximum in its column.
+
+import java.util.Scanner;
+
+public class SaddlePointFinder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows in the matrix: ");
+        int rows = scanner.nextInt();
+
+        System.out.print("Enter the number of columns in the matrix: ");
+        int columns = scanner.nextInt();
+
+        int[][] matrix = new int[rows][columns];
+
+        System.out.println("Enter the elements of the matrix:");
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        int[] saddlePoint = findSaddlePoint(matrix);
+
+        if (saddlePoint != null) {
+            System.out.println("Saddle point found at position: (" + saddlePoint[0] + ", " + saddlePoint[1] + ")");
+            System.out.println("Value at saddle point: " + matrix[saddlePoint[0]][saddlePoint[1]]);
+        } else {
+            System.out.println("No saddle point found in the matrix.");
+        }
+
+        scanner.close();
+    }
+
+    public static int[] findSaddlePoint(int[][] matrix) {
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                int currentElement = matrix[i][j];
+
+                // Check if the current element is the minimum in its row
+                boolean isMinInRow = true;
+                for (int k = 0; k < columns; k++) {
+                    if (matrix[i][k] < currentElement) {
+                        isMinInRow = false;
+                        break;
+                    }
+                }
+
+                // Check if the current element is the maximum in its column
+                boolean isMaxInColumn = true;
+                for (int k = 0; k < rows; k++) {
+                    if (matrix[k][j] > currentElement) {
+                        isMaxInColumn = false;
+                        break;
+                    }
+                }
+
+                // If both conditions are true, the current element is a saddle point
+                if (isMinInRow && isMaxInColumn) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+
+        // If no saddle point is found, return null
+        return null;
+    }
+}
+======================================================================================================================
+
+22 Create a Java program to rotate a given matrix 90 degrees clockwise in place, without
+using an extra matrix.
+
+import java.util.Scanner;
+
+public class RotateMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows in the matrix: ");
+        int rows = scanner.nextInt();
+
+        System.out.print("Enter the number of columns in the matrix: ");
+        int columns = scanner.nextInt();
+
+        int[][] matrix = new int[rows][columns];
+
+        System.out.println("Enter the elements of the matrix:");
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println("Original Matrix:");
+        printMatrix(matrix);
+
+        rotateMatrix(matrix);
+
+        System.out.println("\nMatrix after rotating 90 degrees clockwise:");
+        printMatrix(matrix);
+
+        scanner.close();
+    }
+
+    public static void rotateMatrix(int[][] matrix) {
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+
+        // Transpose the matrix
+        for (int i = 0; i < rows; i++) {
+            for (int j = i + 1; j < columns; j++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+            }
+        }
+
+        // Reverse each row of the transposed matrix
+        for (int i = 0; i < rows; i++) {
+            int start = 0;
+            int end = columns - 1;
+
+            while (start < end) {
+                int temp = matrix[i][start];
+                matrix[i][start] = matrix[i][end];
+                matrix[i][end] = temp;
+
+                start++;
+                end--;
+            }
+        }
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int num : row) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+=============================================================================================
+
+23 Write a Java program to perform matrix multiplication for two given matrices.
+
+import java.util.Scanner;
+
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows in the first matrix: ");
+        int rows1 = scanner.nextInt();
+
+        System.out.print("Enter the number of columns in the first matrix: ");
+        int columns1 = scanner.nextInt();
+
+        System.out.print("Enter the number of rows in the second matrix: ");
+        int rows2 = scanner.nextInt();
+
+        System.out.print("Enter the number of columns in the second matrix: ");
+        int columns2 = scanner.nextInt();
+
+        if (columns1 != rows2) {
+            System.out.println("Matrix multiplication is not possible. The number of columns in the first matrix " +
+                    "should be equal to the number of rows in the second matrix.");
+            return;
+        }
+
+        int[][] matrix1 = new int[rows1][columns1];
+        int[][] matrix2 = new int[rows2][columns2];
+
+        System.out.println("Enter the elements of the first matrix:");
+
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < columns1; j++) {
+                matrix1[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println("Enter the elements of the second matrix:");
+
+        for (int i = 0; i < rows2; i++) {
+            for (int j = 0; j < columns2; j++) {
+                matrix2[i][j] = scanner.nextInt();
+            }
+        }
+
+        int[][] result = multiplyMatrices(matrix1, matrix2);
+
+        System.out.println("Matrix multiplication result:");
+        printMatrix(result);
+
+        scanner.close();
+    }
+
+    public static int[][] multiplyMatrices(int[][] matrix1, int[][] matrix2) {
+        int rows1 = matrix1.length;
+        int columns1 = matrix1[0].length;
+        int rows2 = matrix2.length;
+        int columns2 = matrix2[0].length;
+
+        int[][] result = new int[rows1][columns2];
+
+        for (int i = 0; i < rows1; i++) {
+            for (int j = 0; j < columns2; j++) {
+                for (int k = 0; k < columns1; k++) {
+                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int num : row) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+========================================================================================================
+
+24 Create a Java program to calculate the sum of all the elements in a given 2D array in a
+spiral order.
+
+import java.util.Scanner;
+
+public class SpiralSum {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows in the 2D array: ");
+        int rows = scanner.nextInt();
+
+        System.out.print("Enter the number of columns in the 2D array: ");
+        int columns = scanner.nextInt();
+
+        int[][] array = new int[rows][columns];
+
+        System.out.println("Enter the elements of the 2D array:");
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                array[i][j] = scanner.nextInt();
+            }
+        }
+
+        int spiralSum = calculateSpiralSum(array);
+
+        System.out.println("Sum of elements in a spiral order: " + spiralSum);
+
+        scanner.close();
+    }
+
+    public static int calculateSpiralSum(int[][] matrix) {
+        int sum = 0;
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+
+        int top = 0, bottom = rows - 1, left = 0, right = columns - 1;
+
+        while (top <= bottom && left <= right) {
+            // Traverse top row
+            for (int i = left; i <= right; i++) {
+                sum += matrix[top][i];
+            }
+            top++;
+
+            // Traverse right column
+            for (int i = top; i <= bottom; i++) {
+                sum += matrix[i][right];
+            }
+            right--;
+
+            // Traverse bottom row
+            if (top <= bottom) {
+                for (int i = right; i >= left; i--) {
+                    sum += matrix[bottom][i];
+                }
+                bottom--;
+            }
+
+            // Traverse left column
+            if (left <= right) {
+                for (int i = bottom; i >= top; i--) {
+                    sum += matrix[i][left];
+                }
+                left++;
+            }
+        }
+
+        return sum;
+    }
+}
+
+===========================================================================================================================
+
+25 Create a class called Employee with properties like id, name, and a method
+displayDetails(). Derive two classes, Manager and Clerk, from the Employee class.
+Implement the displayDetails() method differently in each derived class.
+
+class Employee {
+    private int id;
+    private String name;
+
+    public Employee(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public void displayDetails() {
+        System.out.println("Employee ID: " + id);
+        System.out.println("Employee Name: " + name);
+    }
+}
+
+class Manager extends Employee {
+    private String department;
+
+    public Manager(int id, String name, String department) {
+        super(id, name);
+        this.department = department;
+    }
+
+    @Override
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Manager Department: " + department);
+    }
+}
+
+class Clerk extends Employee {
+    private int hoursWorked;
+
+    public Clerk(int id, String name, int hoursWorked) {
+        super(id, name);
+        this.hoursWorked = hoursWorked;
+    }
+
+    @Override
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("Clerk Hours Worked: " + hoursWorked);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Manager manager = new Manager(1, "John Doe", "Sales");
+        Clerk clerk = new Clerk(2, "Jane Smith", 40);
+
+        System.out.println("Manager Details:");
+        manager.displayDetails();
+
+        System.out.println("\nClerk Details:");
+        clerk.displayDetails();
+    }
+}
+------------------------------------------------------------------------------------------
+26 Implement a class hierarchy that models geometric shapes, with a base class Shape and
+derived classes like Circle, Rectangle, and Triangle. Include methods to calculate the area
+and perimeter for each shape.
+
+import java.lang.Math;
+
+class Shape {
+    public double calculateArea() {
+        return 0.0;
+    }
+
+    public double calculatePerimeter() {
+        return 0.0;
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * Math.pow(radius, 2);
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+class Triangle extends Shape {
+    private double side1;
+    private double side2;
+    private double side3;
+
+    public Triangle(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+
+    @Override
+    public double calculateArea() {
+        // Heron's formula for the area of a triangle
+        double s = (side1 + side2 + side3) / 2;
+        return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return side1 + side2 + side3;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5);
+        Rectangle rectangle = new Rectangle(4, 6);
+        Triangle triangle = new Triangle(3, 4, 5);
+
+        System.out.println("Circle Area: " + circle.calculateArea());
+        System.out.println("Circle Perimeter: " + circle.calculatePerimeter());
+
+        System.out.println("\nRectangle Area: " + rectangle.calculateArea());
+        System.out.println("Rectangle Perimeter: " + rectangle.calculatePerimeter());
+
+        System.out.println("\nTriangle Area: " + triangle.calculateArea());
+        System.out.println("Triangle Perimeter: " + triangle.calculatePerimeter());
+    }
+}
+----------------------------------------------------------------------------------------
+
+27 Design a class hierarchy for a library system with classes like Item (base class), Book,
+and DVD (derived classes). Include methods for checking out and returning items.
+
+import java.util.Date;
+
+class Item {
+    private int itemId;
+    private String title;
+    private boolean checkedOut;
+    private Date dueDate;
+
+    public Item(int itemId, String title) {
+        this.itemId = itemId;
+        this.title = title;
+        this.checkedOut = false;
+        this.dueDate = null;
+    }
+
+    public int getItemId() {
+        return itemId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public boolean isCheckedOut() {
+        return checkedOut;
+    }
+
+    public void checkOut() {
+        if (!checkedOut) {
+            checkedOut = true;
+            // Set a due date, for example, two weeks from the current date
+            dueDate = new Date(System.currentTimeMillis() + (14 * 24 * 60 * 60 * 1000));
+            System.out.println("Item checked out successfully. Due date: " + dueDate);
+        } else {
+            System.out.println("Item is already checked out.");
+        }
+    }
+
+    public void returnItem() {
+        if (checkedOut) {
+            checkedOut = false;
+            dueDate = null;
+            System.out.println("Item returned successfully.");
+        } else {
+            System.out.println("Item is not checked out.");
+        }
+    }
+}
+
+class Book extends Item {
+    private String author;
+
+    public Book(int itemId, String title, String author) {
+        super(itemId, title);
+        this.author = author;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+}
+
+class DVD extends Item {
+    private String director;
+
+    public DVD(int itemId, String title, String director) {
+        super(itemId, title);
+        this.director = director;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+}
+
+public class LibrarySystem {
+    public static void main(String[] args) {
+        Book book = new Book(1, "The Great Gatsby", "F. Scott Fitzgerald");
+        DVD dvd = new DVD(2, "Inception", "Christopher Nolan");
+
+        System.out.println("Book Details:");
+        System.out.println("Title: " + book.getTitle());
+        System.out.println("Author: " + book.getAuthor());
+
+        System.out.println("\nDVD Details:");
+        System.out.println("Title: " + dvd.getTitle());
+        System.out.println("Director: " + dvd.getDirector());
+
+        System.out.println("\nChecking out the book...");
+        book.checkOut();
+
+        System.out.println("\nChecking out the DVD...");
+        dvd.checkOut();
+
+        System.out.println("\nReturning the book...");
+        book.returnItem();
+
+        System.out.println("\nReturning the DVD...");
+        dvd.returnItem();
+    }
+}
+-----------------------------------------------------------------------------------------
+28 Create an abstract class Shape with an abstract method calculateArea(). Create two
+subclasses, Circle and Rectangle, that extend the Shape class and provide implementations
+for the calculateArea() method.
+
+abstract class Shape {
+    // Abstract method to calculate the area
+    public abstract double calculateArea();
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        // Area of a circle = π * r^2
+        return Math.PI * Math.pow(radius, 2);
+    }
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        // Area of a rectangle = length * width
+        return length * width;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5);
+        Rectangle rectangle = new Rectangle(4, 6);
+
+        System.out.println("Circle Area: " + circle.calculateArea());
+        System.out.println("Rectangle Area: " + rectangle.calculateArea());
+    }
+}
+------------------------------------------------------------------------------------------
+
+29 Create an abstract class Animal with an abstract method makeSound(). Create three
+subclasses, Dog, Cat, and Horse, that extend the Animal class and implement the
+makeSound() method.
+
+abstract class Animal {
+    // Abstract method to make a sound
+    public abstract void makeSound();
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks!");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Cat meows!");
+    }
+}
+
+class Horse extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Horse neighs!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+        Horse horse = new Horse();
+
+        System.out.println("Dog Sound:");
+        dog.makeSound();
+
+        System.out.println("\nCat Sound:");
+        cat.makeSound();
+
+        System.out.println("\nHorse Sound:");
+        horse.makeSound();
+    }
+}
+------------------------------------------------------------------------------------------
+
+30 Create a base class Shape with a method calculateArea(). Derive two classes Circle and
+Rectangle from Shape. Implement the area calculation logic for each class. Write a program
+that calculates the total area of multiple shapes.
+
+import java.util.ArrayList;
+import java.util.List;
+
+abstract class Shape {
+    // Abstract method to calculate the area
+    public abstract double calculateArea();
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        // Area of a circle = π * r^2
+        return Math.PI * Math.pow(radius, 2);
+    }
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    public double calculateArea() {
+        // Area of a rectangle = length * width
+        return length * width;
+    }
+}
+
+public class ShapeCalculator {
+    public static void main(String[] args) {
+        // Create instances of Circle and Rectangle
+        Circle circle1 = new Circle(5);
+        Rectangle rectangle1 = new Rectangle(4, 6);
+        Circle circle2 = new Circle(3);
+
+        // Store shapes in a list
+        List<Shape> shapes = new ArrayList<>();
+        shapes.add(circle1);
+        shapes.add(rectangle1);
+        shapes.add(circle2);
+
+        // Calculate total area of all shapes
+        double totalArea = calculateTotalArea(shapes);
+
+        // Display the total area
+        System.out.println("Total Area of all Shapes: " + totalArea);
+    }
+
+    // Method to calculate the total area of a list of shapes
+    private static double calculateTotalArea(List<Shape> shapes) {
+        double totalArea = 0;
+        for (Shape shape : shapes) {
+            totalArea += shape.calculateArea();
+        }
+        return totalArea;
+    }
+}
+------------------------------------------------------------------------------------------
+
+31 ArrayList:
+Create an ArrayList of integers and add elements to it. Then, iterate through the list and print
+the elements.
+Write a program to remove all even numbers from an ArrayList.
+Combine two ArrayLists into one.
+Find the maximum and minimum values in an ArrayList of integers.
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Collections;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+        // Create an ArrayList of integers and add elements to it
+        ArrayList<Integer> numbersList1 = new ArrayList<>();
+        numbersList1.add(5);
+        numbersList1.add(10);
+        numbersList1.add(15);
+        numbersList1.add(20);
+        numbersList1.add(25);
+
+        // Iterate through the list and print the elements
+        System.out.println("Elements in the ArrayList:");
+        for (int number : numbersList1) {
+            System.out.println(number);
+        }
+
+        // Remove all even numbers from the ArrayList
+        removeEvenNumbers(numbersList1);
+        System.out.println("\nArrayList after removing even numbers:");
+        for (int number : numbersList1) {
+            System.out.println(number);
+        }
+
+        // Create a second ArrayList and combine it with the first one
+        ArrayList<Integer> numbersList2 = new ArrayList<>();
+        numbersList2.add(30);
+        numbersList2.add(35);
+        numbersList2.add(40);
+
+        numbersList1.addAll(numbersList2);
+
+        System.out.println("\nCombined ArrayList:");
+        for (int number : numbersList1) {
+            System.out.println(number);
+        }
+
+        // Find the maximum and minimum values in the ArrayList
+        int max = Collections.max(numbersList1);
+        int min = Collections.min(numbersList1);
+
+        System.out.println("\nMaximum value in the ArrayList: " + max);
+        System.out.println("Minimum value in the ArrayList: " + min);
+    }
+
+    // Method to remove even numbers from an ArrayList
+    private static void removeEvenNumbers(ArrayList<Integer> list) {
+        Iterator<Integer> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next() % 2 == 0) {
+                iterator.remove();
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+
+32 HashMap:
+Create a HashMap to store the names and ages of people. Retrieve and print the age of a
+specific person.
+Remove an entry from a HashMap based on a given key.
+Check if a key exists in a HashMap.
+Iterate through the keys and values of a HashMap and print them.
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        // Create a HashMap to store names and ages
+        Map<String, Integer> peopleMap = new HashMap<>();
+
+        // Add entries to the HashMap
+        peopleMap.put("Alice", 25);
+        peopleMap.put("Bob", 30);
+        peopleMap.put("Charlie", 22);
+
+        // Retrieve and print the age of a specific person
+        String personToRetrieve = "Bob";
+        if (peopleMap.containsKey(personToRetrieve)) {
+            int age = peopleMap.get(personToRetrieve);
+            System.out.println(personToRetrieve + "'s age is: " + age);
+        } else {
+            System.out.println(personToRetrieve + " not found in the HashMap.");
+        }
+
+        // Remove an entry from the HashMap based on a given key
+        String personToRemove = "Charlie";
+        if (peopleMap.containsKey(personToRemove)) {
+            peopleMap.remove(personToRemove);
+            System.out.println(personToRemove + "'s entry removed from the HashMap.");
+        } else {
+            System.out.println(personToRemove + " not found in the HashMap.");
+        }
+
+        // Check if a key exists in the HashMap
+        String keyToCheck = "Alice";
+        if (peopleMap.containsKey(keyToCheck)) {
+            System.out.println(keyToCheck + " exists in the HashMap.");
+        } else {
+            System.out.println(keyToCheck + " not found in the HashMap.");
+        }
+
+        // Iterate through the keys and values of the HashMap and print them
+        System.out.println("\nIterating through the keys and values of the HashMap:");
+        for (Map.Entry<String, Integer> entry : peopleMap.entrySet()) {
+            System.out.println("Name: " + entry.getKey() + ", Age: " + entry.getValue());
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+33 HashSet:
+
+Create a HashSet of strings and add some duplicate values. Print the unique elements.
+Perform set operations (intersection, union, and difference) between two HashSets.
+Check if a HashSet is a subset of another HashSet.
+Remove a specific element from a HashSet.
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashSetExample {
+    public static void main(String[] args) {
+        // Create a HashSet of strings and add some duplicate values
+        Set<String> set1 = new HashSet<>();
+        set1.add("apple");
+        set1.add("banana");
+        set1.add("orange");
+        set1.add("banana"); // Adding a duplicate value
+
+        // Print the unique elements
+        System.out.println("Unique elements in set1:");
+        for (String element : set1) {
+            System.out.println(element);
+        }
+
+        // Create another HashSet with different elements
+        Set<String> set2 = new HashSet<>();
+        set2.add("orange");
+        set2.add("grape");
+        set2.add("watermelon");
+
+        // Perform set operations (intersection, union, and difference) between two HashSets
+        Set<String> intersection = new HashSet<>(set1);
+        intersection.retainAll(set2); // Intersection
+
+        Set<String> union = new HashSet<>(set1);
+        union.addAll(set2); // Union
+
+        Set<String> difference = new HashSet<>(set1);
+        difference.removeAll(set2); // Difference (elements in set1 but not in set2)
+
+        // Print the results of set operations
+        System.out.println("\nIntersection of set1 and set2:");
+        System.out.println(intersection);
+
+        System.out.println("\nUnion of set1 and set2:");
+        System.out.println(union);
+
+        System.out.println("\nDifference of set1 and set2:");
+        System.out.println(difference);
+
+        // Check if a HashSet is a subset of another HashSet
+        System.out.println("\nIs set2 a subset of set1? " + set1.containsAll(set2));
+
+        // Remove a specific element from a HashSet
+        String elementToRemove = "banana";
+        set1.remove(elementToRemove);
+
+        // Print the HashSet after removing the element
+        System.out.println("\nHashSet set1 after removing \"" + elementToRemove + "\":");
+        for (String element : set1) {
+            System.out.println(element);
+        }
+    }
+}
+-----------------------------------------------------------------------------------------
+34 How do you create a Pattern object in Java to represent a regular expression?
+
+import java.util.regex.Pattern;
+
+public class PatternExample {
+    public static void main(String[] args) {
+        // Creating a Pattern object using the compile method
+        Pattern pattern = Pattern.compile("[0-9]+");
+
+        // Now, you can use the 'pattern' object for matching or searching
+        String input = "12345";
+
+        // Using the pattern to check if the input matches
+        boolean isMatch = pattern.matcher(input).matches();
+        System.out.println("Is input a match? " + isMatch);
+    }
+}
+-------------------------------------------------------------------------------------------
+35 How can you create a Matcher object in Java to match a regular expression against a
+string?
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class MatcherExample {
+    public static void main(String[] args) {
+        // Step 1: Create a Pattern object
+        Pattern pattern = Pattern.compile("\\b\\d{3}-\\d{2}-\\d{4}\\b");
+
+        // Step 2: Create a Matcher object
+        String input = "The Social Security numbers are 123-45-6789 and 987-65-4321.";
+        Matcher matcher = pattern.matcher(input);
+
+        // Step 3: Use the Matcher object
+        while (matcher.find()) {
+            // Print the matched substring
+            System.out.println("Found match: " + matcher.group());
+        }
+
+        // Alternatively, you can use matches() for a complete match
+        boolean isMatch = Pattern.matches("\\d{3}-\\d{2}-\\d{4}", "123-45-6789");
+        System.out.println("Is it a complete match? " + isMatch);
+    }
+}
+-----------------------------------------------------------------------------------------
+36 How do you use the split() method with a regular expression to split a string into an
+array?
+
+public class SplitExample {
+    public static void main(String[] args) {
+        // Example string with comma-separated values
+        String data = "apple,orange,banana,grape";
+
+        // Split the string using a comma as the delimiter
+        String[] fruits = data.split(",");
+
+        // Print each element of the resulting array
+        System.out.println("Splitting string using ',' as the delimiter:");
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+
+        // Example with a regular expression as the delimiter
+        String sentence = "Hello world! How are you today?";
+
+        // Split the string using spaces or punctuation as delimiters
+        String[] words = sentence.split("[\\s!,.?]+");
+
+        // Print each word of the resulting array
+        System.out.println("\nSplitting string using a regular expression as the delimiter:");
+        for (String word : words) {
+            System.out.println(word);
+        }
+    }
+}
+-----------------------------------------------------------------------------------------
+
+37 How do you open a file for reading in Java?
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class BufferedReaderExample {
+    public static void main(String[] args) {
+        // Specify the path to the file you want to read
+        String filePath = "path/to/your/file.txt";
+
+        // Use try-with-resources to ensure the BufferedReader is closed
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                // Process each line (e.g., print it)
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+
+38 How do you open a file for writing in Java?
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class BufferedWriterExample {
+    public static void main(String[] args) {
+        // Specify the path to the file you want to write
+        String filePath = "path/to/your/outputfile.txt";
+
+        // Use try-with-resources to ensure the BufferedWriter is closed
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filePath))) {
+            // Write content to the file
+            String content = "Hello, this is a sample content.";
+            bufferedWriter.write(content);
+            System.out.println("File has been written successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+
+39 Write Java code to read a text file line by line and print its contents.
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReadFileLineByLine {
+    public static void main(String[] args) {
+        // Specify the path to the text file you want to read
+        String filePath = "path/to/your/textfile.txt";
+
+        // Use try-with-resources to ensure the BufferedReader is closed
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            // Read each line and print its content
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+40 How can you check if a file exists in Java before reading or writing to it?
+
+import java.io.File;
+
+public class FileExistsExample {
+    public static void main(String[] args) {
+        // Specify the path to the file you want to write
+        String filePath = "path/to/your/outputfile.txt";
+
+        // Create a File object
+        File fileToWrite = new File(filePath);
+
+        // Check if the file exists before writing
+        if (fileToWrite.exists()) {
+            // Write to the file here
+            System.out.println("File exists. Writing contents...");
+        } else {
+            System.out.println("File does not exist. Cannot write.");
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+41)Basic Thread Creation: Create two threads and make them print "Hello" and "World"
+alternatively.
+
+public class Main {
+
+    public static void main(String[] args) {
+        HelloRunnable helloRunnable = new HelloRunnable();
+        WorldRunnable worldRunnable = new WorldRunnable();
+        
+        Thread helloThread = new Thread(helloRunnable);
+        Thread worldThread = new Thread(worldRunnable);
+        
+        helloThread.start();
+        worldThread.start();
+    }
+}
+
+class HelloRunnable implements Runnable {
+    @Override
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Hello");
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+class WorldRunnable implements Runnable {
+    @Override
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println("World");
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+42) Thread Synchronization: Implement a program that demonstrates the use of
+synchronized keyword to ensure thread safety.
+
+
+public class SynchronizedExample {
+
+    public static void main(String[] args) {
+        // Create an instance of a shared resource
+        SharedResource sharedResource = new SharedResource();
+
+        // Create two threads and pass the shared resource to them
+        Thread thread1 = new Thread(new MyRunnable(sharedResource));
+        Thread thread2 = new Thread(new MyRunnable(sharedResource));
+
+        // Start the threads
+        thread1.start();
+        thread2.start();
+    }
+}
+
+// Shared resource class
+class SharedResource {
+    private int counter = 0;
+
+    // Synchronized method to ensure thread safety
+    public synchronized void increment() {
+        for (int i = 0; i < 5; i++) { // Adjust the loop count as needed
+            System.out.println(Thread.currentThread().getName() + " - Counter: " + (++counter));
+            try {
+                Thread.sleep(100); // Optional: Add a short delay between increments
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+// Runnable implementation that uses the shared resource
+class MyRunnable implements Runnable {
+    private final SharedResource sharedResource;
+
+    public MyRunnable(SharedResource sharedResource) {
+        this.sharedResource = sharedResource;
+    }
+
+    @Override
+    public void run() {
+        // Call the synchronized method on the shared resource
+        sharedResource.increment();
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+43) Write a Java program that generates an ArithmeticException and handles it using a
+try-catch block.
+
+public class ArithmeticExceptionExample {
+
+    public static void main(String[] args) {
+        try {
+            // Attempt to divide by zero, which will result in ArithmeticException
+            int result = divideByZero();
+            System.out.println("Result: " + result); // This line won't be executed if an exception occurs
+        } catch (ArithmeticException e) {
+            // Handle the ArithmeticException
+            System.out.println("Caught an ArithmeticException: " + e.getMessage());
+        }
+    }
+
+    public static int divideByZero() {
+        int numerator = 10;
+        int denominator = 0;
+
+        // Attempt to divide by zero, which will result in ArithmeticException
+        return numerator / denominator;
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+44 Create a Java program that throws an ArrayIndexOutOfBoundsException and handles it
+gracefully.
+
+public class ArrayIndexOutOfBoundsExceptionExample {
+
+    public static void main(String[] args) {
+        try {
+            // Attempt to access an index that is out of bounds in an array
+            int[] array = {1, 2, 3};
+            int value = getValueAtIndex(array, 5);
+            System.out.println("Value at index 5: " + value); // This line won't be executed if an exception occurs
+        } catch (ArrayIndexOutOfBoundsException e) {
+            // Handle the ArrayIndexOutOfBoundsException
+            System.out.println("Caught an ArrayIndexOutOfBoundsException: " + e.getMessage());
+        }
+    }
+
+    public static int getValueAtIndex(int[] array, int index) {
+        // Attempt to access an index that may be out of bounds
+        return array[index];
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+45 Develop a Java program that uses the finally block to ensure a piece of code is executed
+regardless of whether an exception occurs or not.
+
+public class FinallyBlockExample {
+
+    public static void main(String[] args) {
+        try {
+            // Some code that may throw an exception
+            int result = divideNumbers(10, 0);
+            System.out.println("Result: " + result); // This line won't be executed if an exception occurs
+        } catch (ArithmeticException e) {
+            // Handle the ArithmeticException
+            System.out.println("Caught an ArithmeticException: " + e.getMessage());
+        } finally {
+            // Code in the finally block will be executed regardless of whether an exception occurs or not
+            System.out.println("Finally block executed");
+        }
+    }
+
+    public static int divideNumbers(int numerator, int denominator) {
+        // Attempt to divide by zero, which will result in ArithmeticException
+        return numerator / denominator;
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+46 Implement a Java program that reads an integer from the user and handles the
+InputMismatchException using a try-catch block.
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class InputMismatchExceptionExample {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.print("Enter an integer: ");
+            int userInput = scanner.nextInt();
+            System.out.println("You entered: " + userInput);
+        } catch (InputMismatchException e) {
+            // Handle the InputMismatchException
+            System.out.println("Invalid input. Please enter a valid integer.");
+        } finally {
+            // Close the scanner to prevent resource leak
+            scanner.close();
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+47 Design a class structure for an online shopping system using aggregation.
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Product {
+    private String productName;
+    private double price;
+
+    // Constructor, getters, and setters
+
+    public Product(String productName, double price) {
+        this.productName = productName;
+        this.price = price;
+    }
+
+    // Other methods as needed
+}
+
+class ShoppingCart {
+    private List<Product> products;
+
+    // Constructor, getters, and setters
+
+    public ShoppingCart() {
+        this.products = new ArrayList<>();
+    }
+
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+
+    // Other methods as needed
+}
+
+class Order {
+    private int orderId;
+    private List<Product> orderedProducts;
+
+    // Constructor, getters, and setters
+
+    public Order(int orderId) {
+        this.orderId = orderId;
+        this.orderedProducts = new ArrayList<>();
+    }
+
+    public void addProduct(Product product) {
+        orderedProducts.add(product);
+    }
+
+    // Other methods as needed
+}
+
+class Customer {
+    private String customerName;
+    private ShoppingCart shoppingCart;
+    private List<Order> orderHistory;
+
+    // Constructor, getters, and setters
+
+    public Customer(String customerName) {
+        this.customerName = customerName;
+        this.shoppingCart = new ShoppingCart();
+        this.orderHistory = new ArrayList<>();
+    }
+
+    public void addToCart(Product product) {
+        shoppingCart.addProduct(product);
+    }
+
+    public void placeOrder() {
+        Order newOrder = new Order(orderHistory.size() + 1);
+        newOrder.addProducts(shoppingCart.getProducts());
+        orderHistory.add(newOrder);
+        shoppingCart.clear();
+    }
+
+    // Other methods as needed
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+48 Create a class Cart that aggregates Product objects and provides methods for adding
+and removing items.
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Product {
+    private String productName;
+    private double price;
+
+    // Constructor, getters, and setters
+
+    public Product(String productName, double price) {
+        this.productName = productName;
+        this.price = price;
+    }
+
+    // Other methods as needed
+}
+
+class Cart {
+    private List<Product> items;
+
+    // Constructor, getters, and setters
+
+    public Cart() {
+        this.items = new ArrayList<>();
+    }
+
+    public void addItem(Product product) {
+        items.add(product);
+    }
+
+    public void removeItem(Product product) {
+        items.remove(product);
+    }
+
+    public List<Product> getItems() {
+        return new ArrayList<>(items); // Return a copy to prevent direct modification of the internal list
+    }
+
+    // Other methods as needed
+}
+
+public class ShoppingCartExample {
+    public static void main(String[] args) {
+        // Create some products
+        Product laptop = new Product("Laptop", 999.99);
+        Product smartphone = new Product("Smartphone", 499.99);
+
+        // Create a cart
+        Cart cart = new Cart();
+
+        // Add items to the cart
+        cart.addItem(laptop);
+        cart.addItem(smartphone);
+
+        // Display items in the cart
+        System.out.println("Items in the cart:");
+        for (Product item : cart.getItems()) {
+            System.out.println(item.getProductName() + " - $" + item.getPrice());
+        }
+
+        // Remove an item from the cart
+        cart.removeItem(laptop);
+
+        // Display updated items in the cart
+        System.out.println("\nItems in the cart after removal:");
+        for (Product item : cart.getItems()) {
+            System.out.println(item.getProductName() + " - $" + item.getPrice());
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+49 Develop a Java class Team that aggregates a list of Player objects and offers methods
+for adding and removing players.
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Player {
+    private String playerName;
+    private int playerNumber;
+
+    // Constructor, getters, and setters
+
+    public Player(String playerName, int playerNumber) {
+        this.playerName = playerName;
+        this.playerNumber = playerNumber;
+    }
+
+    // Other methods as needed
+}
+
+class Team {
+    private String teamName;
+    private List<Player> players;
+
+    // Constructor, getters, and setters
+
+    public Team(String teamName) {
+        this.teamName = teamName;
+        this.players = new ArrayList<>();
+    }
+
+    public void addPlayer(Player player) {
+        players.add(player);
+    }
+
+    public void removePlayer(Player player) {
+        players.remove(player);
+    }
+
+    public List<Player> getPlayers() {
+        return new ArrayList<>(players); // Return a copy to prevent direct modification of the internal list
+    }
+
+    // Other methods as needed
+}
+
+public class TeamExample {
+    public static void main(String[] args) {
+        // Create some players
+        Player player1 = new Player("John", 7);
+        Player player2 = new Player("Alice", 12);
+
+        // Create a team
+        Team team = new Team("TeamA");
+
+        // Add players to the team
+        team.addPlayer(player1);
+        team.addPlayer(player2);
+
+        // Display players in the team
+        System.out.println("Players in " + team.getTeamName() + ":");
+        for (Player player : team.getPlayers()) {
+            System.out.println(player.getPlayerName() + " - #" + player.getPlayerNumber());
+        }
+
+        // Remove a player from the team
+        team.removePlayer(player1);
+
+        // Display updated players in the team
+        System.out.println("\nPlayers in " + team.getTeamName() + " after removal:");
+        for (Player player : team.getPlayers()) {
+            System.out.println(player.getPlayerName() + " - #" + player.getPlayerNumber());
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+50 Implement a class Car that demonstrates aggregation with an Engine class as an attribute
+
+class Engine {
+    private String engineType;
+
+    // Constructor, getters, and setters
+
+    public Engine(String engineType) {
+        this.engineType = engineType;
+    }
+
+    public String getEngineType() {
+        return engineType;
+    }
+
+    // Other methods as needed
+}
+
+class Car {
+    private String carModel;
+    private Engine carEngine;
+
+    // Constructor, getters, and setters
+
+    public Car(String carModel, Engine carEngine) {
+        this.carModel = carModel;
+        this.carEngine = carEngine;
+    }
+
+    public Engine getCarEngine() {
+        return carEngine;
+    }
+
+    // Other methods as needed
+}
+
+public class CarExample {
+    public static void main(String[] args) {
+        // Create an engine
+        Engine v8Engine = new Engine("V8");
+
+        // Create a car with the engine
+        Car sportsCar = new Car("SportsCar", v8Engine);
+
+        // Display car information including engine type
+        System.out.println("Car Model: " + sportsCar.getCarModel());
+        System.out.println("Engine Type: " + sportsCar.getCarEngine().getEngineType());
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
