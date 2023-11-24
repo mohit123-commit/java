@@ -1,0 +1,678 @@
+1)
+
+Rat Count House
+The function accepts two positive integers ‘r’ and ‘unit’ and a positive integer array ‘arr’ of
+size ‘n’ as its argument ‘r’ represents the number of rats present in an area, ‘unit’ is the
+amount of food each rat consumes and each ith element of array ‘arr’ represents the amount
+of food present in ‘i+1’ house number, where 0 <= i
+Note:
+a)Return -1 if the array is null
+b)Return 0 if the total amount of food from all houses is not sufficient for all the rats.
+c)Computed values lie within the integer range.
+Example:
+Input:
+->r: 7
+->unit: 2
+->n: 8
+->arr: 2 8 3 5 7 4 1 2
+output :
+4
+Explanation:
+Total amount of food required for all rats = r * unit
+= 7 * 2 = 14.
+The amount of food in 1st houses = 2+8+3+5 = 18. Since, amount of food in 1st 4 houses is
+sufficient for all the rats. Thus, output is 4.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter r");
+        int r= sc.nextInt();
+        System.out.println("enter unit");
+        int unit= sc.nextInt();
+
+        System.out.println("enter size");
+        int size= sc.nextInt();
+        int a[]=new int[size];
+
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]= sc.nextInt();
+        }
+
+        if(size==0)
+        {
+            System.out.println(-1);
+        }
+        else
+        {
+            int total=0;
+            int count=0;
+            for(int i=0;i<a.length;i++)
+            {
+                total=total+a[i];
+                count++;
+                if(total>=(r*unit))
+                {
+                    System.out.println(count);
+                    break;
+                }
+                else {
+                    System.out.println(0);
+                    break;
+                }
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+2)
+Problem Statement
+You are given a function,
+Int MaxExponents (int a , int b);
+You have to find and return the number between ‘a’ and ‘b’ ( range inclusive on both ends)
+which has the maximum exponent of 2.
+The algorithm to find the number with maximum exponent of 2 between the given range is
+1.Loop between ‘a’ and ‘b’. Let the looping variable be ‘i’.
+2.Find the exponent (power) of 2 for each ‘i’ and store the number with maximum exponent
+of 2 so faqrd in a variable , let say ‘max’. Set ‘max’ to ‘i’ only if ‘i’ has more exponent of 2
+than ‘max’.
+3.Return ‘max’.
+Assumption: a <b
+Note: If two or more numbers in the range have the same exponents of 2 , return the small
+number.
+Example
+Input:
+7
+12
+Output:
+8
+Explanation:
+Exponents of 2 in:
+7-0
+8-3
+9-0
+10-1
+11-0
+12-2
+Hence maximum exponent if two is of 8
+
+import java.util.Scanner;
+public class Main {
+    static int MaxExponents (int a , int b)
+    {
+
+        int max=0;
+        int x=0;
+        for(int i=a;i<=b;i++)
+        {
+
+            int p=i;
+            int count=0;
+            while (p%2==0)
+            {
+                p = p / 2;
+                count++;
+            }
+            if(max<count)
+            {
+                max=count;
+                x=i;
+            }
+        }
+        return x;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter a");
+        int a = sc.nextInt();
+        System.out.println("enter b");
+        int b = sc.nextInt();
+
+        System.out.println(MaxExponents(a,b));
+    }
+}
+----------------------------------------------------------------------------------------
+3)
+Find the maximum value and its index in the array
+Problem Statement :
+You are given a function, void MaxInArray(int arr[], int length); The function accepts
+an integer array ‘arr’ of size ‘length’ as its argument. Implement the function to find
+the maximum element of the array and print the maximum element and its index to
+the standard output
+(STDOUT). The maximum element and its index should be printed in separate lines.
+Note:
+a)Array index starts with 0
+b)Maximum element and its index should be separated by a line in the output
+c)Assume there is only 1 maximum element in the array
+d)Print exactly what is asked, do not print any additional greeting messages
+Example:
+Input:
+23 45 82 27 66 12 78 13 71 86
+Output:
+86
+9
+
+public class Main {
+    static void MaxInArray(int a[], int length)
+    {
+        int p=0;
+        int max=0;
+        for(int i=0;i<a.length;i++)
+        {
+
+           if(max<a[i])
+           {
+               max=a[i];
+               p=i;
+           }
+        }
+        System.out.println("max= "+max);
+        System.out.println("index= "+p);
+    }
+    public static void main(String[] args) {
+        int a[]={23 ,45, 82, 27, 66, 12, 78, 13, 71, 86};
+        int length=a.length;
+
+        MaxInArray(a,length);
+    }
+}
+-------------------------------------------------------------------------------------------------------
+4)
+In a theater, there is a discount scheme announced where one gets a 10% discount
+on the total cost of tickets when there is a bulk booking of more than 20 tickets, and
+a discount of 2% on the total cost of tickets if a special coupon card is submitted.
+Develop a program to find the total cost as per the scheme. The cost of the k class
+ticket is Rs.75 and q class is Rs.150. Refreshments can also be opted by paying an
+additional of Rs. 50 per member.
+Hint: k and q and You have to book minimum of 5 tickets and maximum of 40 at a
+time. If fails display “Minimum of 5 and Maximum of 40 Tickets”. If circle is given a
+value other than ‘k’ or ‘q’ the output should be “Invalid Input”.
+The ticket cost should be printed exactly to two decimal places.
+Sample Input 1:
+Enter the no of ticket:35
+Do you want refreshment:y
+Do you have coupon code:y
+Enter the circle:k
+Sample Output 1:
+Ticket cost:4065.25
+Sample Input 2:
+Enter the no of ticket:1
+Sample Output 2:
+Minimum of 5 and Maximum of 40 Tickets
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the no of ticket");
+        int ticket= sc.nextInt();
+
+        if(ticket<5 || ticket>40)
+        {
+            System.out.println("Minimum of 5 and Maximum of 40 Tickets");
+        }
+        else
+        {
+            System.out.println("Do you want refreshment");
+            char refresh=sc.next().charAt(0);
+            System.out.println("Do you have coupon code");
+            char coupon=sc.next().charAt(0);
+            System.out.println("Enter the circle");
+            char circle=sc.next().charAt(0);
+
+            double totalcost=0.0;
+            if(circle=='k')
+            {
+                totalcost=75*ticket;
+            }
+            else if(circle=='q')
+            {
+                totalcost=150*ticket;
+            }
+            else {
+                System.out.println("Invalid Input");
+                return;
+            }
+
+            if(ticket>20)
+            {
+                totalcost=totalcost-(0.1*totalcost);
+            }
+            if(coupon=='y')
+            {
+                totalcost=totalcost-(0.02*totalcost);
+            }
+            if(refresh=='y')
+            {
+                totalcost=totalcost+(50.0*ticket);
+            }
+            System.out.println("Ticket cost:"+totalcost);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+5)
+Problem Statement
+Alex works at a clothing store. There is a large pile of socks that must be paired by
+color for sale. Given an array of integers representing the color of each sock,
+determine how many pairs of socks with matching colors there are.
+For example, there are n=7 socks with colors ar = {1,2,1,2,1,3,2}. There is one pair
+of color 1 and one of color 2. There are three odd socks left, one of each color. The
+number of pairs is 2.
+Function Description
+Complete the sockMerchant function in the editor below. It must return an integer
+representing the number of matching pairs of socks that are available.
+sockMerchant has the following parameter(s):
+n: the number of socks in the pile
+ar: the colors of each sock
+Input Format
+The first line contains an integer n, the number of socks represented in ar.
+The second line contains n space-separated integers describing the colors
+ar[i] of the socks in the pile.
+Constraints
+1 <= n <= 100
+1 <= ar[i] <= 100 & 0 <= i < n
+Output Format
+Return the total number of matching pairs of socks that Alex can sell.
+Sample Input
+9
+10 20 20 10 10 30 50 10 20
+Sample Output
+3
+Explanation
+Alex can match 3 pairs of socks i.e 10-10, 10-10, 20-20
+while the left out socks are 50, 60, 20
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+        int size=sc.nextInt();
+
+        int a[]=new int[size];
+
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+
+
+        int count=0;
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]==a[j] && a[j]!=0)
+                {
+                  count++;
+                  a[j]=0;
+                  break;
+                }
+            }
+        }
+        System.out.println(count);
+    }
+}
+------------------------------------------------------------------------------------------------
+6)
+Problem Statement – FOE college wants to recognize the department which has
+succeeded in getting the maximum number of placements for this academic year.
+The departments that have participated in the recruitment drive are CSE,ECE,
+MECH. Help the college find the department getting maximum placements. Check
+for all the possible output given in the sample snapshot
+Note : If any input is negative, the output should be “Input is Invalid”. If all
+department has equal number of placements, the output should be “None of the
+department has got the highest placement”.
+Sample Input 1:
+Enter the no of students placed in CSE:90
+Enter the no of students placed in ECE:45
+Enter the no of students placed in MECH:70
+Sample Output 1:
+Highest placement
+CSE
+Sample Input 2:
+Enter the no of students placed in CSE:55
+Enter the no of students placed in ECE:85
+Enter the no of students placed in MECH:85
+Sample Output 2:
+Highest placement
+ECE
+MECH
+Sample Input 3:
+Enter the no of students placed in CSE:0
+Enter the no of students placed in ECE:0
+Enter the no of students placed in MECH:0
+Sample Output 3:
+None of the department has got the highest placement
+Sample Input 4:
+Enter the no of students placed in CSE:10
+Enter the no of students placed in ECE:-50
+Enter the no of students placed in MECH:40
+Sample Output 4:
+Input is Invalid
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the no of students placed in CSE");
+        int cs= sc.nextInt();
+        System.out.println("Enter the no of students placed in ECE");
+        int ec= sc.nextInt();
+        System.out.println("Enter the no of students placed in MECH");
+        int me= sc.nextInt();
+
+        if(cs<0 || ec<0 || me<0)
+        {
+            System.out.println("Input is Invalid");
+        }
+        else if(cs==ec && ec==me)
+        {
+            System.out.println("None of the department has got the highest placement");
+        }
+        else if(cs>ec && cs>me)
+        {
+            System.out.println("CSE");
+        }
+        else if(me>ec && me>cs)
+        {
+            System.out.println("MECH");
+        }
+
+        else if(cs<ec && cs<me && ec==me)
+        {
+            System.out.println("ECE");
+            System.out.println("MECH");
+        }
+        else if(me<ec && me<cs && ec==cs)
+        {
+            System.out.println("ECE");
+            System.out.println("CSE");
+        }
+        else if(ec<me && ec<cs && me==cs)
+        {
+            System.out.println("MECH");
+            System.out.println("CSE");
+        }
+        else
+        {
+            System.out.println("ECE");
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------
+Problem Statement – Write a program to calculate the fuel consumption of your
+truck.The program should ask the user to enter the quantity of diesel to fill up the
+tank and the distance covered till the tank goes dry.Calculate the fuel consumption
+and display it in the format (liters per 100 kilometers).
+Convert the same result to the U.S. style of miles per gallon and display the result. If
+the quantity or distance is zero or negative display ” is an Invalid Input”.
+[Note: The US approach of fuel consumption calculation (distance / fuel) is the
+inverse of the European approach (fuel / distance ). Also note that 1 kilometer is
+0.6214 miles, and 1 liter is 0.2642 gallons.]
+The result should be with two decimal place.To get two decimal place refer the
+below-mentioned print statement :
+float cost=670.23;
+System.out.printf(“You need a sum of Rs.%.2f to cover the trip”,cost);
+Sample Input 1:
+Enter the no of liters to fill the tank
+20
+Enter the distance covered
+150
+Sample Output 1:
+Liters/100KM
+13.33
+Miles/gallons
+17.64
+Explanation:
+For 150 KM fuel consumption is 20 liters,
+Then for 100 KM fuel consumption would be (20/150)*100=13.33,
+Distance is given in KM, we have to convert it to miles (150*0.6214)=93.21,
+Fuel consumption is given in liters, we have to convert it to gallons
+(20*0.2642)=5.284,
+Then find (miles/gallons)=(93.21/5.284)=17.64
+Sample Input 2:
+Enter the no of liters to fill the tank
+-5
+Sample Output 2:
+-5 is an Invalid Input
+Sample Input 3:
+Enter the no of liters to fill the tank
+25
+Enter the distance covered
+-21
+Sample Output 3:
+-21 is an Invalid Inpu
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the no of liters to fill the tank");
+        int a= sc.nextInt();
+        System.out.println("Enter the distance covered");
+        int b= sc.nextInt();
+
+        if(a<=0)
+        {
+            System.out.println(a+" is an Invalid Input");
+        }
+        else if(b<=0)
+        {
+            System.out.println(b+" is an Invalid Input");
+        }
+        else {
+            float km = (float)a*100/b;
+            float miles = (b * 0.6214f);
+            float gallons = a * 0.2642f;
+            float gall = (miles / gallons);
+            System.out.printf("Liters/100KM=%.2f %n", km);
+            System.out.printf("Miles/gallons=%.2f ", gall);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+8)
+Problem Statement –A chocolate factory is packing chocolates into the packets. The
+chocolate packets here represent an array of N number of integer values. The task is to find
+the empty packets(0) of chocolate and push it to the end of the conveyor belt(array).
+Example 1 :
+N=8 and arr = [4,5,0,1,9,0,5,0] There are 3 empty packets in the given set. These 3 empty
+packets represented as O should be pushed towards the end of the array
+Input :
+8 – Value of N
+[4,5,0,1,9,0,5,0] – Element of arr[O] to arr[N-1],While input each element is separated by
+newline
+Output:
+4 5 1 9 5 0 0 0
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+        int size=sc.nextInt();
+
+        int a[]=new int[size];
+
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+
+        for(int i=0;i<a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]==0)
+                {
+                    int temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+        for(int i=0;i<a.length;i++)
+        {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------
+9)
+Problem Statement – An automobile company manufactures both a two wheeler (TW) and a
+four wheeler (FW). A company manager wants to make the production of both types of
+vehicle according to the given data below:
+a)1st data, Total number of vehicle (two-wheeler + four-wheeler)=v
+b)2nd data, Total number of wheels = W
+The task is to find how many two-wheelers as well as four-wheelers need to manufacture as
+per the given data.
+Example :
+Input :
+200 -> Value of V
+540 -> Value of W
+Output :
+TW =130 FW=70
+Explanation:
+130+70 = 200 vehicles
+(70*4)+(130*2)= 540 wheels
+Constraints :
+a)2<=W
+b)W%2=0
+c)V<W
+Print “INVALID INPUT” , if inputs did not meet the constraints.
+The input format for testing
+The candidate has to write the code to accept two positive numbers separated by a new line.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter Value of V");
+        int v=sc.nextInt();
+        System.out.println("enter Value of W");
+        int w=sc.nextInt();
+
+        if(w%2!=0 || v>=w || w<2)
+        {
+            System.out.println("Invalid input");
+        }
+        else
+        {
+            int fw=(w/2)-v;
+            int tw=v-fw;
+            System.out.println("TW= "+tw);
+            System.out.println("FW= "+fw);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+10)
+A party has been organised on cruise. The party is organised for a limited time(T). The
+number of guests entering (E[i]) and leaving (L[i]) the party at every hour is represented as
+elements of the array. The task is to find the maximum number of guests present on the
+cruise at any given instance within T hours.
+Example 1:
+Input :
+a)5 -> Value of T
+b)[7,0,5,1,3] -> E[], Element of E[0] to E[N-1], where input each element is separated by
+new line
+c)[1,2,1,3,4] -> L[], Element of L[0] to L[N-1], while input each element is separate by new
+line.
+Output :
+8 -> Maximum number of guests on cruise at an instance.
+Explanation:
+1st hour:
+Entry : 7 Exit: 1
+No. of guests on ship : 6
+2nd hour :
+Entry : 0 Exit : 2
+No. of guests on ship : 6-2=4
+Hour 3:
+Entry: 5 Exit: 1
+No. of guests on ship : 4+5-1=8
+Hour 4:
+Entry : 1 Exit : 3
+No. of guests on ship : 8+1-3=6
+Hour 5:
+Entry : 3 Exit: 4
+No. of guests on ship: 6+3-4=5
+Hence, the maximum number of guests within 5 hours is 8.
+Example 2:
+Input:
+4 -> Value of T
+[3,5,2,0] -> E[], Element of E[0] to E[N-1], where input each element is separated by new
+line.
+[0,2,4,4] -> L[], Element of L[0] to L[N-1], while input each element in separated by new line
+Output:
+6
+Cruise at an instance
+Explanation:
+Hour 1:
+Entry: 3 Exit: 0
+No. of guests on ship: 3
+Hour 2:
+Entry : 5 Exit : 2
+No. of guest on ship: 3+5-2=6
+Hour 3:
+Entry : 2 Exit: 4
+No. of guests on ship: 6+2-4= 4
+Hour 4:
+Entry: 0 Exit : 4
+No. of guests on ship : 4+0-4=0
+Hence, the maximum number of guests within 5 hours is 6.
+The input format for testing
+The candidate has to write the code to accept 3 input.
+First input- Accept value for number of T(Positive integer number)
+Second input- Accept T number of values, where each value is separated by a new line.
+Third input- Accept T number of values, where each value is separated by a new line.
+The output format for testing
+The output should be a positive integer number or a message as given in the problem
+statement(Check the output in Example 1 and Example 2)
+Constraints:
+a)1<=T<=25
+b)0<= E[i] <=500
+c)0<= L[i] <=500
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter size");
+        int size=sc.nextInt();
+
+        int a[]=new int[size];
+
+        System.out.println("number of guests entering");
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        int b[]=new int[size];
+
+        System.out.println("number of guests leaving");
+        for(int i=0;i<b.length;i++)
+        {
+            b[i]=sc.nextInt();
+        }
+
+        int total=0;
+        int max=0;
+        for(int i=0;i<a.length;i++)
+        {
+             total=total+a[i]-b[i];
+             if(max<total)
+             {
+                 max=total;
+             }
+        }
+        System.out.println("Maximum number of guests on cruise at an instance= "+max);
+    }
+}
+-----------------------------------------------------------------------------------------
